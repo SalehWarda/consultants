@@ -115,6 +115,10 @@
       <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/nunomaduro/termwind" />
       <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/nunomaduro/collision" />
       <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/nesbot/carbon" />
+      <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/php-flasher/flasher-toastr" />
+      <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/php-flasher/flasher-laravel" />
+      <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/php-flasher/flasher" />
+      <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/yoeunes/toastr" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
