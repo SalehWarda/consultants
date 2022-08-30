@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +18,23 @@ use Illuminate\Support\Facades\Route;
 */
 Route::group(['prefix' => 'admin'],function (){
 
-    Route::get('/dashboard',[DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::group(['middleware' => 'auth:admin'], function () {
 
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+        Route::post('/logout', [LoginController::class, 'logout'])->name('admin.logout');
+
+    });
+    ############################### About Route ###############################
     Route::get('/about',[AboutController::class, 'index'])->name('admin.about');
     Route::patch('/update', [AboutController::class, 'update'])->name('admin.about.update');
 
+    ############################### Contact Route ###############################
     Route::get('/contact',[ContactController::class, 'index'])->name('admin.contact');
     Route::patch('/update/contact', [ContactController::class, 'update'])->name('admin.contact.update');
 
+
+
+    Route::get('/login', [LoginController::class, 'getLogin'])->name('admin.getLogin');
+    Route::post('/login', [LoginController::class, 'login'])->name('admin.login');
 
 });

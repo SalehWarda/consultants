@@ -8,7 +8,7 @@
                 <img src="{{asset('assets/images/admin/users/avatar.png')}}" alt="" class="avatar-md rounded-circle">
             </div>
             <div class="mt-3">
-                <h4 class="font-size-16 mb-1">Saleh</h4>
+                <h4 class="font-size-16 mb-1">{{auth('admin')->user()->name}}</h4>
                 <span class="text-muted"><i class="ri-record-circle-line align-middle font-size-14 text-success"></i> نشط</span>
             </div>
         </div>
