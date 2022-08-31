@@ -22,6 +22,7 @@ class ContactController extends Controller
         $contact = Contact::whereId($request->contact_id)->firstOrFail();
         $input['email'] =  $request->email;
         $input['mobile'] = $request->mobile;
+        $input['address'] = $request->address;
 
 
 

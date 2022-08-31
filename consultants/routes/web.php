@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Frontend\CustomerController;
+use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +15,19 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware' => 'auth:web'], function () {
 
-Route::get('/', function () {
-    return view('pages.frontend.index');
+
+    Route::post('/logout-users', [LoginController::class, 'logout'])->name('site.logout.user');
+    Route::get('/profile', [CustomerController::class, 'profile'])->name('site.customer.profile');
+    Route::patch('/profile', [CustomerController::class, 'update_profile'])->name('site.customer.update_profile');
+
 });
+
+
+Route::get('/', [HomeController::class, 'index'])->name('site.home');
+Route::get('/login-users', [LoginController::class, 'getLogin'])->name('site.login');
+Route::post('/login-users', [LoginController::class, 'login'])->name('site.login.user');
+Route::post('/register-users', [LoginController::class, 'register'])->name('site.register.user');
+
+Route::post('/contact/store', [HomeController::class, 'contact_store'])->name('site.contact_store');

@@ -206,7 +206,7 @@ section {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding:0;
@@ -334,7 +334,7 @@ section {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #012970;
@@ -1619,7 +1619,7 @@ section {
   margin-bottom: 0;
 }
 
-.contact .php-email-form {
+.contact .btn-login {
   background: #fafbff;
   padding:30px;
   height: 100%;
@@ -1687,7 +1687,7 @@ section {
   padding:12px 15px;
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .btn-login button[type=submit] {
   background: #4154f1;
   border: 0;
   padding:10px 30px;

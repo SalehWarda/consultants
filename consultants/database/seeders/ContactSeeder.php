@@ -19,6 +19,7 @@ class ContactSeeder extends Seeder
 
             'email' => 'admin@gmail.com',
             'mobile' => '059123123123',
+            'address' => 'السعودية - الرياض',
 
         ]);
     }

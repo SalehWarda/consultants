@@ -5,6 +5,32 @@
 @section('title')
      الرئيسية
 @endsection
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="hero d-flex align-items-center">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+                <h1 data-aos="fade-up">نحن نقدم حلولاً عصرية لتنمية أعمالك</h1>
+                <h2 data-aos="fade-up" data-aos-delay="400">نحن فريق من المصممين الموهوبين نصنع مواقع الويب باستخدام أحدث التقنيات</h2>
+                <div data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-center text-lg-start">
+                        <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                            <span>هيا لنبدأ</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                <img src="{{asset('assets/site/img/hero-img.png')}}" class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+
+</section><!-- End Hero -->
+
 @section('content')
 
 
@@ -982,7 +1008,8 @@
             </div>
         </div>
 
-    </section><!-- End Clients Section -->
+    </section>
+    <!-- End Clients Section -->
 
     <!-- ======= Recent Blog Posts Section ======= -->
     <section id="recent-blog-posts" class="recent-blog-posts">
@@ -1047,58 +1074,63 @@
                             <div class="info-box">
                                 <i class="bi bi-geo-alt"></i>
                                 <h3>العنوان</h3>
-                                <p>A108 Adam Street,<br>New York, NY 535022</p>
+                                <p>{{$contact->address}}</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="info-box">
                                 <i class="bi bi-telephone"></i>
                                 <h3>إتصل بنا</h3>
-                                <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                                <p ><a href="tel:{{$contact->mobile}}" style="color: black">{{$contact->mobile}}</a></p>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="info-box">
+                        <div class="col-md-12" >
+                            <div class="info-box ">
                                 <i class="bi bi-envelope"></i>
                                 <h3>البريد الإلكتروني</h3>
-                                <p>info@example.com<br>contact@example.com</p>
+                                <p><a href="mailto:{{$contact->email}}" style="color: black">{{$contact->email}}</a></p>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="info-box">
-                                <i class="bi bi-clock"></i>
-                                <h3>ساعات العمل</h3>
-                                <p>Monday - Friday<br>9:00AM - 05:00PM</p>
-                            </div>
-                        </div>
+
                     </div>
 
                 </div>
 
                 <div class="col-lg-6">
-                    <form action="forms/contact.php" method="post" class="php-email-form">
+                    @include('partials.alert.alert')
+                    <form action="{{route('site.contact_store')}}" method="post" class="btn-login">
+                        @csrf
                         <div class="row gy-4">
 
                             <div class="col-md-6">
-                                <input type="text" name="name" class="form-control" placeholder="الإسم كاملا" required>
+                                <input type="text" name="name" class="form-control" placeholder="الإسم كاملا" >
+                                @error('name')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
 
                             <div class="col-md-6 ">
-                                <input type="email" class="form-control" name="email" placeholder="البريد الإلكتروني" required>
+                                <input type="email" class="form-control" name="email" placeholder="البريد الإلكتروني" >
+                                @error('email')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
 
                             <div class="col-md-12">
-                                <input type="text" class="form-control" name="subject" placeholder="الموضوع" required>
+                                <input type="text" class="form-control" name="subject" placeholder="الموضوع" >
+                                @error('subject')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
 
                             <div class="col-md-12">
-                                <textarea class="form-control" name="message" rows="6" placeholder="الرسالة" required></textarea>
+                                <textarea class="form-control" name="message" rows="6" placeholder="الرسالة" ></textarea>
+                                @error('message')
+                                <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
 
                             <div class="col-md-12 text-center">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
 
                                 <button type="submit">إرسال البيانات</button>
                             </div>

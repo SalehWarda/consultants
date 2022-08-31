@@ -88,6 +88,22 @@
                                 </div>
                                 <br>
 
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label for="address"
+                                               class="col-sm-2 col-form-label">الموقع الجغرافي:</label>
+                                        <input class="form-control" type="text"
+                                               value="{{$contact->address}}" name="address"
+                                               id="email">
+                                        @error('address')
+                                        <span class="text-danger">{{$message}}</span>
+                                        @enderror
+                                    </div>
+
+
+                                </div>
+                                <br>
+
 
 
 

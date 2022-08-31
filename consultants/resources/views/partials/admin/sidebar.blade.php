@@ -21,14 +21,14 @@
 
                 <li>
                     <a href="{{route('admin.dashboard')}}" class="waves-effect">
-                        <i class="ri-dashboard-line"></i>
+                        <i class="ri-dashboard-fill"></i>
                         <span>الرئيسية</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-calendar-2-line"></i>
+                        <i class="ri-calendar-2-fill"></i>
                         <span>نبذة عنا</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -39,11 +39,21 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-mail-send-line"></i>
+                        <i class="ri-account-circle-fill"></i>
                         <span>معلومات التواصل</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{route('admin.contact')}}">معلومات التواصل</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-mail-fill"></i>
+                        <span>البريد الوارد</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{route('admin.mail')}}">البريد الوارد</a></li>
                     </ul>
                 </li>
 
