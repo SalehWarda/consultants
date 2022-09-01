@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AboutSeeder::class);
         $this->call(ContactSeeder::class);
         $this->call(MailSeeder::class);
+        $this->call(CouponSeeder::class);
 
     }
 }

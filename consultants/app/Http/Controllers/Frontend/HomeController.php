@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\ContactRequest;
+use App\Models\Backend\Admin;
 use App\Models\Backend\Contact;
 use App\Models\Backend\Mail;
+use App\Notifications\Frontend\Mail\MailCreateNotification;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,9 +29,9 @@ class HomeController extends Controller
 
         $mail = Mail::create($input);
 
-//        Admin::whereStatus(true)->each(function ($admin, $key) use ($mail) {
-//            $admin->notify(new MailCreateNotification($mail));
-//        });
+        Admin::query()->each(function ($admin, $key) use ($mail) {
+            $admin->notify(new MailCreateNotification($mail));
+        });
 
         return back()->with([
 
@@ -38,4 +40,15 @@ class HomeController extends Controller
         ]);
     }
 
+    public function cart()
+    {
+
+        return view('pages.frontend.cart.index');
+    }
+
+    public function checkout()
+    {
+
+        return view('pages.frontend.checkout.index');
+    }
 }

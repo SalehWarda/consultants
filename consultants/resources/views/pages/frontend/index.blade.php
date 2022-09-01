@@ -15,9 +15,9 @@
                 <h1 data-aos="fade-up">نحن نقدم حلولاً عصرية لتنمية أعمالك</h1>
                 <h2 data-aos="fade-up" data-aos-delay="400">نحن فريق من المصممين الموهوبين نصنع مواقع الويب باستخدام أحدث التقنيات</h2>
                 <div data-aos="fade-up" data-aos-delay="600">
-                    <div class="text-center text-lg-start">
+                    <div class="text-center text-lg-end">
                         <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                            <span>هيا لنبدأ</span>
+                            <span >هيا لنبدأ</span>
                             <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
@@ -47,7 +47,7 @@
                         <p>
                             Quisquam vel ut sint cum eos hic dolores aperiam. Sed deserunt et. Inventore et et dolor consequatur itaque ut voluptate sed et. Magnam nam ipsum tenetur suscipit voluptatum nam et est corrupti.
                         </p>
-                        <div class="text-center text-lg-start">
+                        <div class="text-center text-lg-end">
                             <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
                                 <span>إقرأ المزيد</span>
                                 <i class="bi bi-arrow-right"></i>

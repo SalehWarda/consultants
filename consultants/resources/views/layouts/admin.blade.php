@@ -48,7 +48,7 @@
 
     @yield('style')
 
-
+    @livewireStyles
 </head>
 
 <body data-topbar="dark">
@@ -167,7 +167,7 @@
 
 
 @yield('scripts')
-
+@livewireScripts
 </body>
 
 </html>

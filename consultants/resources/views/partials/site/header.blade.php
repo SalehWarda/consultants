@@ -16,6 +16,7 @@
                     <li><a class="nav-link scrollto" href="#portfolio">الأعمال</a></li>
                     <li><a class="nav-link scrollto" href="#team">الفريق</a></li>
                     <li><a href="blog.html">المدونة</a></li>
+                    <li><a href="{{route('site.domains')}}">الدومينات</a></li>
 
                     <li><a class="nav-link scrollto" href="#contact">تواصل معنا</a></li>
 
@@ -44,30 +45,37 @@
                         </li>
 
 
-{{--                        <li class="dropdown">--}}
-{{--                            <a href="#">--}}
-{{--                                <i class="ri-notification-3-fill" style="font-size: 1.2rem; margin-left: -5px"></i>--}}
-{{--                                <span class="badge bg-danger rounded-circle " style="margin-bottom: 18px;">0</span>--}}
-{{--                            </a>--}}
-{{--                            <ul style="margin-right: -250px; margin-top: 10px">--}}
-{{--                                <li><a class="dropdown-item d-flex align-items-center " href="{{route('site.customer.profile')}}">--}}
+                        <li class="dropdown">
+                            <a href="#">
+                                <i class="ri-notification-3-fill" style="font-size: 1.2rem; margin-left: -5px"></i>
+                                <span class="badge bg-danger rounded-circle " style="margin-bottom: 18px;">0</span>
+                            </a>
+                            <ul style="margin-right: -250px; margin-top: 10px">
+                                <li><a class="dropdown-item d-flex align-items-center " href="{{route('site.customer.profile')}}">
 
-{{--                                        <div style="margin-left: 15px">--}}
-{{--                                            <div class="icon-circle bg-dark">--}}
-{{--                                                <i class="ri-file-line text-dark" style="font-size: 2.2rem"></i>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div>--}}
-{{--                                            <div class="small text-gray-500">2/5/2021</div>--}}
-{{--                                            <span class="font-weight-bold">Order ref#123596 status is under proccess</span>--}}
-{{--                                        </div>--}}
-{{--                                    </a>--}}
-{{--                                </li>--}}
+                                        <div style="margin-left: 15px">
+                                            <div class="icon-circle bg-dark">
+                                                <i class="ri-file-line text-dark" style="font-size: 2.2rem"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="small text-gray-500">2/5/2021</div>
+                                            <span class="font-weight-bold">Order ref#123596 status is under proccess</span>
+                                        </div>
+                                    </a>
+                                </li>
 
 
 
-{{--                            </ul>--}}
-{{--                        </li>--}}
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="{{route('site.cart')}}">
+                                <i class="ri-shopping-cart-fill" style="font-size: 1.2rem; margin-left: -5px"></i>
+                                <span class="badge bg-danger rounded-circle " style="margin-bottom: 18px;">0</span>
+                            </a>
+
+                        </li>
 
 
                     @endguest
@@ -81,6 +89,7 @@
                     <li><a class="nav-link scrollto" href="{{route('site.home')}}">الأعمال</a></li>
                     <li><a class="nav-link scrollto" href="{{route('site.home')}}">الفريق</a></li>
                     <li><a href="{{route('site.home')}}">المدونة</a></li>
+                    <li><a href="{{route('site.domains')}}">الدومينات</a></li>
 
                     <li><a class="nav-link scrollto" href="{{route('site.home')}}">تواصل معنا</a></li>
 
@@ -110,7 +119,38 @@
                         </li>
 
 
+                        <li class="dropdown">
+                            <a href="#">
+                                <i class="ri-notification-3-fill" style="font-size: 1.2rem; margin-left: -5px"></i>
+                                <span class="badge bg-danger rounded-circle " style="margin-bottom: 18px;">0</span>
+                            </a>
+                            <ul style="margin-right: -250px; margin-top: 10px">
+                                <li><a class="dropdown-item d-flex align-items-center " href="{{route('site.customer.profile')}}">
 
+                                        <div style="margin-left: 15px">
+                                            <div class="icon-circle bg-dark">
+                                                <i class="ri-file-line text-dark" style="font-size: 2.2rem"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="small text-gray-500">2/5/2021</div>
+                                            <span class="font-weight-bold">Order ref#123596 status is under proccess</span>
+                                        </div>
+                                    </a>
+                                </li>
+
+
+
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="{{route('site.cart')}}">
+                                <i class="ri-shopping-cart-fill" style="font-size: 1.2rem; margin-left: -5px"></i>
+                                <span class="badge bg-danger rounded-circle " style="margin-bottom: 18px;">0</span>
+                            </a>
+
+                        </li>
 
 
                     @endguest

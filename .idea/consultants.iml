@@ -119,6 +119,7 @@
       <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/php-flasher/flasher-laravel" />
       <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/php-flasher/flasher" />
       <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/yoeunes/toastr" />
+      <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/livewire/livewire" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

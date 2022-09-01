@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\ContactController;
+use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Backend\MailController;
@@ -41,6 +42,16 @@ Route::group(['prefix' => 'admin'],function (){
         ############################### Contact Route ###############################
         Route::get('/contact',[ContactController::class, 'index'])->name('admin.contact');
         Route::patch('/update/contact', [ContactController::class, 'update'])->name('admin.contact.update');
+
+        ############################### Coupons Route ###############################
+
+        Route::group(['prefix' => 'coupons'], function () {
+
+            Route::get('/', [CouponController::class, 'index'])->name('admin.coupons');
+            Route::post('/store', [CouponController::class, 'store'])->name('admin.coupons.store');
+            Route::put('/update', [CouponController::class, 'update'])->name('admin.coupons.update');
+            Route::delete('/delete', [CouponController::class, 'destroy'])->name('admin.coupons.destroy');
+        });
 
     });
 

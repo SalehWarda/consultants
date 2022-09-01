@@ -57,7 +57,22 @@
                     </ul>
                 </li>
 
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-coupon-2-fill"></i>
+                        <span>كوبونات الخصم</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
 
+
+                        <li><a href="{{route('admin.coupons')}}">كوبونات الخصم</a></li>
+
+
+                        </li>
+
+                    </ul>
+                </li>
 
             </ul>
         </div>
