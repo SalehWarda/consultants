@@ -33,7 +33,7 @@ class MailCreateNotification extends Notification implements ShouldQueue
      */
     public function via($notifiable)
     {
-        return ['database'];
+        return ['database','mail'];
     }
 
     /**
@@ -42,13 +42,15 @@ class MailCreateNotification extends Notification implements ShouldQueue
      * @param  mixed  $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
-//    public function toMail($notifiable)
-//    {
-//        return (new MailMessage)
-//                    ->line('The introduction to the notification.')
-//                    ->action('Notification Action', url('/'))
-//                    ->line('Thank you for using our application!');
-//    }
+    public function toMail($notifiable)
+    {
+        return (new MailMessage)
+                    ->line($this->mail->subject)
+                    ->line($this->mail->created_at)
+                    ->line($this->mail->name)
+                    ->from($this->mail->email)
+                    ->line($this->mail->message);
+    }
 
     /**
      * Get the array representation of the notification.

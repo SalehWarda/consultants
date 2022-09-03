@@ -7,6 +7,7 @@ use App\Http\Requests\Frontend\ContactRequest;
 use App\Models\Backend\Admin;
 use App\Models\Backend\Contact;
 use App\Models\Backend\Mail;
+use App\Models\Backend\Package;
 use App\Notifications\Frontend\Mail\MailCreateNotification;
 use Illuminate\Http\Request;
 
@@ -16,6 +17,7 @@ class HomeController extends Controller
     public function index()
     {
         $data['contact'] = Contact::first();
+        $data['packages'] = Package::get();
         return view('pages.frontend.index',$data);
     }
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Backend\MailController;
+use App\Http\Controllers\Backend\PackagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,6 +52,17 @@ Route::group(['prefix' => 'admin'],function (){
             Route::post('/store', [CouponController::class, 'store'])->name('admin.coupons.store');
             Route::put('/update', [CouponController::class, 'update'])->name('admin.coupons.update');
             Route::delete('/delete', [CouponController::class, 'destroy'])->name('admin.coupons.destroy');
+        });
+
+        ############################### Packages Route ###############################
+
+        Route::group(['prefix' => 'packages'], function () {
+
+            Route::get('/', [PackagesController::class, 'index'])->name('admin.packages');
+            Route::get('/create', [PackagesController::class, 'create'])->name('admin.packages.create');
+            Route::post('/store', [PackagesController::class, 'store'])->name('admin.packages.store');
+            Route::put('/update', [PackagesController::class, 'update'])->name('admin.coupons.update');
+            Route::delete('/delete', [PackagesController::class, 'destroy'])->name('admin.coupons.destroy');
         });
 
     });

@@ -74,6 +74,23 @@
                     </ul>
                 </li>
 
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-gift-fill"></i>
+                        <span>الباقات</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+
+
+                        <li><a href="{{route('admin.packages')}}">الباقات</a></li>
+
+
+                        </li>
+
+                    </ul>
+                </li>
+
             </ul>
         </div>
         <!-- Sidebar -->

@@ -12,19 +12,38 @@
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">الرئيسية</a></li>
                     <li><a class="nav-link scrollto" href="#about">نبذة عنا</a></li>
-                    <li><a class="nav-link scrollto" href="#services">الخدمات</a></li>
-                    <li><a class="nav-link scrollto" href="#portfolio">الأعمال</a></li>
-                    <li><a class="nav-link scrollto" href="#team">الفريق</a></li>
-                    <li><a href="blog.html">المدونة</a></li>
-                    <li><a href="{{route('site.domains')}}">الدومينات</a></li>
+                    <li><a class="nav-link scrollto" href="#pricing">الخدمات</a></li>
+{{--                    <li><a class="nav-link scrollto" href="#portfolio">الأعمال</a></li>--}}
+{{--                    <li><a class="nav-link scrollto" href="#team">الفريق</a></li>--}}
+{{--                    <li><a href="blog.html">المدونة</a></li>--}}
+{{--                    <li><a href="{{route('site.domains')}}">الدومينات</a></li>--}}
 
                     <li><a class="nav-link scrollto" href="#contact">تواصل معنا</a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
 
 
 
 
                     @guest
-                        <li><a class="getstarted scrollto" href="{{route('site.login')}}">تسجيل الدخول</a></li>
+
+                        <li class="dropdown">
+                            <a href="{{route('site.cart')}}">
+                                <i class="ri-shopping-cart-fill" style="font-size: 1.2rem; margin-left: -5px"></i>
+                                <span class="badge bg-danger rounded-circle " style="margin-bottom: 18px;">0</span>
+                            </a>
+
+                        </li>
+                        <li><a class="btn-login" href="{{route('site.login')}}">دخول<i class="ri-login-box-line"style="font-size: 1.2rem"></i></a></li>
 
 
                     @else
@@ -86,18 +105,36 @@
                     <li><a class="nav-link scrollto " href="{{route('site.home')}}">الرئيسية</a></li>
                     <li><a class="nav-link scrollto" href="{{route('site.home')}}">نبذة عنا</a></li>
                     <li><a class="nav-link scrollto" href="{{route('site.home')}}">الخدمات</a></li>
-                    <li><a class="nav-link scrollto" href="{{route('site.home')}}">الأعمال</a></li>
-                    <li><a class="nav-link scrollto" href="{{route('site.home')}}">الفريق</a></li>
-                    <li><a href="{{route('site.home')}}">المدونة</a></li>
-                    <li><a href="{{route('site.domains')}}">الدومينات</a></li>
+{{--                    <li><a class="nav-link scrollto" href="{{route('site.home')}}">الأعمال</a></li>--}}
+{{--                    <li><a class="nav-link scrollto" href="{{route('site.home')}}">الفريق</a></li>--}}
+{{--                    <li><a href="{{route('site.home')}}">المدونة</a></li>--}}
+{{--                    <li><a href="{{route('site.domains')}}">الدومينات</a></li>--}}
 
-                    <li><a class="nav-link scrollto" href="{{route('site.home')}}">تواصل معنا</a></li>
+                    <li><a class="nav-link scrollto" href="#">تواصل معنا</a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
+                    <li><a class="nav-link scrollto" href="#"></a></li>
 
 
 
 
                     @guest
-                        <li><a class="getstarted scrollto" href="{{route('site.login')}}">تسجيل الدخول</a></li>
+                        <li class="dropdown">
+                            <a href="{{route('site.cart')}}">
+                                <i class="ri-shopping-cart-fill" style="font-size: 1.2rem; margin-left: -5px"></i>
+                                <span class="badge bg-danger rounded-circle " style="margin-bottom: 18px;">0</span>
+                            </a>
+
+                        </li>
+                        <li><a class="btn-login" href="{{route('site.login')}}">دخول<i class="ri-login-box-line"style="font-size: 1.2rem"></i></a></li>
 
 
                     @else

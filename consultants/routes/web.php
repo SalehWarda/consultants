@@ -4,6 +4,7 @@ use App\Http\Controllers\Frontend\CustomerController;
 use App\Http\Controllers\Frontend\DomainController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\LoginController;
+use App\Http\Controllers\Frontend\PackageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +23,11 @@ Route::group(['middleware' => 'auth:web'], function () {
     Route::post('/logout-users', [LoginController::class, 'logout'])->name('site.logout.user');
     Route::get('/profile', [CustomerController::class, 'profile'])->name('site.customer.profile');
     Route::patch('/profile', [CustomerController::class, 'update_profile'])->name('site.customer.update_profile');
-    Route::get('/checkout', [HomeController::class, 'checkout'])->name('site.checkout');
+
+    Route::group(['middleware' => 'check_cart'], function () {
+        Route::get('/checkout', [HomeController::class, 'checkout'])->name('site.checkout');
+    });
+
 
 });
 
@@ -34,4 +39,5 @@ Route::post('/register-users', [LoginController::class, 'register'])->name('site
 
 Route::post('/contact/store', [HomeController::class, 'contact_store'])->name('site.contact_store');
 Route::get('/domains', [DomainController::class, 'index'])->name('site.domains');
+Route::get('/package-details', [PackageController::class, 'package_details'])->name('site.package_details');
 Route::get('/cart', [HomeController::class, 'cart'])->name('site.cart');

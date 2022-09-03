@@ -120,6 +120,9 @@
       <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/php-flasher/flasher" />
       <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/yoeunes/toastr" />
       <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/livewire/livewire" />
+      <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/symfony/mailgun-mailer" />
+      <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/symfony/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/symfony/http-client-contracts" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
