@@ -40,6 +40,8 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
+    @livewireStyles
+
 </head>
 
 <body>
@@ -71,6 +73,7 @@
 
 <!-- Template Main JS File -->
 <script src="{{asset('assets/site/js/main.js')}}"></script>
+@livewireScripts
 
 </body>
 

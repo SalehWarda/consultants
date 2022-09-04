@@ -41,3 +41,6 @@ Route::post('/contact/store', [HomeController::class, 'contact_store'])->name('s
 Route::get('/domains', [DomainController::class, 'index'])->name('site.domains');
 Route::get('/package-details', [PackageController::class, 'package_details'])->name('site.package_details');
 Route::get('/cart', [HomeController::class, 'cart'])->name('site.cart');
+
+Route::post('/search-domain', [PackageController::class, 'search_domain'])->name('site.search_domain');
+

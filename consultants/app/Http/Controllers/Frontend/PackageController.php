@@ -10,6 +10,9 @@ class PackageController extends Controller
     //
     public function package_details()
     {
+
+
         return view('pages.frontend.packages.package_details');
     }
+
 }

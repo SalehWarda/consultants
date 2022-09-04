@@ -115,45 +115,48 @@
 
             <div class="row gy-4">
 
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="count-box">
                         <i class="bi bi-emoji-smile"></i>
                         <div>
-                            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>العملاء</p>
+                            <div class="d-flex">
+                                <span data-purecounter-start="0" data-purecounter-end="100"  data-purecounter-duration="1" class="purecounter"></span>
+                                <h3 style="color: #0b198f"> %</h3>
+
+                            </div>
+                            <p>عملاء سعداء</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="count-box">
-                        <i class="bi bi-journal-richtext" style="color: #ee6c20;"></i>
+                        <i class="bi bi-people" style="color: #ee6c20;"></i>
                         <div>
-                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>المشاريع</p>
+                            <div class="d-flex">
+                                <span data-purecounter-start="0" data-purecounter-end="600"  data-purecounter-duration="1" class="purecounter"></span>
+                                <h3 style="color: #0b198f"> %</h3>
+
+                            </div>
+                            <p> قاعدة جماهير أكبر</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="count-box">
-                        <i class="bi bi-headset" style="color: #15be56;"></i>
+                        <i class="bi bi-alarm" style="color: #bb0852;"></i>
                         <div>
-                            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>ساعات الدعم</p>
+                            <div class="d-flex">
+                                <span data-purecounter-start="0" data-purecounter-end="60"  data-purecounter-duration="1" class="purecounter"></span>
+                                <h3 style="color: #0b198f"> %</h3>
+
+                            </div>
+                            <p> توفير وقت مهدر</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6">
-                    <div class="count-box">
-                        <i class="bi bi-people" style="color: #bb0852;"></i>
-                        <div>
-                            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>الموظفين</p>
-                        </div>
-                    </div>
-                </div>
 
             </div>
 
