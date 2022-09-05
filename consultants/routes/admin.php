@@ -61,8 +61,9 @@ Route::group(['prefix' => 'admin'],function (){
             Route::get('/', [PackagesController::class, 'index'])->name('admin.packages');
             Route::get('/create', [PackagesController::class, 'create'])->name('admin.packages.create');
             Route::post('/store', [PackagesController::class, 'store'])->name('admin.packages.store');
-            Route::put('/update', [PackagesController::class, 'update'])->name('admin.coupons.update');
-            Route::delete('/delete', [PackagesController::class, 'destroy'])->name('admin.coupons.destroy');
+            Route::get('/edit/{id}', [PackagesController::class, 'edit'])->name('admin.packages.edit');
+            Route::put('/update', [PackagesController::class, 'update'])->name('admin.packages.update');
+            Route::delete('/delete', [PackagesController::class, 'destroy'])->name('admin.packages.destroy');
         });
 
     });

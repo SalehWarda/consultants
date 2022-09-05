@@ -84,12 +84,12 @@
                                                 <div class="btn-list btn-list-icon">
 
 
-                                                    <button type="button"
+                                                    <a href="{{route('admin.packages.edit',$package->id)}}"
                                                             class="btn btn-info waves-effect waves-light btn-rounded"
-                                                            data-bs-toggle="modal" data-bs-target="#edit{{$package->id}}"
+
                                                             title="تعديل">
                                                         <i class="ri-edit-2-fill align-middle me-2"></i>تعديل
-                                                    </button>
+                                                    </a>
                                                     <button type="button"
                                                             class="btn btn-danger waves-effect waves-light btn-rounded"
                                                             data-bs-toggle="modal"
@@ -103,238 +103,59 @@
 
 
 
-{{--                                        <!--  Edit Coupon Modal -->--}}
-{{--                                        <div class="modal fade" tabindex="-1" role="dialog" id="edit{{$coupon->id}}"--}}
-{{--                                             aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">--}}
-{{--                                            <div class="modal-dialog modal-lg">--}}
-{{--                                                <div class="modal-content">--}}
-{{--                                                    <div class="modal-header">--}}
-{{--                                                        <h5 class="modal-title" id="myExtraLargeModalLabel">تعديل كوبون الخصم</h5>--}}
-{{--                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"--}}
-{{--                                                                aria-label="Close"></button>--}}
-{{--                                                    </div>--}}
-{{--                                                    <div class="modal-body">--}}
-
-{{--                                                        <form action="{{route('admin.coupons.update')}}" method="post">--}}
-{{--                                                            @csrf--}}
-{{--                                                            @method('PUT')--}}
-
-{{--                                                            <input type="hidden" name="coupon_id"--}}
-{{--                                                                   value="{{$coupon->id}}">--}}
-{{--                                                            <div class="row">--}}
-{{--                                                                <div class="col-md-3">--}}
-{{--                                                                    <label for="code" class=" col-form-label">كود الخصم--}}
-{{--                                                                        :</label>--}}
-{{--                                                                    <input type="text" name="code" id="codeUpdate"--}}
-{{--                                                                           class="form-control"--}}
-{{--                                                                           value="{{old('code',$coupon->code)}}">--}}
-
-{{--                                                                    @error('code')--}}
-{{--                                                                    <span class="text-danger">{{ $message }}</span>--}}
-{{--                                                                    @enderror--}}
-{{--                                                                </div>--}}
-
-{{--                                                                <div class="col-md-3">--}}
-
-{{--                                                                    <label for="type" class=" col-form-label">نوع الكود--}}
-{{--                                                                        : </label>--}}
-
-{{--                                                                    <select class="form-control" name="type">--}}
-{{--                                                                        <option selected > إختر...</option>--}}
 
 
-{{--                                                                        <option--}}
-{{--                                                                            value="fixed" {{old('type',$coupon->type) == 'fixed' ?'selected' : null}}>--}}
-{{--                                                                            ثابت--}}
-{{--                                                                        </option>--}}
-{{--                                                                        <option--}}
-{{--                                                                            value="percentage" {{old('type',$coupon->type) == 'percentage' ?'selected' : null}}>--}}
-{{--                                                                            نسبة مئوية--}}
-{{--                                                                        </option>--}}
+
+                                        <!-- Delete Mail Modal -->
+                                        <div  class="modal fade" tabindex="-1" role="dialog"
+                                              id="delete{{$package->id}}" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h3 class="modal-title" id="myModalLabel">حذف الباقة </h3>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="{{route('admin.packages.destroy')}}" method="post">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <input type="hidden" name="package_id" value="{{$package->id}}">
+
+                                                            <h4>هل أنت متأكد من عملية الحذف؟ </h4>
+
+                                                            <h5><span class="text-danger">{{$package->title}}</span></h5>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-light waves-effect"
+                                                                        data-bs-dismiss="modal">إغلاق
+                                                                </button>
+                                                                <button type="submit"
+                                                                        class="btn btn-danger waves-effect waves-light">حذف
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
 
 
-{{--                                                                    </select>--}}
-{{--                                                                    @error('type')--}}
-{{--                                                                    <span class="text-danger">{{ $message }}</span>--}}
-{{--                                                                    @enderror--}}
-
-{{--                                                                </div>--}}
-
-{{--                                                                <div class="col-md-3">--}}
-{{--                                                                    <label for="value" class=" col-form-label">قيمة الكود--}}
-{{--                                                                        :</label>--}}
-{{--                                                                    <input type="number" name="value"--}}
-{{--                                                                           class="form-control"--}}
-{{--                                                                           value="{{old('value',$coupon->value)}}">--}}
-
-{{--                                                                    @error('value')--}}
-{{--                                                                    <span class="text-danger">{{ $message }}</span>--}}
-{{--                                                                    @enderror--}}
-{{--                                                                </div>--}}
-
-{{--                                                                <div class="col-3">--}}
-{{--                                                                    <div class=" col-form-label">--}}
-{{--                                                                        <label for="use_times">مرات الإستخدام :</label>--}}
-{{--                                                                        <input type="number" name="use_times"--}}
-{{--                                                                               value="{{ old('use_times',$coupon->use_times) }}"--}}
-{{--                                                                               class="form-control">--}}
-{{--                                                                        @error('use_times')<span--}}
-{{--                                                                            class="text-danger">{{ $message }}</span>@enderror--}}
-{{--                                                                    </div>--}}
-{{--                                                                </div>--}}
-
-{{--                                                            </div>--}}
-{{--                                                            <br>--}}
-{{--                                                            <div class="row">--}}
-{{--                                                                <div class="col-md-4">--}}
-{{--                                                                    <div class="form-group">--}}
-{{--                                                                        <label> تاريخ البداية :</label>--}}
-
-{{--                                                                        <input type="text" name="start_date"--}}
-{{--                                                                               id="start_dateUpdate"--}}
-{{--                                                                               class="form-control"--}}
-{{--                                                                               value="{{old('start_date',$coupon->start_date->format('Y-m-d'))}}">--}}
-
-{{--                                                                        @error('start_date')--}}
-{{--                                                                        <span class="text-danger">{{ $message }}</span>--}}
-{{--                                                                        @enderror--}}
-{{--                                                                    </div>--}}
-{{--                                                                </div>--}}
-
-{{--                                                                <div class="col-md-4">--}}
-{{--                                                                    <div class="form-group">--}}
-{{--                                                                        <label> تاريخ النهاية :</label>--}}
-
-{{--                                                                        <input type="text" name="expire_date"--}}
-{{--                                                                               id="expire_dateUpdate"--}}
-{{--                                                                               class="form-control"--}}
-{{--                                                                               value="{{old('expire_date',$coupon->expire_date->format('Y-m-d'))}}">--}}
-
-{{--                                                                        @error('expire_date')--}}
-{{--                                                                        <span class="text-danger">{{ $message }}</span>--}}
-{{--                                                                        @enderror--}}
-{{--                                                                    </div>--}}
-{{--                                                                </div>--}}
-
-
-{{--                                                                <div class="col-md-4">--}}
-{{--                                                                    <div class="form-group">--}}
-{{--                                                                        <label for="status">الحالة :</label>--}}
-{{--                                                                        <br>--}}
-{{--                                                                        <select class="form-control"--}}
-{{--                                                                                name="status">--}}
-
-{{--                                                                            <option selected > إختر...</option>--}}
-{{--                                                                            <option--}}
-{{--                                                                                value="1" {{old('status',$coupon->status) == '1' ? 'selected' : null}}>--}}
-{{--                                                                                مفعل--}}
-{{--                                                                            </option>--}}
-{{--                                                                            <option--}}
-{{--                                                                                value="0" {{old('status',$coupon->status) == '0' ? 'selected' : null}}>--}}
-{{--                                                                                غير مفعل--}}
-{{--                                                                            </option>--}}
-
-{{--                                                                        </select>--}}
-{{--                                                                        @error('status')--}}
-{{--                                                                        <span class="text-danger">{{ $message }}</span>--}}
-{{--                                                                        @enderror--}}
-{{--                                                                    </div>--}}
-{{--                                                                </div>--}}
-
-
-{{--                                                            </div>--}}
-{{--                                                            <br>--}}
-{{--                                                            <div class="row">--}}
-
-{{--                                                                <div class="col-md-12">--}}
-{{--                                                                    <div class="form-group">--}}
-{{--                                                                        <label> الوصف :</label>--}}
-
-{{--                                                                        <textarea name="description" rows="3"--}}
-{{--                                                                                  id="description"--}}
-{{--                                                                                  class="form-control">--}}
-
-{{--                                                                     {{old('description',$coupon->description)}}--}}
-{{--                                                          </textarea>--}}
-
-{{--                                                                        @error('description')--}}
-{{--                                                                        <span class="text-danger">{{ $message }}</span>--}}
-{{--                                                                        @enderror--}}
-{{--                                                                    </div>--}}
-{{--                                                                </div>--}}
-
-
-{{--                                                            </div>--}}
-{{--                                                            <div class="modal-footer">--}}
-{{--                                                                <button class="btn ripple btn-secondary m-lg-2"--}}
-{{--                                                                        type="submit"--}}
-{{--                                                                >حفظ التغييرات<i--}}
-{{--                                                                        class="fe fe-plus"></i></button>--}}
-{{--                                                                <button class="btn ripple btn-danger"--}}
-{{--                                                                        data-bs-dismiss="modal" type="button">--}}
-{{--                                                                    إغلاق--}}
-{{--                                                                </button>--}}
-{{--                                                            </div>--}}
-{{--                                                        </form>--}}
-
-{{--                                                    </div>--}}
-
-
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-
-
-{{--                                        <!-- Delete Mail Modal -->--}}
-{{--                                        <div  class="modal fade" tabindex="-1" role="dialog"--}}
-{{--                                              id="delete{{$coupon->id}}" aria-labelledby="myModalLabel" aria-hidden="true">--}}
-{{--                                            <div class="modal-dialog">--}}
-{{--                                                <div class="modal-content">--}}
-{{--                                                    <div class="modal-header">--}}
-{{--                                                        <h3 class="modal-title" id="myModalLabel">حذف الكوبون </h3>--}}
-{{--                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"--}}
-{{--                                                                aria-label="Close"></button>--}}
-{{--                                                    </div>--}}
-{{--                                                    <div class="modal-body">--}}
-{{--                                                        <form action="{{route('admin.coupons.destroy')}}" method="post">--}}
-{{--                                                            @csrf--}}
-{{--                                                            @method('DELETE')--}}
-{{--                                                            <input type="hidden" name="coupon_id" value="{{$coupon->id}}">--}}
-
-{{--                                                            <h4>هل أنت متأكد من عملية الحذف؟ </h4>--}}
-
-{{--                                                            <h5><span class="text-danger">{{$coupon->code}}</span></h5>--}}
-{{--                                                            <div class="modal-footer">--}}
-{{--                                                                <button type="button" class="btn btn-light waves-effect"--}}
-{{--                                                                        data-bs-dismiss="modal">إغلاق--}}
-{{--                                                                </button>--}}
-{{--                                                                <button type="submit"--}}
-{{--                                                                        class="btn btn-danger waves-effect waves-light">حذف--}}
-{{--                                                                </button>--}}
-{{--                                                            </div>--}}
-{{--                                                        </form>--}}
-{{--                                                    </div>--}}
-
-
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
+                                                </div>
+                                            </div>
+                                        </div>
                                     @empty
 
-{{--                                        <tr>--}}
-{{--                                            <td colspan="8" class="text-center">لم يتم إضافة كوبونات هخصم</td>--}}
-{{--                                        </tr>--}}
+                                        <tr>
+                                            <td colspan="6" class="text-center">لم يتم إضافة باقات</td>
+                                        </tr>
                                     @endforelse
 
 
                                     </tbody>
                                     <tfoot>
                                     <tr>
-                                        <td colspan="8">
+                                        <td colspan="6">
                                             <div class="float-right pagination-rounded">
 
 
-{{--                                                {{$coupons->links()}}--}}
+                                                {{$packages->links()}}
 
                                             </div>
 

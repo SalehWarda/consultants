@@ -30,4 +30,29 @@ class PackagesController extends Controller
         toastr('تم إضافة الباقة بنجاح!','success');
         return redirect()->back();
     }
+
+    public function edit($id)
+    {
+
+        $package = Package::findOrFail($id);
+        return view('pages.backend.packages.edit',compact('package'));
+    }
+
+    public function update(PackageRequest $request)
+    {
+
+        $packege = Package::findOrFail($request->package_id);
+        $packege->update($request->validated());
+
+        toastr('تم تعديل الباقة بنجاح!','success');
+        return redirect()->back();
+    }
+
+    public function destroy(Request $request)
+    {
+        $packege = Package::findOrFail($request->package_id);
+        $packege->delete();
+        toastr('تم حذف الباقة بنجاح!','success');
+        return redirect()->back();
+    }
 }

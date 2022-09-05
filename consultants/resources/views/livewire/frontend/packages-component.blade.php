@@ -6,12 +6,17 @@
                 <div class="box">
                     <h3 style="color: #07d5c0;">{{$package->title}}</h3>
                     <div class="price"><sup>$</sup>{{$package->price}}<span> / {{$package->time_period}}</span></div>
-                    <img src="{{asset('assets/site/img/pricing-free.png')}}" class="img-fluid" alt="">
+                    <br>
+                    <a wire:click.prevent="addToCart({{$package->id}})" style=" cursor: pointer" class="btn-buy"><i class="ri-shopping-cart-line"></i> إضافة إلى السلة </a>
+                    <br>
+                    <br>
                     <ul>
-                        <li>{!! $package->features !!}</li>
+                        <li>{!! $package->features !!} </li>
 
                     </ul>
-                    <a wire:click.prevent="addToCart({{$package->id}})" class="btn-buy">Get Started</a>
+{{--                    <br>--}}
+{{--                    <br>--}}
+{{--                    <a  style=" cursor: pointer; color: #0a53be; font-size: 15px;" > <i class="ri-play-list-add-line"></i> المزيد من التفاصيل </a>--}}
                 </div>
             </div>
         @endforeach

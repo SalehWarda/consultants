@@ -70,7 +70,7 @@
                                     <h3>{{$aggrement['domain'] ?? '' }}</h3>
                                     <h3>{{$aggrement['period'] = 'years' ?? '' }}/{{\Illuminate\Support\Str::limit(number_format(($aggrement['price']) ,2) ,5,'')   ?? ''}} {{$aggrement['currency'] ?? ''}}</h3>
                                     <div class="pricing">
-                                        <a href="#" class="btn-buy" >إضافة إلى السلة</a>
+                                        <a wire:click.prevent="addToCart()" class="btn-buy" ><i class="ri-shopping-cart-line"></i> إضافة إلى السلة </a>
                                     </div>
                                 </div>
                             </div>
@@ -96,6 +96,7 @@
 
 
                     @endif
+
 
 
 

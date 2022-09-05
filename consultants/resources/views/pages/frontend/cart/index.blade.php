@@ -30,6 +30,21 @@
                 <div class="alert alert-light" role="alert">
                     <h4 class="alert-heading">ملخص الطلب</h4>
                     <hr>
+
+{{--                    @forelse(\Gloudemans\Shoppingcart\Facades\Cart::content() as $item)--}}
+
+{{--                        <div class="col-md-12 ">--}}
+{{--                            <div class="info-box d-md-flex justify-content-between">--}}
+{{--                                <h3>1-</h3>--}}
+{{--                                <h3>{{$item->name}} <i class="ri-global-fill" style="font-size: 1.2rem"></i></h3>--}}
+{{--                                <h3>{{$item->price}} $US</h3>--}}
+
+{{--                                <a href="#" class="btn-buy" style="color:#636464 "><i class="ri-delete-bin-2-line" style="font-size: 1.7rem"></i> </a>--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    @empty--}}
+{{--                    @endforelse--}}
                     <div class="col-md-12 ">
                         <div class="info-box d-md-flex justify-content-between">
                             <h3>1-</h3>

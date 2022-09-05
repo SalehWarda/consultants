@@ -2,10 +2,14 @@
 
 namespace App\Http\Livewire\Frontend;
 
+use App\Models\Backend\Package;
+use Gloudemans\Shoppingcart\Facades\Cart;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 
 class DomainCheckerComponenet extends Component
 {
+    use LivewireAlert;
 
     public $domain_name;
     public $aggrement;
@@ -16,6 +20,31 @@ class DomainCheckerComponenet extends Component
         $this->domain_name = '';
         $this->aggrement = '';
     }
+
+
+    public function addToCart()
+    {
+
+
+
+
+         if ($this->domain_name == $this->aggrement['domain']){
+
+
+
+             Cart::instance('default')->add($this->aggrement['domain'], $this->aggrement['domain'],1 ,$this->aggrement['price'])->associate(Package::class);
+             $this->emit('updateCart');
+
+             $this->alert('success', 'تم إضافة الدومين في السلة بنجاح.');
+             return redirect()->route('site.package_details');
+
+         }
+
+
+
+        }
+
+
 
 public function search()
 {
