@@ -123,6 +123,8 @@
       <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/symfony/mailgun-mailer" />
       <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/symfony/http-client" />
       <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/symfony/http-client-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/mindscms/laravelshoppingcart" />
+      <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/jantinnerezo/livewire-alert" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

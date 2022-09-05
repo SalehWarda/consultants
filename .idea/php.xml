@@ -118,6 +118,8 @@
       <path value="$PROJECT_DIR$/consultants/vendor/symfony/mailgun-mailer" />
       <path value="$PROJECT_DIR$/consultants/vendor/symfony/http-client" />
       <path value="$PROJECT_DIR$/consultants/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/consultants/vendor/mindscms/laravelshoppingcart" />
+      <path value="$PROJECT_DIR$/consultants/vendor/jantinnerezo/livewire-alert" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />

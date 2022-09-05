@@ -89,10 +89,8 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="{{route('site.cart')}}">
-                                <i class="ri-shopping-cart-fill" style="font-size: 1.2rem; margin-left: -5px"></i>
-                                <span class="badge bg-danger rounded-circle " style="margin-bottom: 18px;">0</span>
-                            </a>
+                            <livewire:frontend.cart-component/>
+
 
                         </li>
 
@@ -128,10 +126,7 @@
 
                     @guest
                         <li class="dropdown">
-                            <a href="{{route('site.cart')}}">
-                                <i class="ri-shopping-cart-fill" style="font-size: 1.2rem; margin-left: -5px"></i>
-                                <span class="badge bg-danger rounded-circle " style="margin-bottom: 18px;">0</span>
-                            </a>
+                           <livewire:frontend.cart-component/>
 
                         </li>
                         <li><a class="btn-login" href="{{route('site.login')}}">دخول<i class="ri-login-box-line"style="font-size: 1.2rem"></i></a></li>
@@ -182,10 +177,8 @@
                         </li>
 
                         <li class="dropdown">
-                            <a href="{{route('site.cart')}}">
-                                <i class="ri-shopping-cart-fill" style="font-size: 1.2rem; margin-left: -5px"></i>
-                                <span class="badge bg-danger rounded-circle " style="margin-bottom: 18px;">0</span>
-                            </a>
+                            <livewire:frontend.cart-component/>
+
 
                         </li>
 
