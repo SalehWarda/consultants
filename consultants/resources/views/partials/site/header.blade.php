@@ -105,7 +105,7 @@
 {{--                    <li><a href="{{route('site.home')}}">المدونة</a></li>--}}
 {{--                    <li><a href="{{route('site.domains')}}">الدومينات</a></li>--}}
 
-                    <li><a class="nav-link scrollto" href="#">تواصل معنا</a></li>
+                    <li><a class="nav-link scrollto" href="{{route('site.home')}}">تواصل معنا</a></li>
                     <li><a class="nav-link scrollto" href="#"></a></li>
                     <li><a class="nav-link scrollto" href="#"></a></li>
                     <li><a class="nav-link scrollto" href="#"></a></li>

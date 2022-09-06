@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\ContactRequest;
+use App\Models\Backend\About;
 use App\Models\Backend\Admin;
 use App\Models\Backend\Contact;
 use App\Models\Backend\Mail;
@@ -16,6 +17,7 @@ class HomeController extends Controller
     //
     public function index()
     {
+        $data['about'] = About::first();
         $data['contact'] = Contact::first();
         $data['packages'] = Package::get();
         return view('pages.frontend.index',$data);
@@ -52,5 +54,11 @@ class HomeController extends Controller
     {
 
         return view('pages.frontend.checkout.index');
+    }
+
+    public function about()
+    {
+        $about = About::first();
+        return view('pages.frontend.about.about_details',compact('about'));
     }
 }

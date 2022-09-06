@@ -43,4 +43,5 @@ Route::get('/package-details', [PackageController::class, 'package_details'])->n
 Route::get('/cart', [HomeController::class, 'cart'])->name('site.cart');
 
 Route::post('/search-domain', [PackageController::class, 'search_domain'])->name('site.search_domain');
+Route::get('/about-us', [HomeController::class, 'about'])->name('site.about');
 

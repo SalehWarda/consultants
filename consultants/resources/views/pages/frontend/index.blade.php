@@ -43,12 +43,10 @@
                 <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
                     <div class="content">
                         <h3>تعرف علينا</h3>
-                        <h2>Expedita voluptas omnis cupiditate totam eveniet nobis sint iste. Dolores est repellat corrupti reprehenderit.</h2>
-                        <p>
-                            Quisquam vel ut sint cum eos hic dolores aperiam. Sed deserunt et. Inventore et et dolor consequatur itaque ut voluptate sed et. Magnam nam ipsum tenetur suscipit voluptatum nam et est corrupti.
-                        </p>
+                        <h2>نحن أحد منتجات حلة لتقنية المعلومات التي تم  تأسيسها وبناؤها لتخدم المدربين والمستشارين والمحامون ولكل من يقدم الخدمات.</h2>
+                      <br>
                         <div class="text-center text-lg-end">
-                            <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                            <a href="{{route('site.about')}}" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
                                 <span>إقرأ المزيد</span>
                                 <i class="bi bi-arrow-right"></i>
                             </a>
@@ -456,8 +454,8 @@
         <div class="container" data-aos="fade-up">
 
             <header class="section-header">
-                <h2>الباقات</h2>
-                <p>تصفح الباقات</p>
+                <h2>الخدمات</h2>
+                <p>تصفح الخدمات</p>
             </header>
 
          <livewire:frontend.packages-component :packages="$packages" />
