@@ -46,8 +46,8 @@
                                 </li><hr>
 
                                 <li class="d-flex align-items-center justify-content-between">
-                                    <strong class="small font-weight-bold">مساحة القرص</strong>
-                                    <span class="text-muted small"> 20G SSD</span>
+                                    <strong class="small font-weight-bold">إسم الباقة</strong>
+                                    <span class="text-muted small"> {{$package->title}}</span>
                                 </li><hr>
 
 
@@ -56,12 +56,18 @@
                                 {{--                                    <span class="text-muted small">- $ 20</span>--}}
                                 {{--                                </li><hr>--}}
                                 <li class="d-flex align-items-center justify-content-between">
-                                    <strong class="small font-weight-bold">عدد المواقع</strong>
-                                    <span class="text-muted small">50 موقع</span>
+                                    <strong class="small font-weight-bold">سعر الباقة</strong>
+                                    <span class="text-muted small">USD {{$package->price}} /{{$package->time_period}}</span>
                                 </li><hr>
+
+
+                                <li class="d-flex align-items-center justify-content-center">
+                                    <strong class="small font-weight-bold">مزايا الباقة</strong>
+                                </li>
+                                <br>
                                 <li class="d-flex align-items-center justify-content-between">
-                                    <strong class="small font-weight-bold">كمية نقل البيانات</strong>
-                                    <span class="text-muted small">غير محدودة</span>
+
+                                    <span class="text-muted small">{!! $package->features !!}</span>
                                 </li><hr>
 
 

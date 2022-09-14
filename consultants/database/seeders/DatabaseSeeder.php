@@ -23,10 +23,13 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call(AdminSeeder::class);
+        $this->call(UserSeeder::class);
         $this->call(AboutSeeder::class);
         $this->call(ContactSeeder::class);
         $this->call(MailSeeder::class);
         $this->call(CouponSeeder::class);
+        $this->call(PackageSeeder::class);
+        $this->call(OrderSeeder::class);
 
     }
 }

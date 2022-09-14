@@ -5,6 +5,7 @@ use App\Http\Controllers\Frontend\DomainController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\LoginController;
 use App\Http\Controllers\Frontend\PackageController;
+use App\Http\Controllers\Frontend\PaymentWayController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,9 +27,12 @@ Route::group(['middleware' => 'auth:web'], function () {
 
     Route::group(['middleware' => 'check_cart'], function () {
         Route::get('/checkout', [HomeController::class, 'checkout'])->name('site.checkout');
-    });
+        Route::post('/checkout/payment', [PaymentWayController::class, 'checkout_now'])->name('site.checkout.payment');
+        Route::get('/checkout/completed', [PaymentWayController::class, 'completed'])->name('site.checkout.complete');
+        Route::get('/checkout/{order_id}/cancelled', [PaymentWayController::class, 'cancelled'])->name('site.checkout.cancel');
 
 
+});
 });
 
 
@@ -39,7 +43,7 @@ Route::post('/register-users', [LoginController::class, 'register'])->name('site
 
 Route::post('/contact/store', [HomeController::class, 'contact_store'])->name('site.contact_store');
 Route::get('/domains', [DomainController::class, 'index'])->name('site.domains');
-Route::get('/package-details', [PackageController::class, 'package_details'])->name('site.package_details');
+Route::get('/package-details/{id}', [PackageController::class, 'package_details'])->name('site.package_details');
 Route::get('/cart', [HomeController::class, 'cart'])->name('site.cart');
 
 Route::post('/search-domain', [PackageController::class, 'search_domain'])->name('site.search_domain');

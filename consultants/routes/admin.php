@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Backend\MailController;
+use App\Http\Controllers\Backend\OrdersController;
 use App\Http\Controllers\Backend\PackagesController;
 use Illuminate\Support\Facades\Route;
 
@@ -65,6 +66,22 @@ Route::group(['prefix' => 'admin'],function (){
             Route::put('/update', [PackagesController::class, 'update'])->name('admin.packages.update');
             Route::delete('/delete', [PackagesController::class, 'destroy'])->name('admin.packages.destroy');
         });
+
+        ############################### Orders Route ###############################
+
+        Route::group(['prefix' => 'orders'], function () {
+
+
+            Route::get('/', [OrdersController::class, 'index'])->name('admin.orders.index');
+            Route::get('/create', [OrdersController::class, 'create'])->name('admin.orders.create');
+            Route::post('/store', [OrdersController::class, 'store'])->name('admin.orders.store');
+            Route::get('/edit/{id}', [OrdersController::class, 'edit'])->name('admin.orders.edit');
+            Route::patch('/update', [OrdersController::class, 'update'])->name('admin.orders.update');
+            Route::get('/show/{id}', [OrdersController::class, 'show'])->name('admin.orders.show');
+            Route::delete('/delete', [OrdersController::class, 'destroy'])->name('admin.orders.destroy');
+            Route::get('/package-order-details/{id}', [OrdersController::class, 'packageOrderDetails'])->name('admin.orders.package-order-details');
+        });
+
 
     });
 

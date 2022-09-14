@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Frontend;
 
 use App\Models\Backend\Package;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Str;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 
@@ -32,11 +33,11 @@ class DomainCheckerComponenet extends Component
 
 
 
-             Cart::instance('default')->add($this->aggrement['domain'], $this->aggrement['domain'],1 ,$this->aggrement['price'])->associate(Package::class);
+             Cart::instance('default')->add($this->aggrement['domain'], $this->aggrement['domain'],1 ,Str::limit($this->aggrement['price'],2,'')  )->associate(Package::class);
              $this->emit('updateCart');
 
              $this->alert('success', 'تم إضافة الدومين في السلة بنجاح.');
-             return redirect()->route('site.package_details');
+             return redirect()->route('site.cart');
 
          }
 

@@ -24,7 +24,7 @@ class PackagesComponent extends Component
             $this->emit('updateCart');
 
             $this->alert('success', 'تم إضافة الباقة في السلة بنجاح.');
-            return redirect()->route('site.package_details');
+            return redirect()->route('site.package_details',$package->id);
 
         }
     }
