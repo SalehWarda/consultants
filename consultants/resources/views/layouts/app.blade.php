@@ -40,6 +40,7 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
+    @yield('style')
     @livewireStyles
 
 </head>
@@ -73,6 +74,7 @@
 
 <!-- Template Main JS File -->
 <script src="{{asset('assets/site/js/main.js')}}"></script>
+@yield('scripts')
 @livewireScripts
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

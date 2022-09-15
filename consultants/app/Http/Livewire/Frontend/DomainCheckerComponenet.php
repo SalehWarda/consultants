@@ -14,6 +14,7 @@ class DomainCheckerComponenet extends Component
 
     public $domain_name;
     public $aggrement;
+    public $existingDomain;
 
 
     public function removeData()
@@ -33,12 +34,36 @@ class DomainCheckerComponenet extends Component
 
 
 
-             Cart::instance('default')->add($this->aggrement['domain'], $this->aggrement['domain'],1 ,Str::limit($this->aggrement['price'],2,'')  )->associate(Package::class);
+             Cart::instance('default')->add($this->aggrement['domain'], $this->aggrement['domain'],1 ,Str::limit($this->aggrement['price'],2,'') ,['type'=>'domain'] )->associate(Package::class);
              $this->emit('updateCart');
 
              $this->alert('success', 'تم إضافة الدومين في السلة بنجاح.');
              return redirect()->route('site.cart');
 
+         }
+
+
+
+
+
+        }
+
+
+   public function addToCartExisitngDomain()
+    {
+
+
+
+
+
+
+         if ($this->existingDomain)
+         {
+             Cart::instance('default')->add($this->existingDomain, $this->existingDomain,1 ,0,['type'=>'domain'] )->associate(Package::class);
+             $this->emit('updateCart');
+
+             $this->alert('success', 'تم إضافة الدومين في السلة بنجاح.');
+             return redirect()->route('site.cart');
          }
 
 

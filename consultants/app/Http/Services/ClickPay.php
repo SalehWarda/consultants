@@ -39,7 +39,8 @@ class ClickPay
 //            return false;
         }
         $response = json_decode($response->getBody(), true);
-        return view('pages.test',compact('response')) ;
+
+        return view('pages.frontend.invoiceInfo.index',compact('response')) ;
 
     }
 

@@ -42,7 +42,7 @@ class OrderSeeder extends Seeder
             'order_status' => Order::PAYMENT_COMPLETED,
         ]);
 
-        // Create Order services
+        // Create Order package
         $order->packages()->attach($packages->pluck('id')->toArray());
 
         // Create Order Transactions

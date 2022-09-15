@@ -16,6 +16,6 @@ class Package extends Model
 
     public function orders(): BelongsToMany
     {
-        return $this->belongsToMany(Order::class);
+        return $this->belongsToMany(Order::class,'order_package');
     }
 }

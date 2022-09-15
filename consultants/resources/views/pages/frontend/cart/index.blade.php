@@ -15,12 +15,13 @@
 
             <ol>
                 <li><a href="{{route('site.home')}}">الرئيسية</a></li>
-                <li>سلة المشتريات</li>
+                <li >سلة المشتريات</li>
             </ol>
             <h2>سلة المشتريات</h2>
 
         </div>
     </section><!-- End Breadcrumbs -->
+
 
     <div class="row">
 

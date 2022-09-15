@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Backend\Order;
+use App\Models\Backend\OrderPackage;
 use App\Models\Backend\Package;
 use Illuminate\Http\Request;
 
@@ -25,6 +26,7 @@ class OrdersController extends Controller
     {
 
         $order = Order::findOrFail($id);
+        $domain = OrderPackage::whereOrderId($order->id)->get();
 
         $order_status_array = [
             '0' => 'New order',
@@ -45,7 +47,7 @@ class OrdersController extends Controller
             }
         }
 
-        return view('pages.backend.orders.show', compact('order', 'order_status_array'));
+        return view('pages.backend.orders.show', compact('order','domain', 'order_status_array'));
     }
 
 

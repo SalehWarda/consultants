@@ -16,7 +16,7 @@ class OrderServices
     {
 
 
-        $order = Order::create([
+        $order = Order::with('packages')->create([
             'ref_id' => 'ORD-' . Str::random(15),
             'user_id' => auth()->id(),
             'subtotal' => getNumbers()->get('subtotal'),
@@ -29,26 +29,37 @@ class OrderServices
         ]);
 
 
-//
-//        foreach (Cart::content() as $item) {
-//
-//
-//            if($item->options->type === 'course')
-//                \App\Models\Backend\OrderPackage::create([
-//                    'order_id' => $order->id,
-//                    'package_id' =>$item->model->id,
-//                    'domain' =>$item->model->id,
-//
-//                ]);
-//
-//
-//
-//
-//
-//
-//
-//
-//        }
+
+        foreach (Cart::content() as $item) {
+
+
+            if($item->options->type === 'domain')
+                \App\Models\Backend\OrderPackage::create([
+                    'order_id' => $order->id,
+                    'package_id' =>null,
+                    'domain' =>$item->name,
+
+                ]);
+            elseif($item->options->type !== 'domain')
+                \App\Models\Backend\OrderPackage::create([
+                    'order_id' => $order->id,
+                    'package_id' =>$item->id,
+                    'domain' =>null,
+
+
+                ]);
+
+
+
+
+
+
+
+
+
+
+
+        }
 
         $order->transactions()->create([
             'transaction' => OrderTransaction::NEW_ORDER

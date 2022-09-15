@@ -157,9 +157,6 @@
                         <thead>
                         <tr>
                             <th>الباقات</th>
-
-
-
                         </tr>
                         </thead>
                         <tbody>
@@ -169,7 +166,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="2">لا يوجد باقات</td>
+                                <td colspan="1">لا يوجد باقات</td>
                             </tr>
                         @endforelse
 
@@ -180,21 +177,19 @@
                         <thead>
                         <tr>
                             <th>الدومينات</th>
-
-
-
                         </tr>
                         </thead>
                         <tbody>
-{{--                        @forelse($order->courses as $course)--}}
-{{--                            <tr>--}}
-{{--                                <td><a href="#">{{ $course->title }}</a></td>--}}
-{{--                            </tr>--}}
-{{--                        @empty--}}
-{{--                            <tr>--}}
-{{--                                <td colspan="2">No Courses found</td>--}}
-{{--                            </tr>--}}
-{{--                        @endforelse--}}
+
+                        @forelse($domain as $order)
+                            <tr>
+                                <td><a href="#">{{ $order->domain  }}</a></td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="1">لا يوجد دومينات </td>
+                            </tr>
+                        @endforelse
 
 
                         </tbody>

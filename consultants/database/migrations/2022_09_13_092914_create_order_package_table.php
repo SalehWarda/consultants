@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('order_package', function (Blueprint $table) {
             $table->foreignId('order_id')->nullable()->constrained()->cascadeOnDelete();
             $table->foreignId('package_id')->nullable()->constrained()->nullOnDelete();
+            $table->string('domain')->nullable();
         });
     }
 

@@ -12,7 +12,7 @@
 
                 <div class="col-md-12 ">
                     <div class="form-check" >
-                        <input class="form-check-input" type="radio" wire:click="removeData"  id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" wire:click="removeData" name="flexRadioDefault"  id="flexRadioDefault1">
                         <label x-on:click="showSearch = ! showSearch"  class="form-check-label"  for="flexRadioDefault1">
                             <span><h6 class="alert-heading"> إسم دومين جديد</h6></span>
                         </label>
@@ -118,8 +118,8 @@
                                     <div class="col-lg-6">
 
                                         <form>
-                                            <input class="form-control" type="text" placeholder="أدخل الدومين الخاص بك">
-                                            <input type="submit" value="ربط الدومين">
+                                            <input class="form-control" wire:model="existingDomain" type="text" placeholder="أدخل الدومين الخاص بك">
+                                            <input type="submit" wire:click.prevent="addToCartExisitngDomain()" value="ربط الدومين">
 
                                         </form>
 

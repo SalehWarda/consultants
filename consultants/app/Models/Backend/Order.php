@@ -32,7 +32,7 @@ class Order extends Model
 
     public function packages(): BelongsToMany
     {
-        return $this->belongsToMany(Package::class);
+        return $this->belongsToMany(Package::class,'order_package');
     }
 
     public function transactions(): HasMany
