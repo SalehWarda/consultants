@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    كويونات الخصم
+    {{trans('dashboard.Coupons')}}
 @endsection
 
 @push('style')
@@ -26,12 +26,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">كويونات الخصم</h4>
+                        <h4 class="mb-sm-0">{{trans('dashboard.Coupons')}}</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item active">كويونات الخصم</li>
-                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">الرئيسية</a></li>
+                                <li class="breadcrumb-item active">{{trans('dashboard.Coupons')}}</li>
+                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{trans('dashboard.Home')}}</a></li>
                             </ol>
                         </div>
 
@@ -45,7 +45,7 @@
                         <div class="card-body">
                             <div class="d-block d-md-flex justify-content-between">
                                 <div class="d-block">
-                                    <h5 class="card-title pb-0 border-0"> كويونات الخصم</h5>
+                                    <h5 class="card-title pb-0 border-0"> {{trans('dashboard.Coupons')}}</h5>
                                 </div>
 
                                 <div class="d-block d-md-flex justify-content-between">
@@ -53,7 +53,7 @@
                                         <a class="btn btn-secondary waves-effect waves-light btn-rounded"
 
                                            data-bs-toggle="modal" data-bs-target="#add"
-                                        > إضافة كوبون خصم  <i class="fa fa-plus"></i>
+                                        > {{trans('dashboard.Add_New_Coupon')}}  <i class="fa fa-plus"></i>
                                         </a>
 
                                     </div>
@@ -67,13 +67,13 @@
                                     <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>كود الخصم</th>
-                                        <th>قيمة الكود</th>
-                                        <th>الوصف</th>
-                                        <th>مرات الإستخدام</th>
-                                        <th>فترة الكود</th>
-                                        <th>الحالة</th>
-                                        <th>العمليات</th>
+                                        <th>{{trans('dashboard.Code')}}</th>
+                                        <th>{{trans('dashboard.Value')}}</th>
+                                        <th>{{trans('dashboard.Description')}}</th>
+                                        <th>{{trans('dashboard.Used_time')}}</th>
+                                        <th>{{trans('dashboard.Expiration_date')}}</th>
+                                        <th>{{trans('dashboard.Status')}}</th>
+                                        <th>{{trans('dashboard.Actions')}}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -105,14 +105,14 @@
                                                     <button type="button"
                                                             class="btn btn-info waves-effect waves-light btn-rounded"
                                                             data-bs-toggle="modal" data-bs-target="#edit{{$coupon->id}}"
-                                                            title="تعديل">
-                                                        <i class="ri-edit-2-fill align-middle me-2"></i>تعديل
+                                                            title="{{trans('dashboard.Edit')}}">
+                                                        <i class="ri-edit-2-fill align-middle me-2"></i>{{trans('dashboard.Edit')}}
                                                     </button>
                                                     <button type="button"
                                                             class="btn btn-danger waves-effect waves-light btn-rounded"
                                                             data-bs-toggle="modal"
-                                                            data-bs-target="#delete{{$coupon->id}}" title="حذف">
-                                                        <i class="ri-delete-bin-2-line align-middle me-2"></i>حذف
+                                                            data-bs-target="#delete{{$coupon->id}}" title="{{trans('dashboard.Delete')}}">
+                                                        <i class="ri-delete-bin-2-line align-middle me-2"></i>{{trans('dashboard.Delete')}}
                                                     </button>
 
                                                 </div>
@@ -127,7 +127,7 @@
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="myExtraLargeModalLabel">تعديل كوبون الخصم</h5>
+                                                        <h5 class="modal-title" id="myExtraLargeModalLabel">{{trans('dashboard.Edit')}}</h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close"></button>
                                                     </div>
@@ -141,7 +141,7 @@
                                                                    value="{{$coupon->id}}">
                                                             <div class="row">
                                                                 <div class="col-md-3">
-                                                                    <label for="code" class=" col-form-label">كود الخصم
+                                                                    <label for="code" class=" col-form-label">{{trans('dashboard.Code')}}
                                                                         :</label>
                                                                     <input type="text" name="code" id="codeUpdate"
                                                                            class="form-control"
@@ -154,20 +154,20 @@
 
                                                                 <div class="col-md-3">
 
-                                                                    <label for="type" class=" col-form-label">نوع الكود
+                                                                    <label for="type" class=" col-form-label">{{trans('dashboard.Type')}}
                                                                         : </label>
 
                                                                     <select class="form-control" name="type">
-                                                                        <option selected > إختر...</option>
+                                                                        <option selected > {{trans('dashboard.Choose')}}...</option>
 
 
                                                                         <option
                                                                             value="fixed" {{old('type',$coupon->type) == 'fixed' ?'selected' : null}}>
-                                                                            ثابت
+                                                                            {{trans('dashboard.Fixed')}}
                                                                         </option>
                                                                         <option
                                                                             value="percentage" {{old('type',$coupon->type) == 'percentage' ?'selected' : null}}>
-                                                                            نسبة مئوية
+                                                                            {{trans('dashboard.Percentage')}}
                                                                         </option>
 
 
@@ -179,7 +179,7 @@
                                                                 </div>
 
                                                                 <div class="col-md-3">
-                                                                    <label for="value" class=" col-form-label">قيمة الكود
+                                                                    <label for="value" class=" col-form-label">{{trans('dashboard.Value')}}
                                                                         :</label>
                                                                     <input type="number" name="value"
                                                                            class="form-control"
@@ -192,7 +192,7 @@
 
                                                                 <div class="col-3">
                                                                     <div class=" col-form-label">
-                                                                        <label for="use_times">مرات الإستخدام :</label>
+                                                                        <label for="use_times">{{trans('dashboard.Used_time')}} :</label>
                                                                         <input type="number" name="use_times"
                                                                                value="{{ old('use_times',$coupon->use_times) }}"
                                                                                class="form-control">
@@ -206,7 +206,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
-                                                                        <label> تاريخ البداية :</label>
+                                                                        <label> {{trans('dashboard.Start_date')}} :</label>
 
                                                                         <input type="text" name="start_date"
                                                                                id="start_dateUpdate"
@@ -221,7 +221,7 @@
 
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
-                                                                        <label> تاريخ النهاية :</label>
+                                                                        <label> {{trans('dashboard.Expired_date')}} :</label>
 
                                                                         <input type="text" name="expire_date"
                                                                                id="expire_dateUpdate"
@@ -237,19 +237,19 @@
 
                                                                 <div class="col-md-4">
                                                                     <div class="form-group">
-                                                                        <label for="status">الحالة :</label>
+                                                                        <label for="status">{{trans('dashboard.Status')}} :</label>
                                                                         <br>
                                                                         <select class="form-control"
                                                                                 name="status">
 
-                                                                            <option selected > إختر...</option>
+                                                                            <option selected > {{trans('dashboard.Choose')}}...</option>
                                                                             <option
                                                                                 value="1" {{old('status',$coupon->status) == '1' ? 'selected' : null}}>
-                                                                                مفعل
+                                                                                {{trans('dashboard.Active')}}
                                                                             </option>
                                                                             <option
                                                                                 value="0" {{old('status',$coupon->status) == '0' ? 'selected' : null}}>
-                                                                               غير مفعل
+                                                                                {{trans('dashboard.InActive')}}
                                                                             </option>
 
                                                                         </select>
@@ -266,7 +266,7 @@
 
                                                                 <div class="col-md-12">
                                                                     <div class="form-group">
-                                                                        <label> الوصف :</label>
+                                                                        <label> {{trans('dashboard.Description')}} :</label>
 
                                                                         <textarea name="description" rows="3"
                                                                                   id="description"
@@ -286,11 +286,11 @@
                                                             <div class="modal-footer">
                                                                 <button class="btn ripple btn-secondary m-lg-2"
                                                                         type="submit"
-                                                                >حفظ التغييرات<i
+                                                                >{{trans('dashboard.Save_Changes')}}<i
                                                                         class="fe fe-plus"></i></button>
                                                                 <button class="btn ripple btn-danger"
                                                                         data-bs-dismiss="modal" type="button">
-                                                                    إغلاق
+                                                                    {{trans('dashboard.Close')}}
                                                                 </button>
                                                             </div>
                                                         </form>
@@ -309,7 +309,7 @@
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h3 class="modal-title" id="myModalLabel">حذف الكوبون </h3>
+                                                        <h3 class="modal-title" id="myModalLabel">{{trans('dashboard.Coupon_Delete')}} </h3>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close"></button>
                                                     </div>
@@ -319,15 +319,15 @@
                                                             @method('DELETE')
                                                             <input type="hidden" name="coupon_id" value="{{$coupon->id}}">
 
-                                                            <h4>هل أنت متأكد من عملية الحذف؟ </h4>
+                                                            <h4>{{trans('dashboard.are_sure_of_the_deleting_process')}} </h4>
 
                                                             <h5><span class="text-danger">{{$coupon->code}}</span></h5>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-light waves-effect"
-                                                                        data-bs-dismiss="modal">إغلاق
+                                                                        data-bs-dismiss="modal">{{trans('dashboard.Close')}}
                                                                 </button>
                                                                 <button type="submit"
-                                                                        class="btn btn-danger waves-effect waves-light">حذف
+                                                                        class="btn btn-danger waves-effect waves-light">{{trans('dashboard.Delete')}}
                                                                 </button>
                                                             </div>
                                                         </form>
@@ -340,7 +340,7 @@
                                     @empty
 
                                         <tr>
-                                            <td colspan="8" class="text-center">لم يتم إضافة كوبونات هخصم</td>
+                                            <td colspan="8" class="text-center">{{trans('dashboard.No_coupons_found')}}</td>
                                         </tr>
                                     @endforelse
 
@@ -369,7 +369,7 @@
                                 <div class="modal-dialog modal-lg">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="myExtraLargeModalLabel">إضافة كوبون خصم جديد</h5>
+                                            <h5 class="modal-title" id="myExtraLargeModalLabel">{{trans('dashboard.Add_New_Coupon')}}</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                         </div>
@@ -380,7 +380,7 @@
                                                 @method('POST')
                                                 <div class="row">
                                                     <div class="col-md-3">
-                                                        <label for="code" class=" col-form-label">كود الخصم :</label>
+                                                        <label for="code" class=" col-form-label">{{trans('dashboard.Code')}} :</label>
                                                         <input type="text" name="code" id="codeCreate" class="form-control"
                                                                value="{{old('code')}}">
 
@@ -391,19 +391,19 @@
 
                                                     <div class="col-md-3">
 
-                                                        <label for="type" class=" col-form-label">نوع الكود : </label>
+                                                        <label for="type" class=" col-form-label">{{trans('dashboard.Type')}} : </label>
 
                                                         <select class="form-control" name="type">
-                                                            <option selected > إختر...</option>
+                                                            <option selected > {{trans('dashboard.Choose')}}...</option>
 
 
                                                             <option
                                                                 value="fixed" {{old('type') == 'fixed' ?'selected' : null}}>
-                                                                ثابت
+                                                                {{trans('dashboard.Fixed')}}
                                                             </option>
                                                             <option
                                                                 value="percentage" {{old('type') == 'percentage' ?'selected' : null}}>
-                                                                نسبة مئوية
+                                                                {{trans('dashboard.Percentage')}}
                                                             </option>
 
 
@@ -415,7 +415,7 @@
                                                     </div>
 
                                                     <div class="col-md-3">
-                                                        <label for="value" class=" col-form-label">قيمة الكود :</label>
+                                                        <label for="value" class=" col-form-label">{{trans('dashboard.Value')}} :</label>
                                                         <input type="number" name="value" class="form-control"
                                                                value="{{old('value')}}">
 
@@ -426,7 +426,7 @@
 
                                                     <div class="col-3">
                                                         <div class=" col-form-label">
-                                                            <label for="use_times">مرات الإستخدام :</label>
+                                                            <label for="use_times">{{trans('dashboard.Used_time')}} :</label>
                                                             <input type="number" name="use_times"
                                                                    value="{{ old('use_times') }}" class="form-control">
                                                             @error('use_times')<span
@@ -439,7 +439,7 @@
                                                 <div class="row">
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label> تاريخ البداية :</label>
+                                                            <label> {{trans('dashboard.Start_date')}} :</label>
 
                                                             <input type="text" name="start_date" id="start_date"
                                                                    class="form-control"
@@ -453,7 +453,7 @@
 
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label> تاريخ النهاية :</label>
+                                                            <label> {{trans('dashboard.Expired_date')}} :</label>
 
                                                             <input type="text" name="expire_date" id="expire_date"
                                                                    class="form-control"
@@ -468,19 +468,19 @@
 
                                                     <div class="col-md-4">
                                                         <div class="form-group">
-                                                            <label for="status">الحالة :</label>
+                                                            <label for="status">{{trans('dashboard.Status')}} :</label>
                                                             <br>
                                                             <select class="form-control"
                                                                     name="status">
 
-                                                                <option selected > إختر...</option>
+                                                                <option selected > {{trans('dashboard.Choose')}}...</option>
                                                                 <option
                                                                     value="1" {{old('status') == '1' ? 'selected' : null}}>
-                                                                    مفعل
+                                                                    {{trans('dashboard.Active')}}
                                                                 </option>
                                                                 <option
                                                                     value="0" {{old('status') == '0' ? 'selected' : null}}>
-                                                                    غير مفعل
+                                                                    {{trans('dashboard.InActive')}}
                                                                 </option>
 
                                                             </select>
@@ -497,7 +497,7 @@
 
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label> الوصف :</label>
+                                                            <label> {{trans('dashboard.Description')}} :</label>
 
                                                             <textarea name="description" rows="3" id="description"
                                                                       class="form-control">
@@ -515,11 +515,11 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button class="btn ripple btn-secondary m-lg-2" type="submit"
-                                                    > حفظ<i
+                                                    > {{trans('dashboard.Save')}}<i
                                                             class="fe fe-plus"></i></button>
                                                     <button class="btn ripple btn-danger" data-bs-dismiss="modal"
                                                             type="button">
-                                                        إغلاق
+                                                        {{trans('dashboard.Close')}}
                                                     </button>
                                                 </div>
                                             </form>

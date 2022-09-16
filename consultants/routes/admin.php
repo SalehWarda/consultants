@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\MailController;
 use App\Http\Controllers\Backend\OrdersController;
 use App\Http\Controllers\Backend\PackagesController;
 use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function(){ //...
+
 Route::group(['prefix' => 'admin'],function (){
 
     Route::group(['middleware' => 'auth:admin'], function () {
@@ -91,3 +100,4 @@ Route::group(['prefix' => 'admin'],function (){
     Route::post('/login', [LoginController::class, 'login'])->name('admin.login');
 
 });
+    });

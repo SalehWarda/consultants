@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    نبذة عنا
+    {{trans('dashboard.About_Us')}}
 @endsection
 
 @section('style')
@@ -18,15 +18,15 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">نبذة عنا</h4>
+                        <h4 class="mb-sm-0">{{trans('dashboard.About_Us')}}</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item active">
-                                    <h4 class="mb-sm-0">نبذة عنا</h4>
+                                    <h4 class="mb-sm-0">{{trans('dashboard.About_Us')}}</h4>
                                 </li>
                                 <li class="breadcrumb-item"><a
-                                        href="{{route('admin.dashboard')}}">الرئيسية</a></li>
+                                        href="{{route('admin.dashboard')}}">{{trans('dashboard.Home')}}</a></li>
                             </ol>
                         </div>
 
@@ -59,82 +59,115 @@
                                 <div class="row">
 
                                     <div class="col-6">
-                                        <label for="bio_ar"> العنوان الأول:</label>
+                                        <label for="bio_ar"> {{trans('dashboard.title_one_ar')}}:</label>
 
-                                        <textarea id="title_one" name="title_one" class="body-content"
+                                        <textarea id="title_one_ar" name="title_one_ar" class="body-content"
                                         >
-                                                        {!! $about->title_one !!}
+                                                        {!! $about->getTranslation('title_one','ar')  !!}
+                                                           </textarea>
+                                        @error('title_one')<span
+                                            class="text-danger">{{ $message }}</span>@enderror
+                                    </div>
+                                  <div class="col-6">
+                                        <label for="bio_ar"> {{trans('dashboard.title_one_en')}}:</label>
+
+                                        <textarea id="title_one_en" name="title_one_en" class="body-content"
+                                        >
+                                                        {!! $about->getTranslation('title_one','en')  !!}
                                                            </textarea>
                                         @error('title_one')<span
                                             class="text-danger">{{ $message }}</span>@enderror
                                     </div>
 
-                                    <div class="col-6">
-                                        <label for="body_one">المحتوى الأول:</label>
 
-                                        <textarea id="body_one" name="body_one" class="body-content2"
+
+                                </div>
+                                <br>
+                                <div class="row">
+
+                                    <div class="col-6">
+                                        <label for="body_one">{{trans('dashboard.body_one_ar')}}:</label>
+
+                                        <textarea id="body_one_ar" name="body_one_ar" class="body-content2"
                                         >
-                                                     {!! $about->body_one !!}
+                                                    {!! $about->getTranslation('body_one','ar')  !!}
+                                                           </textarea>
+                                        @error('body_one')<span
+                                            class="text-danger">{{ $message }}</span>@enderror
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="body_one">{{trans('dashboard.body_one_en')}}:</label>
+
+                                        <textarea id="body_one_en" name="body_one_en" class="body-content2"
+                                        >
+                                                    {!! $about->getTranslation('body_one','en')  !!}
                                                            </textarea>
                                         @error('body_one')<span
                                             class="text-danger">{{ $message }}</span>@enderror
                                     </div>
 
 
+
+
+
                                 </div>
                                 <br>
 
                                 <div class="row">
 
                                     <div class="col-6">
-                                        <label for="title_tow"> العنوان الثاني:</label>
+                                        <label for="title_tow_ar"> {{trans('dashboard.title_tow_ar')}}:</label>
 
-                                        <textarea id="title_tow" name="title_tow" class="body-content"
+                                        <textarea id="title_tow_ar" name="title_tow_ar" class="body-content"
                                         >
-                                                        {!! $about->title_tow !!}
+                                                        {!! $about->getTranslation('title_tow','ar')  !!}
+                                                           </textarea>
+                                        @error('title_tow')<span
+                                            class="text-danger">{{ $message }}</span>@enderror
+                                    </div>
+   <div class="col-6">
+                                        <label for="title_tow_en"> {{trans('dashboard.title_tow_en')}}:</label>
+
+                                        <textarea id="title_tow_en" name="title_tow_en" class="body-content"
+                                        >
+                                                       {!! $about->getTranslation('title_tow','en')  !!}
                                                            </textarea>
                                         @error('title_tow')<span
                                             class="text-danger">{{ $message }}</span>@enderror
                                     </div>
 
-                                    <div class="col-6">
-                                        <label for="body_tow">المحتوى الثاني:</label>
 
-                                        <textarea id="body_tow" name="body_tow" class="body-content2"
+
+
+                                </div>
+                                <br>
+
+                                <div class="row">
+
+
+                                    <div class="col-6">
+                                        <label for="body_tow_ar">{{trans('dashboard.body_tow_ar')}}:</label>
+
+                                        <textarea id="body_tow_ar" name="body_tow_ar" class="body-content2"
                                         >
-                                                     {!! $about->body_tow !!}
+                                                       {!! $about->getTranslation('body_tow','ar')  !!}
+                                                           </textarea>
+                                        @error('body_tow')<span
+                                            class="text-danger">{{ $message }}</span>@enderror
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="body_tow_en">{{trans('dashboard.body_tow_en')}}:</label>
+
+                                        <textarea id="body_tow_en" name="body_tow_en" class="body-content2"
+                                        >
+                                                       {!! $about->getTranslation('body_tow','en')  !!}
                                                            </textarea>
                                         @error('body_tow')<span
                                             class="text-danger">{{ $message }}</span>@enderror
                                     </div>
 
 
-                                </div>
-                                <br>
 
-                                <div class="row">
-
-                                    <div class="col-6">
-                                        <label for="title_three"> العنوان الثالث:</label>
-
-                                        <textarea id="title_three" name="title_three" class="body-content"
-                                        >
-                                                        {!! $about->title_three !!}
-                                                           </textarea>
-                                        @error('title_three')<span
-                                            class="text-danger">{{ $message }}</span>@enderror
-                                    </div>
-
-                                    <div class="col-6">
-                                        <label for="body_three">المحتوى الثالث:</label>
-
-                                        <textarea id="body_three" name="body_three" class="body-content2"
-                                        >
-                                                     {!! $about->body_three !!}
-                                                           </textarea>
-                                        @error('body_three')<span
-                                            class="text-danger">{{ $message }}</span>@enderror
-                                    </div>
 
 
                                 </div>
@@ -142,27 +175,125 @@
 
                                 <div class="row">
 
-                                    <div class="col-6">
-                                        <label for="title_four"> العنوان الرابع:</label>
 
-                                        <textarea id="title_four" name="title_four" class="body-content"
+                                    <div class="col-6">
+                                        <label for="title_three_ar"> {{trans('dashboard.title_three_ar')}}:</label>
+
+                                        <textarea id="title_three_ar" name="title_three_ar" class="body-content"
                                         >
-                                                        {!! $about->title_four !!}
+                                                        {!! $about->getTranslation('title_three','ar') !!}
                                                            </textarea>
-                                        @error('title_four')<span
+                                        @error('title_three_ar')<span
                                             class="text-danger">{{ $message }}</span>@enderror
                                     </div>
 
                                     <div class="col-6">
-                                        <label for="body_four">المحتوى الرابع:</label>
+                                        <label for="title_three_en"> {{trans('dashboard.title_three_en')}}:</label>
 
-                                        <textarea id="body_four" name="body_four" class="body-content2"
+                                        <textarea id="title_three_en" name="title_three_en" class="body-content"
                                         >
-                                                     {!! $about->body_four !!}
+                                                        {!! $about->getTranslation('title_three','en') !!}
                                                            </textarea>
-                                        @error('body_four')<span
+                                        @error('title_three_en')<span
                                             class="text-danger">{{ $message }}</span>@enderror
                                     </div>
+
+
+
+
+
+                                </div>
+                                <br>
+
+
+                                <div class="row">
+
+
+                                    <div class="col-6">
+                                        <label for="body_three_ar">{{trans('dashboard.body_three_ar')}}:</label>
+
+                                        <textarea id="body_three_ar" name="body_three_ar" class="body-content2"
+                                        >
+                                                       {!! $about->getTranslation('body_three','ar')  !!}
+                                                           </textarea>
+                                        @error('body_tow_ar')<span
+                                            class="text-danger">{{ $message }}</span>@enderror
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="body_three_en">{{trans('dashboard.body_three_en')}}:</label>
+
+                                        <textarea id="body_three_en" name="body_three_en" class="body-content2"
+                                        >
+                                                       {!! $about->getTranslation('body_three','en')  !!}
+                                                           </textarea>
+                                        @error('body_tow_en')<span
+                                            class="text-danger">{{ $message }}</span>@enderror
+                                    </div>
+
+
+
+
+
+
+
+                                </div>
+                                <br>
+
+                                <div class="row">
+
+                                    <div class="col-6">
+                                        <label for="title_four_ar"> {{trans('dashboard.title_four_ar')}}:</label>
+
+                                        <textarea id="title_four_ar" name="title_four_ar" class="body-content"
+                                        >
+                                                       {!! $about->getTranslation('title_four','ar')  !!}
+                                                           </textarea>
+                                        @error('title_four_ar')<span
+                                            class="text-danger">{{ $message }}</span>@enderror
+                                    </div>
+
+                                    <div class="col-6">
+                                        <label for="title_four_en">{{trans('dashboard.title_four_en')}}:</label>
+
+                                        <textarea id="title_four_en" name="title_four_en" class="body-content"
+                                        >
+                                                       {!! $about->getTranslation('title_four','en')  !!}
+                                                           </textarea>
+                                        @error('title_four_en')<span
+                                            class="text-danger">{{ $message }}</span>@enderror
+                                    </div>
+
+
+
+
+                                </div>
+                                <br>
+
+                                <div class="row">
+
+                                    <div class="col-6">
+                                        <label for="body_four_ar"> {{trans('dashboard.body_four_ar')}}:</label>
+
+                                        <textarea id="body_four_ar" name="body_four_ar" class="body-content"
+                                        >
+                                                       {!! $about->getTranslation('body_four','ar')  !!}
+                                                           </textarea>
+                                        @error('title_four_ar')<span
+                                            class="text-danger">{{ $message }}</span>@enderror
+                                    </div>
+
+                                    <div class="col-6">
+                                        <label for="body_four_en"> {{trans('dashboard.body_four_en')}}:</label>
+
+                                        <textarea id="body_four_en" name="body_four_en" class="body-content"
+                                        >
+                                                       {!! $about->getTranslation('body_four','en')  !!}
+                                                           </textarea>
+                                        @error('body_four_en')<span
+                                            class="text-danger">{{ $message }}</span>@enderror
+                                    </div>
+
+
 
 
                                 </div>
@@ -170,7 +301,7 @@
 
 
                                 <button class="btn ripple btn-secondary m-lg-2" type="submit">
-                                    حفظ التغييرات<i
+                                    {{trans('dashboard.Save_Changes')}}<i
                                         class="fe fe-plus"></i></button>
                             </form>
 
@@ -192,7 +323,50 @@
 
         $(function () {
 
-            $('#title_one').summernote({
+            $('#title_one_ar').summernote({
+                height: 100,
+
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear',
+                        'strikethrough', 'superscript', 'subscript',
+                        'fontname', 'fontsize', 'table', 'ul', 'ol', 'paragraph',
+                    ]],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['codeview', 'help']],
+                    ['color', ['color']],
+                    ['color', ['forecolor']],
+
+
+                ],
+                popover: {
+                    image: [
+                        ['image', ['resizeFull', 'resizeHalf', 'resizeQuarter', 'resizeNone']],
+                        ['float', ['floatLeft', 'floatRight', 'floatNone']],
+                        ['remove', ['removeMedia']]
+                    ],
+                    link: [
+                        ['link', ['linkDialogShow', 'unlink']]
+                    ],
+                    table: [
+                        ['add', ['addRowDown', 'addRowUp', 'addColLeft', 'addColRight']],
+                        ['delete', ['deleteRow', 'deleteCol', 'deleteTable']],
+                    ],
+                    air: [
+                        ['color', ['color']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['para', ['ul', 'paragraph']],
+                        ['table', ['table']],
+                        ['insert', ['link', 'picture']]
+                    ]
+                },
+
+
+            });
+
+        });
+        $(function () {
+
+            $('#title_one_en').summernote({
                 height: 100,
 
                 toolbar: [
@@ -236,7 +410,7 @@
 
         $(function () {
 
-            $('#body_one').summernote({
+            $('#body_one_ar').summernote({
                 height: 100,
 
                 toolbar: [
@@ -280,7 +454,7 @@
 
         $(function () {
 
-            $('#title_tow').summernote({
+            $('#body_one_en').summernote({
                 height: 100,
 
                 toolbar: [
@@ -324,7 +498,7 @@
 
         $(function () {
 
-            $('#body_tow').summernote({
+            $('#title_tow_ar').summernote({
                 height: 100,
 
                 toolbar: [
@@ -368,7 +542,7 @@
 
         $(function () {
 
-            $('#title_three').summernote({
+            $('#title_tow_en').summernote({
                 height: 100,
 
                 toolbar: [
@@ -412,7 +586,51 @@
 
         $(function () {
 
-            $('#body_three').summernote({
+            $('#body_tow_ar').summernote({
+                height: 100,
+
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear',
+                        'strikethrough', 'superscript', 'subscript',
+                        'fontname', 'fontsize', 'table', 'ul', 'ol', 'paragraph',
+                    ]],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['codeview', 'help']],
+                    ['color', ['color']],
+                    ['color', ['forecolor']],
+
+
+                ],
+                popover: {
+                    image: [
+                        ['image', ['resizeFull', 'resizeHalf', 'resizeQuarter', 'resizeNone']],
+                        ['float', ['floatLeft', 'floatRight', 'floatNone']],
+                        ['remove', ['removeMedia']]
+                    ],
+                    link: [
+                        ['link', ['linkDialogShow', 'unlink']]
+                    ],
+                    table: [
+                        ['add', ['addRowDown', 'addRowUp', 'addColLeft', 'addColRight']],
+                        ['delete', ['deleteRow', 'deleteCol', 'deleteTable']],
+                    ],
+                    air: [
+                        ['color', ['color']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['para', ['ul', 'paragraph']],
+                        ['table', ['table']],
+                        ['insert', ['link', 'picture']]
+                    ]
+                },
+
+
+            });
+
+        });
+
+   $(function () {
+
+            $('#body_tow_en').summernote({
                 height: 100,
 
                 toolbar: [
@@ -456,7 +674,7 @@
 
         $(function () {
 
-            $('#title_four').summernote({
+            $('#title_three_ar').summernote({
                 height: 100,
 
                 toolbar: [
@@ -500,7 +718,272 @@
 
         $(function () {
 
-            $('#body_four').summernote({
+            $('#title_three_en').summernote({
+                height: 100,
+
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear',
+                        'strikethrough', 'superscript', 'subscript',
+                        'fontname', 'fontsize', 'table', 'ul', 'ol', 'paragraph',
+                    ]],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['codeview', 'help']],
+                    ['color', ['color']],
+                    ['color', ['forecolor']],
+
+
+                ],
+                popover: {
+                    image: [
+                        ['image', ['resizeFull', 'resizeHalf', 'resizeQuarter', 'resizeNone']],
+                        ['float', ['floatLeft', 'floatRight', 'floatNone']],
+                        ['remove', ['removeMedia']]
+                    ],
+                    link: [
+                        ['link', ['linkDialogShow', 'unlink']]
+                    ],
+                    table: [
+                        ['add', ['addRowDown', 'addRowUp', 'addColLeft', 'addColRight']],
+                        ['delete', ['deleteRow', 'deleteCol', 'deleteTable']],
+                    ],
+                    air: [
+                        ['color', ['color']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['para', ['ul', 'paragraph']],
+                        ['table', ['table']],
+                        ['insert', ['link', 'picture']]
+                    ]
+                },
+
+
+            });
+
+        });
+
+        $(function () {
+
+            $('#body_three_ar').summernote({
+                height: 100,
+
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear',
+                        'strikethrough', 'superscript', 'subscript',
+                        'fontname', 'fontsize', 'table', 'ul', 'ol', 'paragraph',
+                    ]],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['codeview', 'help']],
+                    ['color', ['color']],
+                    ['color', ['forecolor']],
+
+
+                ],
+                popover: {
+                    image: [
+                        ['image', ['resizeFull', 'resizeHalf', 'resizeQuarter', 'resizeNone']],
+                        ['float', ['floatLeft', 'floatRight', 'floatNone']],
+                        ['remove', ['removeMedia']]
+                    ],
+                    link: [
+                        ['link', ['linkDialogShow', 'unlink']]
+                    ],
+                    table: [
+                        ['add', ['addRowDown', 'addRowUp', 'addColLeft', 'addColRight']],
+                        ['delete', ['deleteRow', 'deleteCol', 'deleteTable']],
+                    ],
+                    air: [
+                        ['color', ['color']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['para', ['ul', 'paragraph']],
+                        ['table', ['table']],
+                        ['insert', ['link', 'picture']]
+                    ]
+                },
+
+
+            });
+
+        });
+
+        $(function () {
+
+            $('#body_three_en').summernote({
+                height: 100,
+
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear',
+                        'strikethrough', 'superscript', 'subscript',
+                        'fontname', 'fontsize', 'table', 'ul', 'ol', 'paragraph',
+                    ]],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['codeview', 'help']],
+                    ['color', ['color']],
+                    ['color', ['forecolor']],
+
+
+                ],
+                popover: {
+                    image: [
+                        ['image', ['resizeFull', 'resizeHalf', 'resizeQuarter', 'resizeNone']],
+                        ['float', ['floatLeft', 'floatRight', 'floatNone']],
+                        ['remove', ['removeMedia']]
+                    ],
+                    link: [
+                        ['link', ['linkDialogShow', 'unlink']]
+                    ],
+                    table: [
+                        ['add', ['addRowDown', 'addRowUp', 'addColLeft', 'addColRight']],
+                        ['delete', ['deleteRow', 'deleteCol', 'deleteTable']],
+                    ],
+                    air: [
+                        ['color', ['color']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['para', ['ul', 'paragraph']],
+                        ['table', ['table']],
+                        ['insert', ['link', 'picture']]
+                    ]
+                },
+
+
+            });
+
+        });
+
+        $(function () {
+
+            $('#title_four_ar').summernote({
+                height: 100,
+
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear',
+                        'strikethrough', 'superscript', 'subscript',
+                        'fontname', 'fontsize', 'table', 'ul', 'ol', 'paragraph',
+                    ]],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['codeview', 'help']],
+                    ['color', ['color']],
+                    ['color', ['forecolor']],
+
+
+                ],
+                popover: {
+                    image: [
+                        ['image', ['resizeFull', 'resizeHalf', 'resizeQuarter', 'resizeNone']],
+                        ['float', ['floatLeft', 'floatRight', 'floatNone']],
+                        ['remove', ['removeMedia']]
+                    ],
+                    link: [
+                        ['link', ['linkDialogShow', 'unlink']]
+                    ],
+                    table: [
+                        ['add', ['addRowDown', 'addRowUp', 'addColLeft', 'addColRight']],
+                        ['delete', ['deleteRow', 'deleteCol', 'deleteTable']],
+                    ],
+                    air: [
+                        ['color', ['color']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['para', ['ul', 'paragraph']],
+                        ['table', ['table']],
+                        ['insert', ['link', 'picture']]
+                    ]
+                },
+
+
+            });
+
+        });
+
+
+        $(function () {
+
+            $('#title_four_en').summernote({
+                height: 100,
+
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear',
+                        'strikethrough', 'superscript', 'subscript',
+                        'fontname', 'fontsize', 'table', 'ul', 'ol', 'paragraph',
+                    ]],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['codeview', 'help']],
+                    ['color', ['color']],
+                    ['color', ['forecolor']],
+
+
+                ],
+                popover: {
+                    image: [
+                        ['image', ['resizeFull', 'resizeHalf', 'resizeQuarter', 'resizeNone']],
+                        ['float', ['floatLeft', 'floatRight', 'floatNone']],
+                        ['remove', ['removeMedia']]
+                    ],
+                    link: [
+                        ['link', ['linkDialogShow', 'unlink']]
+                    ],
+                    table: [
+                        ['add', ['addRowDown', 'addRowUp', 'addColLeft', 'addColRight']],
+                        ['delete', ['deleteRow', 'deleteCol', 'deleteTable']],
+                    ],
+                    air: [
+                        ['color', ['color']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['para', ['ul', 'paragraph']],
+                        ['table', ['table']],
+                        ['insert', ['link', 'picture']]
+                    ]
+                },
+
+
+            });
+
+        });
+
+        $(function () {
+
+            $('#body_four_ar').summernote({
+                height: 100,
+
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear',
+                        'strikethrough', 'superscript', 'subscript',
+                        'fontname', 'fontsize', 'table', 'ul', 'ol', 'paragraph',
+                    ]],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['codeview', 'help']],
+                    ['color', ['color']],
+                    ['color', ['forecolor']],
+
+
+                ],
+                popover: {
+                    image: [
+                        ['image', ['resizeFull', 'resizeHalf', 'resizeQuarter', 'resizeNone']],
+                        ['float', ['floatLeft', 'floatRight', 'floatNone']],
+                        ['remove', ['removeMedia']]
+                    ],
+                    link: [
+                        ['link', ['linkDialogShow', 'unlink']]
+                    ],
+                    table: [
+                        ['add', ['addRowDown', 'addRowUp', 'addColLeft', 'addColRight']],
+                        ['delete', ['deleteRow', 'deleteCol', 'deleteTable']],
+                    ],
+                    air: [
+                        ['color', ['color']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['para', ['ul', 'paragraph']],
+                        ['table', ['table']],
+                        ['insert', ['link', 'picture']]
+                    ]
+                },
+
+
+            });
+
+        });
+
+    $(function () {
+
+            $('#body_four_en').summernote({
                 height: 100,
 
                 toolbar: [

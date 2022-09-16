@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    تفاصيل الطلب
+    {{trans('dashboard.Order_Details')}}
 @endsection
 
 @section('content')
@@ -18,12 +18,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">تفاصيل الطلب</h4>
+                        <h4 class="mb-sm-0">{{trans('dashboard.Order_Details')}}</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item active">تفاصيل الطلب</li>
-                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">الرئيسية</a></li>
+                                <li class="breadcrumb-item active">{{trans('dashboard.Order_Details')}}</li>
+                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{trans('dashboard.Home')}}</a></li>
                             </ol>
                         </div>
 
@@ -37,20 +37,20 @@
             <div class="card  mb-4">
 
                 <div class="card-header py-3 d-flex justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">الطلب ({{ $order->ref_id }})</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">{{trans('dashboard.Order')}} ({{ $order->ref_id }})</h6>
                     <div class="ml-auto">
                         <form action="{{ route('admin.orders.update') }}" method="post">
                             @csrf
                             @method('PATCH')
                             <input type="hidden" name="id" value="{{$order->id}}">
                             <div class="form-row align-items-center">
-                                <label class="sr-only" for="inlineFormInputGroupUsername">إسم المستخدم</label>
+                                <label class="sr-only" for="inlineFormInputGroupUsername">{{trans('dashboard.User')}}</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <div class="input-group-text">حالة الطلب</div>
+                                        <div class="input-group-text">{{trans('dashboard.Status')}}</div>
                                     </div>
                                     <select class="form-control" name="order_status" style="outline-style: none;" onchange="this.form.submit()">
-                                        <option value=""> إختر الحالة... </option>
+                                        <option value=""> {{trans('dashboard.Choose_Status')}}... </option>
                                         @foreach($order_status_array as $key => $value)
                                             <option value="{{ $key }}">{{ $value }}</option>
                                         @endforeach
@@ -66,16 +66,16 @@
                             <table class="table table-hover">
                                 <tbody>
                                 <tr>
-                                    <th>رقم الطلب</th>
+                                    <th>{{trans('dashboard.Ref_id')}}</th>
                                     <td>{{ $order->ref_id }}</td>
-                                    <th>إسم المستخدم</th>
+                                    <th>{{trans('dashboard.User')}}</th>
                                     <td><a href="">{{ $order->user->name }}</a></td>
                                 </tr>
 
                                 <tr>
-                                    <th>تاريخ الطلب</th>
+                                    <th>{{trans('dashboard.Date')}}</th>
                                     <td>{{ $order->created_at->format('d-m-Y h:i a') }}</td>
-                                    <th>حالة الطلب</th>
+                                    <th>{{trans('dashboard.Order_Status')}}</th>
                                     <td>{!! $order->statusWithLabel() !!}</td>
                                 </tr>
                                 </tbody>
@@ -87,24 +87,24 @@
                             <table class="table table-hover">
                                 <tbody>
                                 <tr>
-                                    <th>المبلغ الفرعي</th>
+                                    <th>{{trans('dashboard.Subtotal')}}</th>
                                     <td>{{ $order->currency . $order->subtotal }}</td>
                                 </tr>
                                 <tr>
-                                    <th>كود الخصم</th>
+                                    <th>{{trans('dashboard.Discount_code')}}</th>
                                     <td>{{ $order->discount_code }}</td>
                                 </tr>
                                 <tr>
-                                    <th>قيمة الخصم</th>
+                                    <th>{{trans('dashboard.Discount')}}</th>
                                     <td>{{ $order->currency . $order->discount }}</td>
                                 </tr>
 
                                 <tr>
-                                    <th>الضريبة</th>
+                                    <th>{{trans('dashboard.Tax')}}</th>
                                     <td>{{ $order->currency . $order->tax }}</td>
                                 </tr>
                                 <tr>
-                                    <th>المبلغ</th>
+                                    <th>{{trans('dashboard.Amount')}}</th>
                                     <td>{{ $order->currency . $order->total }}</td>
                                 </tr>
                                 </tbody>
@@ -116,17 +116,17 @@
 
             <div class="card  mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">العمليات على الطلب</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">{{trans('dashboard.Transactions')}}</h6>
                 </div>
 
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th>معاملة الطلب</th>
-                            <th>رقم المعاملة</th>
-                            <th>نتيجة المعاملة</th>
-                            <th>تاريخ المعاملة</th>
+                            <th>{{trans('dashboard.Transaction')}}</th>
+                            <th>{{trans('dashboard.Transaction_Number')}}</th>
+                            <th>{{trans('dashboard.Transaction_Result')}}</th>
+                            <th>{{trans('dashboard.Transaction_Date')}}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -149,14 +149,14 @@
 
             <div class="card  mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">تفاصيل الطلب</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">{{trans('dashboard.Order_Details')}}</h6>
                 </div>
 
                 <div class="table-responsive d-flex">
                     <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th>الباقات</th>
+                            <th>{{trans('dashboard.Packages')}}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -166,7 +166,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="1">لا يوجد باقات</td>
+                                <td colspan="1">{{trans('dashboard.No_packages_found')}}</td>
                             </tr>
                         @endforelse
 
@@ -176,7 +176,7 @@
                     <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th>الدومينات</th>
+                            <th>{{trans('dashboard.Domains')}}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -187,7 +187,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="1">لا يوجد دومينات </td>
+                                <td colspan="1">No Domains Found ... </td>
                             </tr>
                         @endforelse
 

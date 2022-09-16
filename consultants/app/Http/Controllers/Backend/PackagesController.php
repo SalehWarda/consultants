@@ -22,10 +22,19 @@ class PackagesController extends Controller
         return view('pages.backend.packages.create');
     }
 
-    public function store(PackageRequest $request)
+    public function store(Request $request)
     {
 
-        Package::create($request->validated());
+       Package::create([
+
+           'title' => ['ar' => $request->title_ar, 'en' => $request->title_en],
+           'time_period' => $request->time_period,
+           'price' => $request->price,
+           'features' => ['ar' => $request->features_ar, 'en' => $request->features_en],
+
+
+       ]);
+
 
         toastr('تم إضافة الباقة بنجاح!','success');
         return redirect()->back();
@@ -38,11 +47,18 @@ class PackagesController extends Controller
         return view('pages.backend.packages.edit',compact('package'));
     }
 
-    public function update(PackageRequest $request)
+    public function update(Request $request)
     {
 
         $packege = Package::findOrFail($request->package_id);
-        $packege->update($request->validated());
+        $packege->update([
+
+            'title' => ['ar' => $request->title_ar, 'en' => $request->title_en],
+            'time_period' => $request->time_period,
+            'price' => $request->price,
+            'features' => ['ar' => $request->features_ar, 'en' => $request->features_en],
+
+        ]);
 
         toastr('تم تعديل الباقة بنجاح!','success');
         return redirect()->back();

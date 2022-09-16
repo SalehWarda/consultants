@@ -16,7 +16,7 @@ class Coupon extends Model
 
     public function status()
     {
-        return $this->status ? 'مفعل' : 'غير مفعل';
+        return $this->status ? trans('dashboard.Active') : trans('dashboard.InActive');
     }
 
     public function discount($total)

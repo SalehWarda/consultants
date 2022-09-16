@@ -3,7 +3,7 @@
 @extends('layouts.app')
 
 @section('title')
-    سلة المشتريات
+    {{trans('site.Cart')}}
 @endsection
 
 
@@ -14,10 +14,10 @@
         <div class="container d-flex justify-content-between">
 
             <ol>
-                <li><a href="{{route('site.home')}}">الرئيسية</a></li>
-                <li >سلة المشتريات</li>
+                <li><a href="{{route('site.home')}}">{{trans('site.Home')}}</a></li>
+                <li > {{trans('site.Cart')}}</li>
             </ol>
-            <h2>سلة المشتريات</h2>
+            <h2>{{trans('site.Cart')}} </h2>
 
         </div>
     </section><!-- End Breadcrumbs -->
@@ -29,7 +29,7 @@
             <div class=" container" data-aos="fade-up">
 
                 <div class="alert alert-light" role="alert">
-                    <h4 class="alert-heading">ملخص الطلب</h4>
+                    <h4 class="alert-heading">{{trans('site.Order_Summary')}}</h4>
                     <hr>
 
                     @forelse(\Gloudemans\Shoppingcart\Facades\Cart::content() as $item)

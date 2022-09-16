@@ -12,7 +12,7 @@ class AboutController extends Controller
     public function index()
     {
         $about = About::first();
-        return view('pages.backend.about.index',compact('about'));
+        return view('pages.backend.about.index', compact('about'));
     }
 
 
@@ -21,17 +21,14 @@ class AboutController extends Controller
 
 
         $about = About::whereId($request->about_id)->firstOrFail();
-        $input['title_one'] =  $request->title_one;
-        $input['body_one'] = $request->body_one;
-        $input['title_tow'] =  $request->title_tow;
-        $input['body_tow'] =  $request->body_tow;
-        $input['title_three'] = $request->title_three;
-        $input['body_three'] = $request->body_three;
-        $input['title_four'] = $request->title_four;
-        $input['body_four'] = $request->body_four;
-
-
-
+        $input['title_one'] = ['ar' => $request->title_one_ar, 'en' => $request->title_one_en];
+        $input['body_one'] = ['ar' => $request->body_one_ar, 'en' => $request->body_one_en];
+        $input['title_tow'] = ['ar' => $request->title_tow_ar, 'en' => $request->title_tow_en];
+        $input['body_tow'] = ['ar' => $request->body_tow_ar, 'en' => $request->body_tow_en];
+        $input['title_three'] = ['ar' => $request->title_three_ar, 'en' => $request->title_three_en];
+        $input['body_three'] = ['ar' => $request->body_three_ar, 'en' => $request->body_three_en];
+        $input['title_four'] = ['ar' => $request->title_four_ar, 'en' => $request->title_four_en];
+        $input['body_four'] = ['ar' => $request->body_four_ar, 'en' => $request->body_four_en];
 
 
         $about->update($input);

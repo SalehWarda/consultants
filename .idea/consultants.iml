@@ -125,6 +125,9 @@
       <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/symfony/http-client-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/mindscms/laravelshoppingcart" />
       <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/jantinnerezo/livewire-alert" />
+      <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/mcamara/laravel-localization" />
+      <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/spatie/laravel-translatable" />
+      <excludeFolder url="file://$MODULE_DIR$/consultants/vendor/spatie/laravel-package-tools" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

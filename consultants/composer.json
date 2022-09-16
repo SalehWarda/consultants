@@ -14,7 +14,9 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.10",
+        "mcamara/laravel-localization": "^1.7",
         "mindscms/laravelshoppingcart": "^2.0",
+        "spatie/laravel-translatable": "^6.0",
         "symfony/http-client": "^6.1",
         "symfony/mailgun-mailer": "^6.1",
         "yoeunes/toastr": "^2.0"

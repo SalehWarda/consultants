@@ -3,7 +3,7 @@
 @extends('layouts.app')
 
 @section('title')
-    تفاصيل الباقة
+    {{trans('site.Package_details')}}
 @endsection
 
 
@@ -14,10 +14,10 @@
         <div class="container d-flex justify-content-between">
 
             <ol>
-                <li><a href="{{route('site.home')}}">الرئيسية</a></li>
-                <li>تفاصيل الباقة</li>
+                <li><a href="{{route('site.home')}}">{{trans('site.Home')}}</a></li>
+                <li>{{trans('site.Package_details')}}</li>
             </ol>
-            <h2>تفاصيل الباقة</h2>
+            <h2>{{trans('site.Package_details')}}</h2>
 
         </div>
     </section><!-- End Breadcrumbs -->
@@ -42,27 +42,23 @@
 
                             <ul class="mb-20">
                                 <li class="d-flex align-items-center justify-content-center">
-                                    <strong class="small font-weight-bold">معلومات الباقة الخاصة بك</strong>
+                                    <strong class="small font-weight-bold">{{trans('site.Your_package_information')}}</strong>
                                 </li><hr>
 
                                 <li class="d-flex align-items-center justify-content-between">
-                                    <strong class="small font-weight-bold">إسم الباقة</strong>
+                                    <strong class="small font-weight-bold">{{trans('site.Package_name')}}</strong>
                                     <span class="text-muted small"> {{$package->title}}</span>
                                 </li><hr>
 
 
-                                {{--                                <li class="d-flex align-items-center justify-content-between">--}}
-                                {{--                                    <strong class="small font-weight-bold">الخصم<small>(saw)</small></strong>--}}
-                                {{--                                    <span class="text-muted small">- $ 20</span>--}}
-                                {{--                                </li><hr>--}}
                                 <li class="d-flex align-items-center justify-content-between">
-                                    <strong class="small font-weight-bold">سعر الباقة</strong>
+                                    <strong class="small font-weight-bold">{{trans('site.Package_price')}}</strong>
                                     <span class="text-muted small">USD {{$package->price}} /{{$package->time_period}}</span>
                                 </li><hr>
 
 
                                 <li class="d-flex align-items-center justify-content-center">
-                                    <strong class="small font-weight-bold">مزايا الباقة</strong>
+                                    <strong class="small font-weight-bold">{{trans('site.Package_Benefits')}}</strong>
                                 </li>
                                 <br>
                                 <li class="d-flex align-items-center justify-content-between">

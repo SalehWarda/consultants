@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    الباقات
+    {{trans('dashboard.Packages')}}
 @endsection
 
 @section('content')
@@ -19,12 +19,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">الباقات</h4>
+                        <h4 class="mb-sm-0">{{trans('dashboard.Packages')}}</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item active">الباقات</li>
-                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">الرئيسية</a></li>
+                                <li class="breadcrumb-item active">{{trans('dashboard.Packages')}}</li>
+                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{trans('dashboard.Home')}}</a></li>
                             </ol>
                         </div>
 
@@ -39,7 +39,7 @@
                         <div class="card-body">
                             <div class="d-block d-md-flex justify-content-between">
                                 <div class="d-block">
-                                    <h5 class="card-title pb-0 border-0"> الباقات</h5>
+                                    <h5 class="card-title pb-0 border-0"> {{trans('dashboard.Packages')}}</h5>
                                 </div>
 
                                 <div class="d-block d-md-flex justify-content-between">
@@ -47,7 +47,7 @@
                                         <a href="{{route('admin.packages.create')}}" class="btn btn-secondary waves-effect waves-light btn-rounded"
 
 
-                                        > إضافة باقة جديدة  <i class="fa fa-plus"></i>
+                                        > {{trans('dashboard.Add_New_Package')}}  <i class="fa fa-plus"></i>
                                         </a>
 
                                     </div>
@@ -61,11 +61,11 @@
                                     <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>عنوان الباقة</th>
-                                        <th>سعرالباقة</th>
-                                        <th>الفترة الزمنية</th>
-                                        <th>مزايا الباقة</th>
-                                        <th>العمليات</th>
+                                        <th>{{trans('dashboard.Package_title')}}</th>
+                                        <th>{{trans('dashboard.Price')}}</th>
+                                        <th>{{trans('dashboard.Time_period')}}</th>
+                                        <th>{{trans('dashboard.Features')}}</th>
+                                        <th>{{trans('dashboard.Actions')}}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -87,14 +87,14 @@
                                                     <a href="{{route('admin.packages.edit',$package->id)}}"
                                                             class="btn btn-info waves-effect waves-light btn-rounded"
 
-                                                            title="تعديل">
-                                                        <i class="ri-edit-2-fill align-middle me-2"></i>تعديل
+                                                            title="{{trans('dashboard.Edit')}}">
+                                                        <i class="ri-edit-2-fill align-middle me-2"></i>{{trans('dashboard.Edit')}}
                                                     </a>
                                                     <button type="button"
                                                             class="btn btn-danger waves-effect waves-light btn-rounded"
                                                             data-bs-toggle="modal"
-                                                            data-bs-target="#delete{{$package->id}}" title="حذف">
-                                                        <i class="ri-delete-bin-2-line align-middle me-2"></i>حذف
+                                                            data-bs-target="#delete{{$package->id}}" title="{{trans('dashboard.Delete')}}">
+                                                        <i class="ri-delete-bin-2-line align-middle me-2"></i>{{trans('dashboard.Delete')}}
                                                     </button>
 
                                                 </div>
@@ -112,7 +112,7 @@
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h3 class="modal-title" id="myModalLabel">حذف الباقة </h3>
+                                                        <h3 class="modal-title" id="myModalLabel">{{trans('dashboard.Delete')}} </h3>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close"></button>
                                                     </div>
@@ -122,15 +122,15 @@
                                                             @method('DELETE')
                                                             <input type="hidden" name="package_id" value="{{$package->id}}">
 
-                                                            <h4>هل أنت متأكد من عملية الحذف؟ </h4>
+                                                            <h4>{{trans('dashboard.are_sure_of_the_deleting_process')}} </h4>
 
                                                             <h5><span class="text-danger">{{$package->title}}</span></h5>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-light waves-effect"
-                                                                        data-bs-dismiss="modal">إغلاق
+                                                                        data-bs-dismiss="modal">{{trans('dashboard.Close')}}
                                                                 </button>
                                                                 <button type="submit"
-                                                                        class="btn btn-danger waves-effect waves-light">حذف
+                                                                        class="btn btn-danger waves-effect waves-light">{{trans('dashboard.Delete')}}
                                                                 </button>
                                                             </div>
                                                         </form>
@@ -143,7 +143,7 @@
                                     @empty
 
                                         <tr>
-                                            <td colspan="6" class="text-center">لم يتم إضافة باقات</td>
+                                            <td colspan="6" class="text-center">{{trans('dashboard.No_packages_found')}}</td>
                                         </tr>
                                     @endforelse
 
@@ -166,173 +166,7 @@
                                 </table>
                             </div>
 
-                            <!--  Add Coupon Modal -->
-{{--                            <div class="modal fade" tabindex="-1" role="dialog" id="add"--}}
-{{--                                 aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">--}}
-{{--                                <div class="modal-dialog modal-lg">--}}
-{{--                                    <div class="modal-content">--}}
-{{--                                        <div class="modal-header">--}}
-{{--                                            <h5 class="modal-title" id="myExtraLargeModalLabel">إضافة كوبون خصم جديد</h5>--}}
-{{--                                            <button type="button" class="btn-close" data-bs-dismiss="modal"--}}
-{{--                                                    aria-label="Close"></button>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="modal-body">--}}
 
-{{--                                            <form action="{{route('admin.coupons.store')}}" method="post">--}}
-{{--                                                @csrf--}}
-{{--                                                @method('POST')--}}
-{{--                                                <div class="row">--}}
-{{--                                                    <div class="col-md-3">--}}
-{{--                                                        <label for="code" class=" col-form-label">كود الخصم :</label>--}}
-{{--                                                        <input type="text" name="code" id="codeCreate" class="form-control"--}}
-{{--                                                               value="{{old('code')}}">--}}
-
-{{--                                                        @error('code')--}}
-{{--                                                        <span class="text-danger">{{ $message }}</span>--}}
-{{--                                                        @enderror--}}
-{{--                                                    </div>--}}
-
-{{--                                                    <div class="col-md-3">--}}
-
-{{--                                                        <label for="type" class=" col-form-label">نوع الكود : </label>--}}
-
-{{--                                                        <select class="form-control" name="type">--}}
-{{--                                                            <option selected > إختر...</option>--}}
-
-
-{{--                                                            <option--}}
-{{--                                                                value="fixed" {{old('type') == 'fixed' ?'selected' : null}}>--}}
-{{--                                                                ثابت--}}
-{{--                                                            </option>--}}
-{{--                                                            <option--}}
-{{--                                                                value="percentage" {{old('type') == 'percentage' ?'selected' : null}}>--}}
-{{--                                                                نسبة مئوية--}}
-{{--                                                            </option>--}}
-
-
-{{--                                                        </select>--}}
-{{--                                                        @error('type')--}}
-{{--                                                        <span class="text-danger">{{ $message }}</span>--}}
-{{--                                                        @enderror--}}
-
-{{--                                                    </div>--}}
-
-{{--                                                    <div class="col-md-3">--}}
-{{--                                                        <label for="value" class=" col-form-label">قيمة الكود :</label>--}}
-{{--                                                        <input type="number" name="value" class="form-control"--}}
-{{--                                                               value="{{old('value')}}">--}}
-
-{{--                                                        @error('value')--}}
-{{--                                                        <span class="text-danger">{{ $message }}</span>--}}
-{{--                                                        @enderror--}}
-{{--                                                    </div>--}}
-
-{{--                                                    <div class="col-3">--}}
-{{--                                                        <div class=" col-form-label">--}}
-{{--                                                            <label for="use_times">مرات الإستخدام :</label>--}}
-{{--                                                            <input type="number" name="use_times"--}}
-{{--                                                                   value="{{ old('use_times') }}" class="form-control">--}}
-{{--                                                            @error('use_times')<span--}}
-{{--                                                                class="text-danger">{{ $message }}</span>@enderror--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-
-{{--                                                </div>--}}
-{{--                                                <br>--}}
-{{--                                                <div class="row">--}}
-{{--                                                    <div class="col-md-4">--}}
-{{--                                                        <div class="form-group">--}}
-{{--                                                            <label> تاريخ البداية :</label>--}}
-
-{{--                                                            <input type="text" name="start_date" id="start_date"--}}
-{{--                                                                   class="form-control"--}}
-{{--                                                                   value="{{old('start_date')}}">--}}
-
-{{--                                                            @error('start_date')--}}
-{{--                                                            <span class="text-danger">{{ $message }}</span>--}}
-{{--                                                            @enderror--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-
-{{--                                                    <div class="col-md-4">--}}
-{{--                                                        <div class="form-group">--}}
-{{--                                                            <label> تاريخ النهاية :</label>--}}
-
-{{--                                                            <input type="text" name="expire_date" id="expire_date"--}}
-{{--                                                                   class="form-control"--}}
-{{--                                                                   value="{{old('expire_date')}}">--}}
-
-{{--                                                            @error('expire_date')--}}
-{{--                                                            <span class="text-danger">{{ $message }}</span>--}}
-{{--                                                            @enderror--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-
-
-{{--                                                    <div class="col-md-4">--}}
-{{--                                                        <div class="form-group">--}}
-{{--                                                            <label for="status">الحالة :</label>--}}
-{{--                                                            <br>--}}
-{{--                                                            <select class="form-control"--}}
-{{--                                                                    name="status">--}}
-
-{{--                                                                <option selected > إختر...</option>--}}
-{{--                                                                <option--}}
-{{--                                                                    value="1" {{old('status') == '1' ? 'selected' : null}}>--}}
-{{--                                                                    مفعل--}}
-{{--                                                                </option>--}}
-{{--                                                                <option--}}
-{{--                                                                    value="0" {{old('status') == '0' ? 'selected' : null}}>--}}
-{{--                                                                    غير مفعل--}}
-{{--                                                                </option>--}}
-
-{{--                                                            </select>--}}
-{{--                                                            @error('status')--}}
-{{--                                                            <span class="text-danger">{{ $message }}</span>--}}
-{{--                                                            @enderror--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-
-
-{{--                                                </div>--}}
-{{--                                                <br>--}}
-{{--                                                <div class="row">--}}
-
-{{--                                                    <div class="col-md-12">--}}
-{{--                                                        <div class="form-group">--}}
-{{--                                                            <label> الوصف :</label>--}}
-
-{{--                                                            <textarea name="description" rows="3" id="description"--}}
-{{--                                                                      class="form-control">--}}
-
-{{--                                                                     {{old('description')}}--}}
-{{--                                                          </textarea>--}}
-
-{{--                                                            @error('description')--}}
-{{--                                                            <span class="text-danger">{{ $message }}</span>--}}
-{{--                                                            @enderror--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-
-
-{{--                                                </div>--}}
-{{--                                                <div class="modal-footer">--}}
-{{--                                                    <button class="btn ripple btn-secondary m-lg-2" type="submit"--}}
-{{--                                                    > حفظ<i--}}
-{{--                                                            class="fe fe-plus"></i></button>--}}
-{{--                                                    <button class="btn ripple btn-danger" data-bs-dismiss="modal"--}}
-{{--                                                            type="button">--}}
-{{--                                                        إغلاق--}}
-{{--                                                    </button>--}}
-{{--                                                </div>--}}
-{{--                                            </form>--}}
-
-{{--                                        </div>--}}
-
-
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
 
                         </div>
                     </div>

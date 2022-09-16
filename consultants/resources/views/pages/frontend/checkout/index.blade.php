@@ -3,7 +3,7 @@
 @extends('layouts.app')
 
 @section('title')
-    سلة المشتريات
+    {{trans('site.Payment_stage')}}
 @endsection
 
 
@@ -14,10 +14,10 @@
         <div class="container d-flex justify-content-between">
 
             <ol>
-                <li><a href="{{route('site.home')}}">الرئيسية</a></li>
-                <li>مرحلة الدفع</li>
+                <li><a href="{{route('site.home')}}">{{trans('site.Home')}}</a></li>
+                <li>{{trans('site.Payment_stage')}}</li>
             </ol>
-            <h2>مرحلة الدفع</h2>
+            <h2>{{trans('site.Payment_stage')}}</h2>
 
         </div>
     </section><!-- End Breadcrumbs -->
@@ -28,7 +28,7 @@
             <div class=" container" data-aos="fade-up">
 
                 <div class="alert alert-light" role="alert">
-                    <h4 class="alert-heading">إختيار وسيلة دفع</h4>
+                    <h4 class="alert-heading">{{trans('site.Choose_a_payment_method')}}</h4>
                     <hr>
                     <div class="col-md-12 ">
                         <div class="info-box d-md-flex justify-content-between">
@@ -36,7 +36,7 @@
                             <form action="{{route('site.checkout.payment')}}" method="post" >
                                 @csrf
                                 <img src="{{asset('assets/images/clickpay-logo.svg')}}" width="80"><br><br>
-                                <button type="submit" style="background-color: #000000; color: white; border-radius: 12px; margin-bottom: 3px" ><i class="bi bi-currency-exchange" style="font-size: 1.2rem"></i> دفع الان </button>
+                                <button type="submit" style="background-color: #000000; color: white; border-radius: 12px; margin-bottom: 3px" ><i class="bi bi-currency-exchange" style="font-size: 1.2rem"></i> {{trans('site.Pay_now')}} </button>
 
 
                             </form>

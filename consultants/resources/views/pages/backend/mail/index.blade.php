@@ -2,7 +2,7 @@
 
 @section('title')
 
-    البريد الوارد
+   {{trans('dashboard.Mail')}}
 
 
 @endsection
@@ -16,12 +16,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0"> البريد الوارد</h4>
+                        <h4 class="mb-sm-0"> {{trans('dashboard.Mail')}}</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item active"> البريد الوارد</li>
-                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}"> الرئيسية</a></li>
+                                <li class="breadcrumb-item active"> {{trans('dashboard.Mail')}}</li>
+                                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}"> {{trans('dashboard.Home')}}</a></li>
                             </ol>
                         </div>
 
@@ -35,7 +35,7 @@
                         <div class="card-body">
                             <div class="d-block d-md-flex justify-content-between">
                                 <div class="d-block">
-                                    <h5 class="card-title pb-0 border-0"> البريد الوارد</h5>
+                                    <h5 class="card-title pb-0 border-0"> {{trans('dashboard.Mail')}}</h5>
                                 </div>
 
 
@@ -63,7 +63,7 @@
                                                 <button type="button"
                                                         class="btn btn-dark waves-light waves-effect dropdown-toggle"
                                                         data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <strong> الرسائل الواردة</strong> <i
+                                                    <strong> {{trans('dashboard.Incoming_messages')}}</strong> <i
                                                         class="mdi mdi-mail ms-2"></i>
                                                 </button>
 
@@ -81,7 +81,7 @@
                                                         <a href="{{route('admin.mail.mail_details',$mail->id)}}" class="title">{{ $mail->name}}</a><span
                                                             class="star-toggle far fa-trash-alt"
                                                             data-bs-toggle="modal" data-bs-target="#delete{{$mail->id}}"
-                                                            title=" {{trans('mail.Delete')}}" style=" cursor: pointer"></span>
+                                                            title=" {{trans('dashboard.Delete')}}" style=" cursor: pointer"></span>
                                                     </div>
                                                     <div class="col-mail col-mail-2">
                                                         <a href="{{route('admin.mail.mail_details',$mail->id)}}" class="subject"><span class="bg-info badge me-2">{{ $mail->subject}}</span>
@@ -99,8 +99,7 @@
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h3 class="modal-title" id="myModalLabel">حذف
-                                                                    الرسالة </h3>
+                                                                <h3 class="modal-title" id="myModalLabel">{{trans('dashboard.Delete_Message')}} </h3>
                                                                 <button type="button" class="btn-close"
                                                                         data-bs-dismiss="modal"
                                                                         aria-label="Close"></button>
@@ -114,7 +113,7 @@
                                                                     <input type="hidden" name="mail_id"
                                                                            value="{{$mail->id}}">
 
-                                                                    <h4>هل انت متأكد من عملية الحذف ؟ </h4>
+                                                                    <h4>{{trans('dashboard.are_sure_of_the_deleting_process')}}</h4>
 
                                                                     <h5><span class="text-danger">{{$mail->name}}</span>
                                                                     </h5>
@@ -122,11 +121,11 @@
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-light waves-effect"
-                                                                            data-bs-dismiss="modal">Close
+                                                                            data-bs-dismiss="modal">{{trans('dashboard.Close')}}
                                                                     </button>
                                                                     <button type="submit"
                                                                             class="btn btn-danger waves-effect waves-light">
-                                                                        حذف
+                                                                        {{trans('dashboard.Delete')}}
                                                                     </button>
                                                                 </div>
                                                             </form>

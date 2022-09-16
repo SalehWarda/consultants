@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    الباقات
+    {{trans('dashboard.Packages')}}
 @endsection
 
 @section('style')
@@ -18,15 +18,15 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">تعديل الباقة</h4>
+                        <h4 class="mb-sm-0"> {{trans('dashboard.Edit_package')}}</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item active">
-                                    <h4 class="mb-sm-0">تعديل الباقة</h4>
+                                    <h4 class="mb-sm-0">{{trans('dashboard.Edit_package')}}</h4>
                                 </li>
                                 <li class="breadcrumb-item"><a
-                                        href="{{route('admin.dashboard')}}">الرئيسية</a></li>
+                                        href="{{route('admin.dashboard')}}">{{trans('dashboard.Home')}}</a></li>
                             </ol>
                         </div>
 
@@ -58,21 +58,72 @@
                                 <input type="hidden" value="{{$package->id}}" name="package_id">
                                 <div class="row">
                                     <div class="col-6">
-                                        <label for="title"
-                                               class="col-sm-2 col-form-label">عنوان الباقة:</label>
-                                        <input class="form-control" value="{{$package->title}}" type="text"
-                                               name="title"
-                                               id="title">
-                                        @error('title')
+                                        <label for="title_ar"
+                                        >{{trans('dashboard.Title_ar')}}:</label>
+                                        <input class="form-control" type="text"
+                                               name="title_ar"
+                                               value="{{$package->getTranslation('title','ar')}}"
+                                               id="title_ar">
+                                        @error('title_ar')
                                         <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
 
                                     <div class="col-6">
+                                        <label for="title_en"
+                                        >{{trans('dashboard.Title_en')}}:</label>
+                                        <input class="form-control" type="text"
+                                               name="title_en"
+                                               value="{{$package->getTranslation('title','en')}}"
+                                               id="title_en">
+                                        @error('title_en')
+                                        <span class="text-danger">{{$message}}</span>
+                                        @enderror
+                                    </div>
+
+
+                                </div>
+                                <br>
+
+
+                                <div class="row">
+
+                                    <div class="col-6">
+
+                                        <label for="type" class=" col-form-label">{{trans('dashboard.Time_period')}}
+                                            : </label>
+
+                                        <select class="form-control" name="time_period">
+                                            <option selected> {{trans('dashboard.Choose')}}...</option>
+
+
+                                            <option
+                                                value="monthly" {{old('time_period',$package->time_period) == 'monthly' ?'selected' : null}}>
+                                                {{trans('dashboard.Monthly')}}
+                                            </option>
+                                            <option
+                                                value="yearly" {{old('time_period',$package->time_period) == 'yearly' ?'selected' : null}}>
+                                                {{trans('dashboard.Yearly')}}
+                                            </option>
+
+                                            <option
+                                                value="2 years" {{old('time_period',$package->time_period) == '2 years' ?'selected' : null}}>
+                                                {{trans('dashboard.2_Years')}}
+                                            </option>
+
+
+                                        </select>
+                                        @error('time_period')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+
+                                    </div>
+                                    <div class="col-6">
                                         <label for="price"
-                                               class="col-sm-2 col-form-label">السعر:</label>
-                                        <input class="form-control" value="{{$package->price}}" type="text"
+                                               class="col-sm-2 col-form-label">{{trans('dashboard.Price')}}:</label>
+                                        <input class="form-control" type="text"
                                                name="price"
+                                               value="{{$package->price}}"
                                                id="price">
                                         @error('price')
                                         <span class="text-danger">{{$message}}</span>
@@ -85,63 +136,35 @@
 
                                 <div class="row">
 
-                                    <div class="col-12">
+                                    <div class="col-6">
+                                        <label for="features_ar"> {{trans('dashboard.Features_ar')}}:</label>
 
-                                        <label for="type" class=" col-form-label">الفترة الزمنية للباقة : </label>
-
-                                        <select class="form-control" name="time_period">
-                                            <option selected > إختر...</option>
-
-
-                                            <option
-                                                value="monthly" {{old('time_period',$package->time_period) == 'monthly' ?'selected' : null}}>
-                                                شهرية
-                                            </option>
-                                            <option
-                                                value="yearly" {{old('time_period',$package->time_period) == 'yearly' ?'selected' : null}}>
-                                               سنوية
-                                            </option>
-
-                                            <option
-                                                value="2 years" {{old('time_period',$package->time_period) == '2 years' ?'selected' : null}}>
-                                               سنتان
-                                            </option>
-
-
-                                        </select>
-                                        @error('time_period')
-                                        <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-
-                                    </div>
-
-
-
-
-                                </div>
-                                <br>   <div class="row">
-
-                                    <div class="col-12">
-                                        <label for="features"> مزايا الباقة:</label>
-
-                                        <textarea id="features"  name="features" class="body-content">
-                                            {!! $package->features !!}
-                                        </textarea>
-                                        @error('features')<span
+                                        <textarea id="features_ar" name="features_ar" class="body-content"
+                                        >
+                             {!! $package->getTranslation('features','ar') !!}
+                                                           </textarea>
+                                        @error('features_ar')<span
                                             class="text-danger">{{ $message }}</span>@enderror
                                     </div>
 
+                                    <div class="col-6">
+                                        <label for="features_en"> {{trans('dashboard.Features_en')}}:</label>
 
+                                        <textarea id="features_en" name="features_en" class="body-content">
+
+                                            {!! $package->getTranslation('features','en') !!}
+                                                           </textarea>
+                                        @error('features_en')<span
+                                            class="text-danger">{{ $message }}</span>@enderror
+                                    </div>
 
 
                                 </div>
                                 <br>
 
 
-
-
                                 <button class="btn ripple btn-secondary m-lg-2" type="submit">
-                                    حفظ <i
+                                    {{trans('dashboard.Save_Changes')}} <i
                                         class="fe fe-plus"></i></button>
                             </form>
 
@@ -163,7 +186,50 @@
 
         $(function () {
 
-            $('#features').summernote({
+            $('#features_ar').summernote({
+                height: 100,
+
+                toolbar: [
+                    ['style', ['bold', 'italic', 'underline', 'clear',
+                        'strikethrough', 'superscript', 'subscript',
+                        'fontname', 'fontsize', 'table', 'ul', 'ol', 'paragraph',
+                    ]],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['codeview', 'help']],
+                    ['color', ['color']],
+                    ['color', ['forecolor']],
+
+
+                ],
+                popover: {
+                    image: [
+                        ['image', ['resizeFull', 'resizeHalf', 'resizeQuarter', 'resizeNone']],
+                        ['float', ['floatLeft', 'floatRight', 'floatNone']],
+                        ['remove', ['removeMedia']]
+                    ],
+                    link: [
+                        ['link', ['linkDialogShow', 'unlink']]
+                    ],
+                    table: [
+                        ['add', ['addRowDown', 'addRowUp', 'addColLeft', 'addColRight']],
+                        ['delete', ['deleteRow', 'deleteCol', 'deleteTable']],
+                    ],
+                    air: [
+                        ['color', ['color']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['para', ['ul', 'paragraph']],
+                        ['table', ['table']],
+                        ['insert', ['link', 'picture']]
+                    ]
+                },
+
+
+            });
+
+        });
+        $(function () {
+
+            $('#features_en').summernote({
                 height: 100,
 
                 toolbar: [

@@ -36,9 +36,10 @@ class ClickPay
         ]);
 
         if ($response->getStatusCode() != 200){
-//            return false;
+         return "saw";
         }
         $response = json_decode($response->getBody(), true);
+
 
         return view('pages.frontend.invoiceInfo.index',compact('response')) ;
 
@@ -49,6 +50,14 @@ class ClickPay
 
      return   $response = $this->buildRequest( 'https://secure.clickpay.com.sa/payment/request', 'POST', $data);
 
+
+    }
+
+    public function getPaymentStatus($data)
+    {
+
+
+        return   $response = $this->buildRequest( 'https://secure.clickpay.com.sa/payment/page/REF/redirect', 'POST',$data);
 
     }
 

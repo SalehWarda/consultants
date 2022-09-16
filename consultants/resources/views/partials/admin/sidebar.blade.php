@@ -9,7 +9,7 @@
             </div>
             <div class="mt-3">
                 <h4 class="font-size-16 mb-1">{{auth('admin')->user()->name}}</h4>
-                <span class="text-muted"><i class="ri-record-circle-line align-middle font-size-14 text-success"></i> نشط</span>
+                <span class="text-muted"><i class="ri-record-circle-line align-middle font-size-14 text-success"></i> {{trans('dashboard.Active')}}</span>
             </div>
         </div>
 
@@ -17,22 +17,22 @@
         <div id="sidebar-menu">
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
-                <li class="menu-title">أقسام لوحة التحكم</li>
+                <li class="menu-title">{{trans('dashboard.Control_Panel_Sections')}}</li>
 
                 <li>
                     <a href="{{route('admin.dashboard')}}" class="waves-effect">
                         <i class="ri-dashboard-fill"></i>
-                        <span>الرئيسية</span>
+                        <span>{{trans('dashboard.Home')}}</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-calendar-2-fill"></i>
-                        <span>نبذة عنا</span>
+                        <span>{{trans('dashboard.About_Us')}}</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{route('admin.about')}}">نبذة عنا</a></li>
+                        <li><a href="{{route('admin.about')}}">{{trans('dashboard.About_Us')}}</a></li>
 
                     </ul>
                 </li>
@@ -40,33 +40,33 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-account-circle-fill"></i>
-                        <span>معلومات التواصل</span>
+                        <span>{{trans('dashboard.Contact_information')}}</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{route('admin.contact')}}">معلومات التواصل</a></li>
+                        <li><a href="{{route('admin.contact')}}">{{trans('dashboard.Contact_information')}}</a></li>
                     </ul>
                 </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-mail-fill"></i>
-                        <span>البريد الوارد</span>
+                        <span>{{trans('dashboard.Mail')}}</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{route('admin.mail')}}">البريد الوارد</a></li>
+                        <li><a href="{{route('admin.mail')}}">{{trans('dashboard.Mail')}}</a></li>
                     </ul>
                 </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-coupon-2-fill"></i>
-                        <span>كوبونات الخصم</span>
+                        <span>{{trans('dashboard.Coupons')}}</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li>
 
 
-                        <li><a href="{{route('admin.coupons')}}">كوبونات الخصم</a></li>
+                        <li><a href="{{route('admin.coupons')}}">{{trans('dashboard.Coupons')}}</a></li>
 
 
                         </li>
@@ -77,13 +77,13 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-gift-fill"></i>
-                        <span>الباقات</span>
+                        <span>{{trans('dashboard.Packages')}}</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li>
 
 
-                        <li><a href="{{route('admin.packages')}}">الباقات</a></li>
+                        <li><a href="{{route('admin.packages')}}">{{trans('dashboard.Packages')}}</a></li>
 
 
                         </li>
@@ -94,13 +94,13 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-secure-payment-fill"></i>
-                        <span>الطلبات</span>
+                        <span>{{trans('dashboard.Orders')}}</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li>
 
 
-                        <li><a href="{{route('admin.orders.index')}}">الطلبات</a></li>
+                        <li><a href="{{route('admin.orders.index')}}">{{trans('dashboard.Orders')}}</a></li>
 
 
                         </li>

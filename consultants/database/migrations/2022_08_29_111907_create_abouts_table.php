@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
-            $table->string('title_one');
+            $table->longText('title_one');
             $table->longText('body_one');
-            $table->string('title_tow');
+            $table->longText('title_tow');
             $table->longText('body_tow');
-            $table->string('title_three');
+            $table->longText('title_three');
             $table->longText('body_three');
-            $table->string('title_four');
+            $table->longText('title_four');
             $table->longText('body_four');
 
 

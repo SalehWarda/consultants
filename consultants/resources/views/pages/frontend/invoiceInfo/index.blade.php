@@ -1,12 +1,18 @@
 @extends('layouts.app')
 @section('style')
+
+    @if (App::getLocale() == 'ar')
     <link href="{{asset('assets/site/invoice/css/apps/invoice-preview.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('assets/site/invoice/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    @else
+        <link href="{{asset('assets/site/invoice/en/assets/css/apps/invoice-preview.css')}}" rel="stylesheet" type="text/css"/>
+        <link href="{{asset('assets/site/invoice/en/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    @endif
 
 @endsection
 
 @section('title')
-    تفاصيل الباقة
+    {{trans('site.Transaction_details')}}
 @endsection
 
 
@@ -17,10 +23,10 @@
         <div class="container d-flex justify-content-between">
 
             <ol>
-                <li><a href="{{route('site.home')}}">الرئيسية</a></li>
-                <li>تفاصيل المعاملة</li>
+                <li><a href="{{route('site.home')}}">{{trans('site.Home')}}</a></li>
+                <li>{{trans('site.Transaction_details')}}</li>
             </ol>
-            <h2>تفاصيل المعاملة</h2>
+            <h2>{{trans('site.Transaction_details')}}</h2>
 
         </div>
     </section><!-- End Breadcrumbs -->
@@ -55,13 +61,12 @@
                                                                 <img class="company-logo"
                                                                      src="{{asset('assets/images/hulla1.png')}}"
                                                                      width="100" alt="company">
-                                                                <h3 class="in-heading align-self-center">مؤسسة حلة
-                                                                    لتقنية المعلومات.</h3>
+                                                                <h3 class="in-heading align-self-center">{{trans('site.Holla')}}</h3>
                                                             </div>
                                                         </div>
 
                                                         <div class="col-sm-6 text-sm-right">
-                                                            <p class="inv-list-number"><span class="inv-title">رمز المعاملة : </span>
+                                                            <p class="inv-list-number"><span class="inv-title">{{trans('site.Transaction_code')}} : </span>
                                                                 <span
                                                                     class="inv-number">#{{$response['tran_ref']}}</span>
                                                             </p>
@@ -73,7 +78,7 @@
                                                             <p class="inv-email-address">(120) 456 789</p>
                                                         </div>
                                                         <div class="col-sm-6 align-self-center mt-3 text-sm-right">
-                                                            <p class="inv-created-date"><span class="inv-title">تاريخ اليوم : </span>
+                                                            <p class="inv-created-date"><span class="inv-title">{{trans('site.Today_date')}} : </span>
                                                                 <span class="inv-date">{{date('Y M,d')}}</span></p>
                                                         </div>
 
@@ -87,7 +92,7 @@
 
                                                         <div
                                                             class="col-xl-8 col-lg-7 col-md-6 col-sm-4 align-self-center">
-                                                            <p class="inv-to">الطلب الخاص ب:</p>
+                                                            <p class="inv-to">{{trans('site.Your_order')}}:</p>
                                                         </div>
 
 
@@ -110,8 +115,8 @@
 
                                                             <tr>
                                                                 <th scope="col">S.No</th>
-                                                                <th scope="col">رمز الطلب</th>
-                                                                <th class="text-right" scope="col">السعر</th>
+                                                                <th scope="col">{{trans('site.Order_code')}}</th>
+                                                                <th class="text-right" scope="col">{{trans('site.Price')}}</th>
                                                             </tr>
 
 
@@ -135,7 +140,7 @@
 
                                                     <div class="row mt-4">
                                                         <div class="col-sm-12 col-12 order-sm-0 order-1">
-                                                            <p>ملاحظة: شكرا لك للتعامل معنا.</p>
+                                                            <p>{{trans('site.Note')}}: {{trans('site.Thank_you_for_dealing_with_us')}}</p>
                                                         </div>
                                                     </div>
 
@@ -163,12 +168,11 @@
                                         <div class="col-xl-12 col-md-3 col-sm-6">
                                             <img src="{{asset('assets/images/clickpay-logo.svg')}}" width="100"><br><br>
                                             <a href="{{$response['redirect_url']}}" class="btn btn-dark btn-send"><i
-                                                    class="bi bi-currency-exchange" style="font-size: 1.2rem"></i> إتمام
-                                                الدفع</a>
+                                                    class="bi bi-currency-exchange" style="font-size: 1.2rem"></i> {{trans('site.Pay_now')}}</a>
                                         </div>
                                         <div class="col-xl-12 col-md-3 col-sm-6">
                                             <a href="javascript:void(0);" class="btn btn-warning btn-print" onclick="window.print()"><i
-                                                    class="bi bi-printer" style="font-size: 1.2rem"></i>طباعة</a>
+                                                    class="bi bi-printer" style="font-size: 1.2rem"></i>{{trans('site.Print')}}</a>
                                         </div>
 
                                     </div>
@@ -192,17 +196,35 @@
 
 @section('scripts')
 
-    <script src="{{asset('assets/site/invoice/js/libs/jquery-3.1.1.min.js')}}"></script>
-    <script src="{{asset('assets/site/invoice/bootstrap/js/popper.min.js')}}"></script>
-    <script src="{{asset('assets/site/invoice/bootstrap/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('assets/site/invoice/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
-    <script src="{{asset('assets/site/invoice/js/app.js')}}"></script>
 
-    <script>
-        $(document).ready(function () {
-            App.init();
-        });
-    </script>
-    <script src="{{asset('assets/site/invoice/js/custom.js')}}"></script>
-    <script src="{{asset('assets/site/invoice/js/apps/invoice-preview.js')}}"></script>
+    @if (App::getLocale() == 'ar')
+        <script src="{{asset('assets/site/invoice/js/libs/jquery-3.1.1.min.js')}}"></script>
+        <script src="{{asset('assets/site/invoice/bootstrap/js/popper.min.js')}}"></script>
+        <script src="{{asset('assets/site/invoice/bootstrap/js/bootstrap.min.js')}}"></script>
+        <script src="{{asset('assets/site/invoice/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
+        <script src="{{asset('assets/site/invoice/js/app.js')}}"></script>
+
+        <script>
+            $(document).ready(function () {
+                App.init();
+            });
+        </script>
+        <script src="{{asset('assets/site/invoice/js/custom.js')}}"></script>
+        <script src="{{asset('assets/site/invoice/js/apps/invoice-preview.js')}}"></script>
+
+    @else
+        <script src="{{asset('assets/site/invoice/en/js/libs/jquery-3.1.1.min.js')}}"></script>
+        <script src="{{asset('assets/site/invoice/en/bootstrap/js/popper.min.js')}}"></script>
+        <script src="{{asset('assets/site/invoice/en/bootstrap/js/bootstrap.min.js')}}"></script>
+        <script src="{{asset('assets/site/invoice/en/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
+        <script src="{{asset('assets/site/invoice/en/js/app.js')}}"></script>
+
+        <script>
+            $(document).ready(function () {
+                App.init();
+            });
+        </script>
+        <script src="{{asset('assets/site/invoice/en/js/custom.js')}}"></script>
+        <script src="{{asset('assets/site/invoice/en/js/apps/invoice-preview.js')}}"></script>    @endif
+
 @endsection

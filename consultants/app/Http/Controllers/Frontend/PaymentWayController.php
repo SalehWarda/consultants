@@ -33,15 +33,16 @@ class PaymentWayController extends Controller
             "cart_description" =>'package',
             "cart_currency" => $order->currency,
             "cart_amount" => $order->total,
-            "callback" => route('site.home'),
-            "return" => route('site.home'),
+            "callback" => route('site.checkout.complete'),
+            "return" =>route('site.checkout.complete'),
             "customer_details" => [
                 "name" => $order->user->name,
                 "email" => $order->user->email,
                 "phone" => $order->user->mobile,
 
             ] ,
-            "hide_shipping"=> true
+            "hide_shipping"=> true,
+
 
 
         ];
@@ -53,6 +54,22 @@ class PaymentWayController extends Controller
 
     public function completed()
     {
+
+        return "https://secure.clickpay.com.sa/payment/page/REF/redirect";
+
+
+             $this->clickPay->getPaymentStatus($data);
+
+
+
+
+
+
+
+
+
+
+
 
 //        $order = Order::with('packages', 'user')->find($order_id);
 //

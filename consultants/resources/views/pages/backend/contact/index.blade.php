@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    معلومات التواصل
+    {{trans('dashboard.Contact_information')}}
 @endsection
 
 @section('style')
@@ -18,15 +18,15 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">معلومات التواصل</h4>
+                        <h4 class="mb-sm-0">{{trans('dashboard.Contact_information')}}</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item active">
-                                    <h4 class="mb-sm-0">معلومات التواصل</h4>
+                                    <h4 class="mb-sm-0">{{trans('dashboard.Contact_information')}}</h4>
                                 </li>
                                 <li class="breadcrumb-item"><a
-                                        href="{{route('admin.dashboard')}}">الرئيسية</a></li>
+                                        href="{{route('admin.dashboard')}}">{{trans('dashboard.Home')}}</a></li>
                             </ol>
                         </div>
 
@@ -64,7 +64,7 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <label for="email"
-                                               class="col-sm-2 col-form-label">البريد الإلكتروني:</label>
+                                               class="col-sm-2 col-form-label">{{trans('dashboard.Email')}}:</label>
                                         <input class="form-control" type="text"
                                                value="{{$contact->email}}" name="email"
                                                id="email">
@@ -75,7 +75,7 @@
 
                                     <div class="col-6">
                                         <label for="mobile"
-                                               class="col-sm-2 col-form-label">رقم الهاتف:</label>
+                                               class="col-sm-2 col-form-label">{{trans('dashboard.Mobile')}}:</label>
                                         <input class="form-control" type="text"
                                                value="{{$contact->mobile}}" name="mobile"
                                                id="mobile">
@@ -89,13 +89,24 @@
                                 <br>
 
                                 <div class="row">
-                                    <div class="col-12">
-                                        <label for="address"
-                                               class="col-sm-2 col-form-label">الموقع الجغرافي:</label>
+                                    <div class="col-6">
+                                        <label for="address_ar"
+                                               class="col-sm-2 col-form-label">{{trans('dashboard.Address_ar')}}:</label>
                                         <input class="form-control" type="text"
-                                               value="{{$contact->address}}" name="address"
-                                               id="email">
-                                        @error('address')
+                                               value="{{$contact->getTranslation('address','ar')}}" name="address_ar"
+                                               id="address_ar">
+                                        @error('address_ar')
+                                        <span class="text-danger">{{$message}}</span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="col-6">
+                                        <label for="address_en"
+                                               class="col-sm-2 col-form-label">{{trans('dashboard.Address_en')}}:</label>
+                                        <input class="form-control" type="text"
+                                               value="{{$contact->getTranslation('address','en')}}" name="address_en"
+                                               id="address_en">
+                                        @error('address_en')
                                         <span class="text-danger">{{$message}}</span>
                                         @enderror
                                     </div>
@@ -108,7 +119,7 @@
 
 
                                 <button class="btn ripple btn-secondary m-lg-2" type="submit">
-                                   حفظ التغييرات<i
+                                    {{trans('dashboard.Save_Changes')}}<i
                                         class="fe fe-plus"></i></button>
                             </form>
 

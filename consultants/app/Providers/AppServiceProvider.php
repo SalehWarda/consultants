@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Backend\About;
 use App\Models\Backend\Contact;
 use App\Models\Backend\Package;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -26,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Paginator::useBootstrap();
         view()->composer('partials.site.footer',function ($view){
 
             $view->with('contact',Contact::first());

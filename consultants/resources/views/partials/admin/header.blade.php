@@ -37,6 +37,27 @@
 
 
 
+            <div class="dropdown d-none d-sm-inline-block">
+                <button type="button" class="btn header-item waves-effect"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    @if (App::getLocale() == 'ar')
+                        ({{ App::getLocale() }})
+                        <i class="ri-translate-2" style="font-size: 1.2em;" ></i>
+                    @else
+                        ({{ App::getLocale() }})
+                        <i class="ri-translate-2" style="font-size: 1.2em;" ></i>
+                    @endif
+                </button>
+                <div class="dropdown-menu dropdown-menu-end">
+
+                    <!-- item-->
+                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <a rel="alternate" class="btn btn-country btn-lg btn-block {{$properties['native'] == App::getLocale() ? 'active' : ''}} " hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}" class="dropdown-item notify-item">
+                            {{   $properties['name'] }}
+                        </a>
+                    @endforeach
+                </div>
+            </div>
 
 
 

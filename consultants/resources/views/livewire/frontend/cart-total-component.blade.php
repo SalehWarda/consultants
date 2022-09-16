@@ -12,7 +12,7 @@
                     <ul class="mb-20">
                         @if ($cart_total != 0)
                             <li class="d-flex align-items-center justify-content-between">
-                                <strong class="small font-weight-bold">المبلغ الفرعي</strong>
+                                <strong class="small font-weight-bold">{{trans('site.Sub_Total')}}</strong>
                                 <span class="text-muted small"> $ {{$cart_subtotal}}</span>
                             </li>
                             <hr>
@@ -26,12 +26,12 @@
                             @endif
 
                             <li class="d-flex align-items-center justify-content-between">
-                                <strong class="small font-weight-bold">الضريبة</strong>
+                                <strong class="small font-weight-bold">{{trans('site.Tax')}}</strong>
                                 <span class="text-muted small">$ {{$cart_tax}}</span>
                             </li>
                             <hr>
                             <li class="d-flex align-items-center justify-content-between">
-                                <strong class="small font-weight-bold">المبلغ</strong>
+                                <strong class="small font-weight-bold">{{trans('site.Amount')}}</strong>
                                 <span class="text-muted small">$ {{$cart_total}}</span>
                             </li>
                             <hr>
@@ -46,8 +46,7 @@
                         @if (Cart::instance('default')->count() > 0)
                             <li class="navbar d-flex justify-content-center"><a class="getstarted scrollto"
                                                                                 href="{{route('site.checkout')}}"
-                                                                                style="background: #242632">الذهاب
-                                    لإتمام الدفع</a></li>
+                                                                                style="background: #242632">{{trans('site.Go_to_checkout')}}</a></li>
                         @endif
 
                     </ul>

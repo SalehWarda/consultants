@@ -23,10 +23,10 @@ class PackageSeeder extends Seeder
         for ($i = 1; $i <= 10; $i++) {
             Package::create([
 
-                'title'                  =>  $faker->sentence(2, true) ,
+                'title'                  =>  ['ar' => $faker->sentence(2, true) , 'en'=>$faker->sentence(2, true) ],
                 'price'                 => $faker->numberBetween(5, 200),
                 'time_period'                => 'yearly',
-                'features'           => $faker->paragraph,
+                'features'           => ['ar' =>  $faker->paragraph , 'en' => $faker->paragraph],
                 'created_at'            => now(),
                 'updated_at'            => now(),
             ]);
