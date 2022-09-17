@@ -45,7 +45,7 @@ return [
     'Package_Benefits' => 'Package benefits',
     'Use_the_domain_checker_to_search_for_available_domains' => 'Use the domain checker to search for available domains',
     'Just_type_the_domain_name_you_want_and_find_out_immediately_if_it_is_available.' => 'Just type the domain name you want and find out immediately if it is available.',
-    'Search_for_the_desired_domain_name' => 'Search for the desired domain name',
+    'Search_for_the_desired_domain_name' => 'Search for the domain name',
     'Search' => 'Search',
     'Just_type_your_domain_name_to_be_linked_to_the_package' => 'Just type your domain name to be linked to the package',
     'Enter_your_domain' => 'Enter your domain',
@@ -65,7 +65,7 @@ return [
     'Coupon_removal' => 'Coupon removal',
     'Transaction_details' => 'Transaction details',
     'Print' => 'Print',
-    'Holla' => 'Holla',
+    'Holla' => 'Holla Information Technology Corporation',
     'Transaction_code' => 'Transaction code',
     'Today_date' => 'Today date',
     'Your_order' => 'Your order',
@@ -77,6 +77,7 @@ return [
     'Cart' => 'Cart',
 
 
+    'There_are_no_order_in_the_cart' =>'There are no order in the cart',
 
 
 

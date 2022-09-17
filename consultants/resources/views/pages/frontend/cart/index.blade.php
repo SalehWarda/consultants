@@ -40,7 +40,7 @@
 
                         <tr>
                             <td class="pl-0 border-light" colspan="6">
-                                <p class="text-center">لا يوجد طلبات في السلة.</p>
+                                <p class="text-center">{{trans('site.There_are_no_order_in_the_cart')}}.</p>
                             </td>
 
                         </tr>

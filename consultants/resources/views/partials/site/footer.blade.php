@@ -6,11 +6,12 @@
         <div class="container">
             <div class="row gy-4">
                 <div class="col-lg-5 col-md-12 footer-info">
-                    <a href="index.html" class="logo d-flex align-items-center">
-                        <img src="{{asset('assets/site/img/logo.png')}}" alt="">
-                        <span>FlexStart</span>
+                    <a href="{{route('site.home')}}" class="logo align-items-center">
+                        <img src="{{asset('assets/site/img/holla.png')}}" alt=""><br>
+                        <p style="font-size: 13px; color: #012970" >{{trans('site.Holla')}}</p>
                     </a>
-                    <br>
+
+                    <br><br>
                     <p>{!! $about->body_one !!}</p>
                     <div class="social-links mt-3">
                         <a href="https://twitter.com/" target="_blank" class="twitter"><i class="bi bi-twitter"></i></a>

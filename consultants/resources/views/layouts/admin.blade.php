@@ -7,9 +7,9 @@
     <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesdesign" name="author" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset('assets/site/img/favicon_io/favicon-32x32.png')}}">
+    <link rel="shortcut icon" href="{{asset('assets/site/img/favicon-32x32.png')}}">
 
     <!-- jquery.vectormap css -->
     <link href="{{asset('assets/admin/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css')}}" rel="stylesheet" type="text/css" />

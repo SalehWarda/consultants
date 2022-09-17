@@ -3,7 +3,7 @@
 @extends('layouts.app')
 
 @section('title')
-    نبذة عنا
+    {{trans('site.About_Us')}}
 @endsection
 
 
@@ -14,10 +14,10 @@
         <div class="container d-flex justify-content-between">
 
             <ol>
-                <li><a href="{{route('site.home')}}">الرئيسية</a></li>
-                <li>نبذة عنا</li>
+                <li><a href="{{route('site.home')}}">{{trans('site.Home')}}</a></li>
+                <li>{{trans('site.About_Us')}}</li>
             </ol>
-            <h2>نبذة عنا</h2>
+            <h2>{{trans('site.About_Us')}}</h2>
 
         </div>
     </section><!-- End Breadcrumbs -->
@@ -29,7 +29,7 @@
             <div class="container" data-aos="fade-up">
 
                 <header class="section-header">
-                    <p>تفاصيل أكثر عنا</p>
+                    <p>{{trans('site.Get_to_know_us')}}</p>
                 </header>
 
                 <div class="row gy-4">

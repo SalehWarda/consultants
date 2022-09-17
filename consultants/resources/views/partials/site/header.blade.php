@@ -2,8 +2,7 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
         <a href="{{route('site.home')}}" class="logo d-flex align-items-center">
-            <img src="{{asset('assets/site/img/logo.png')}}" alt="">
-            <span>FlexStart</span>
+            <img src="{{asset('assets/site/img/holla.png')}}" alt="">
         </a>
 
         <nav id="navbar" class="navbar">

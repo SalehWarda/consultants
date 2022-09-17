@@ -13,7 +13,7 @@ class PackagesController extends Controller
     public function index()
     {
 
-        $packages = Package::paginate(10);
+        $packages = Package::orderBy('id','Desc')->paginate(10);
         return view('pages.backend.packages.index',compact('packages'));
     }
 

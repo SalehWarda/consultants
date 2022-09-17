@@ -37,7 +37,7 @@ Route::group(
         Route::group(['middleware' => 'check_cart'], function () {
             Route::get('/checkout', [HomeController::class, 'checkout'])->name('site.checkout');
             Route::post('/checkout/payment', [PaymentWayController::class, 'checkout_now'])->name('site.checkout.payment');
-            Route::get('/checkout/completed', [PaymentWayController::class, 'completed'])->name('site.checkout.complete');
+            Route::get('/checkout/{order_id}/completed', [PaymentWayController::class, 'completed'])->name('site.checkout.complete');
             Route::get('/checkout/{order_id}/cancelled', [PaymentWayController::class, 'cancelled'])->name('site.checkout.cancel');
 
 

@@ -78,7 +78,7 @@ return [
 
 
 
-    //Order
+    'There_are_no_order_in_the_cart' =>'لا يوجد طلبات في السلة',
 
 
 

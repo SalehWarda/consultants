@@ -38,7 +38,7 @@ class AppServiceProvider extends ServiceProvider
         });
         view()->composer('partials.site.footer',function ($view){
 
-            $view->with('packages',Package::get());
+            $view->with('packages',Package::latest()->take(4)->get());
         });
     }
 }

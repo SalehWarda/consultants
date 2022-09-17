@@ -68,7 +68,7 @@
                                                         <div class="col-sm-6 text-sm-right">
                                                             <p class="inv-list-number"><span class="inv-title">{{trans('site.Transaction_code')}} : </span>
                                                                 <span
-                                                                    class="inv-number">#{{$response['tran_ref']}}</span>
+                                                                    class="inv-number">#{{$response['tran_ref'] ?? ''}}</span>
                                                             </p>
                                                         </div>
 
@@ -97,9 +97,9 @@
 
 
                                                         <div class="col-xl-8 col-lg-7 col-md-6 col-sm-4">
-                                                            <p class="inv-customer-name">{{$response['customer_details']['name']}}</p>
-                                                            <p class="inv-street-addr">{{$response['customer_details']['email']}}</p>
-                                                            <p class="inv-email-address">{{$response['customer_details']['phone']}}</p>
+                                                            <p class="inv-customer-name">{{$response['customer_details']['name'] ?? ''}}</p>
+                                                            <p class="inv-street-addr">{{$response['customer_details']['email'] ?? ''}}</p>
+                                                            <p class="inv-email-address">{{$response['customer_details']['phone'] ?? ''}}</p>
                                                         </div>
 
 
@@ -125,9 +125,9 @@
 
                                                             <tr>
                                                                 <td>1</td>
-                                                                <td>{{$response['cart_id']}}</td>
-                                                                <td class="text-right">{{$response['cart_amount']}}
-                                                                    /{{$response['cart_currency']}}</td>
+                                                                <td>{{$response['cart_id'] ?? ''}}</td>
+                                                                <td class="text-right">{{$response['cart_amount'] ?? ''}}
+                                                                    /{{$response['cart_currency'] ?? ''}}</td>
                                                             </tr>
 
                                                             </tbody>
@@ -167,7 +167,7 @@
                                     <div class="row">
                                         <div class="col-xl-12 col-md-3 col-sm-6">
                                             <img src="{{asset('assets/images/clickpay-logo.svg')}}" width="100"><br><br>
-                                            <a href="{{$response['redirect_url']}}" class="btn btn-dark btn-send"><i
+                                            <a href="{{$response['redirect_url'] ?? ''}}" class="btn btn-dark btn-send"><i
                                                     class="bi bi-currency-exchange" style="font-size: 1.2rem"></i> {{trans('site.Pay_now')}}</a>
                                         </div>
                                         <div class="col-xl-12 col-md-3 col-sm-6">
