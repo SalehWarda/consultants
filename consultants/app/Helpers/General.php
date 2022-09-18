@@ -36,6 +36,7 @@ function getNumbers()
         'discount_code' => $discount_code,
         'shipping' => (float)$shipping,
         'shipping_code' => $shipping_code,
-        'total' => (float)$total,
+
+        'total' => (float)$total * 4.5,
     ]);
 }

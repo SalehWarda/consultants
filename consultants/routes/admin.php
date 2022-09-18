@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Backend\MailController;
 use App\Http\Controllers\Backend\OrdersController;
 use App\Http\Controllers\Backend\PackagesController;
+use App\Http\Controllers\Backend\PrivacyPolicyController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -34,6 +35,8 @@ Route::group(['prefix' => 'admin'],function (){
     Route::group(['middleware' => 'auth:admin'], function () {
 
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+        Route::get('/profile', [DashboardController::class, 'profile'])->name('admin.profile');
+        Route::patch('/profile', [DashboardController::class, 'profileUpdate'])->name('admin.update.profile');
         Route::post('/logout', [LoginController::class, 'logout'])->name('admin.logout');
 
 
@@ -90,7 +93,13 @@ Route::group(['prefix' => 'admin'],function (){
             Route::delete('/delete', [OrdersController::class, 'destroy'])->name('admin.orders.destroy');
             Route::get('/package-order-details/{id}', [OrdersController::class, 'packageOrderDetails'])->name('admin.orders.package-order-details');
         });
+        ############################### Privacy-Policy Route ###############################
 
+        Route::group(['prefix' => 'privacy-and-usage-policy'], function () {
+
+            Route::get('/', [PrivacyPolicyController::class, 'index'])->name('admin.privacy');
+            Route::patch('/update', [PrivacyPolicyController::class, 'update'])->name('admin.privacy.update');
+        });
 
     });
 

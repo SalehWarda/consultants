@@ -1,13 +1,9 @@
 @extends('layouts.app')
 @section('style')
 
-    @if (App::getLocale() == 'ar')
     <link href="{{asset('assets/site/invoice/css/apps/invoice-preview.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('assets/site/invoice/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-    @else
-        <link href="{{asset('assets/site/invoice/en/assets/css/apps/invoice-preview.css')}}" rel="stylesheet" type="text/css"/>
-        <link href="{{asset('assets/site/invoice/en/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-    @endif
+
 
 @endsection
 
@@ -135,6 +131,51 @@
                                                     </div>
                                                 </div>
 
+                                                <div class="inv--product-table-section">
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <thead class="">
+
+
+                                                            <tr>
+                                                                <th ><span style="font-size: 15px">محتويات الطلب</span></th>
+                                                                <th ></th>
+                                                                <th ></th>
+
+                                                            </tr>
+
+                                                            <tr>
+
+                                                                    <th scope="col">#</th>
+                                                                    <th scope="col">{{trans('dashboard.Order')}}</th>
+                                                                    <th class="text-right" scope="col">{{trans('site.Price')}}</th>
+
+
+                                                            </tr>
+
+
+                                                            </thead>
+                                                            <tbody>
+                                                            @foreach(\Gloudemans\Shoppingcart\Facades\Cart::content() as $item)
+                                                            <tr>
+                                                                <td>{{$loop->iteration}}</td>
+                                                                <td>{{$item->name}}</td>
+                                                                <td class="text-right">{{   $item->price}}</td>
+
+                                                            </tr>
+                                                            @endforeach
+
+                                                            <tr>
+                                                                <th ><span style="font-size: 15px"><strong style="color: red">ملاحظة: </strong> عند عدم وجود شعار سيتم عمل شعار خاص بك بتكلفة 700 ريال سعودي مضافة لسعر الطلب.</span></th>
+                                                                <th ></th>
+                                                                <th ></th>
+
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+
 
                                                 <div class="inv--note">
 
@@ -196,8 +237,6 @@
 
 @section('scripts')
 
-
-    @if (App::getLocale() == 'ar')
         <script src="{{asset('assets/site/invoice/js/libs/jquery-3.1.1.min.js')}}"></script>
         <script src="{{asset('assets/site/invoice/bootstrap/js/popper.min.js')}}"></script>
         <script src="{{asset('assets/site/invoice/bootstrap/js/bootstrap.min.js')}}"></script>
@@ -212,19 +251,6 @@
         <script src="{{asset('assets/site/invoice/js/custom.js')}}"></script>
         <script src="{{asset('assets/site/invoice/js/apps/invoice-preview.js')}}"></script>
 
-    @else
-        <script src="{{asset('assets/site/invoice/en/js/libs/jquery-3.1.1.min.js')}}"></script>
-        <script src="{{asset('assets/site/invoice/en/bootstrap/js/popper.min.js')}}"></script>
-        <script src="{{asset('assets/site/invoice/en/bootstrap/js/bootstrap.min.js')}}"></script>
-        <script src="{{asset('assets/site/invoice/en/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
-        <script src="{{asset('assets/site/invoice/en/js/app.js')}}"></script>
 
-        <script>
-            $(document).ready(function () {
-                App.init();
-            });
-        </script>
-        <script src="{{asset('assets/site/invoice/en/js/custom.js')}}"></script>
-        <script src="{{asset('assets/site/invoice/en/js/apps/invoice-preview.js')}}"></script>    @endif
 
 @endsection

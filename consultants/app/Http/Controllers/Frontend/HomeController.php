@@ -9,6 +9,7 @@ use App\Models\Backend\Admin;
 use App\Models\Backend\Contact;
 use App\Models\Backend\Mail;
 use App\Models\Backend\Package;
+use App\Models\Backend\PrivacyAndPolicy;
 use App\Notifications\Frontend\Mail\MailCreateNotification;
 use Illuminate\Http\Request;
 
@@ -60,5 +61,17 @@ class HomeController extends Controller
     {
         $about = About::first();
         return view('pages.frontend.about.about_details',compact('about'));
+    }
+
+    public function privacy()
+    {
+        $privacy = PrivacyAndPolicy::first();
+        return view('pages.frontend.policy.privacy_policy',compact('privacy'));
+    }
+
+    public function terms()
+    {
+        $trems = PrivacyAndPolicy::first();
+        return view('pages.frontend.terms.terms',compact('trems'));
     }
 }

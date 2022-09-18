@@ -108,6 +108,23 @@
                     </ul>
                 </li>
 
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="fas fa-comment-dots"></i>
+                        <span>سياسة الخصوصية والإستخدام</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+
+
+                        <li><a href="{{route('admin.privacy')}}">سياسة الخصوصية والإستخدام</a></li>
+
+
+                        </li>
+
+                    </ul>
+                </li>
+
             </ul>
         </div>
         <!-- Sidebar -->

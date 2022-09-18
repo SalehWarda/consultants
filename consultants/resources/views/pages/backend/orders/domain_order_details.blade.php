@@ -40,7 +40,7 @@
                                 <div class="col-12">
                                     <div class="invoice-title">
                                         <h3>
-                                            <p>{{$package->title}}</p>
+                                            <p>{{$order->domain}}</p>
                                         </h3>
                                     </div>
                                     <hr>
@@ -69,9 +69,9 @@
                                                     <tbody>
                                                         <tr>
 
-                                                            <td>{{$package->title}}</td>
-                                                            <td>{{$package->price}}/ USD</td>
-                                                            <td>{{$package->time_period}}</td>
+{{--                                                            <td>{{$package->title}}</td>--}}
+{{--                                                            <td>{{$package->price}}/ USD</td>--}}
+{{--                                                            <td>{{$package->time_period}}</td>--}}
 
 
                                                         </tr>

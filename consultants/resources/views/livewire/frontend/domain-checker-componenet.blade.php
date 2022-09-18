@@ -1,5 +1,5 @@
 
-    <section class="col-md-8 inner-page" x-data="{ showSearch: false, showInputExistingDomain: false }">
+    <section class="col-md-8 inner-page" x-data="{ showSearch: false, showInputExistingDomain: false, logo:false }">
         <div class=" container" >
 
             <div class="alert alert-light" role="alert">
@@ -12,13 +12,13 @@
 
                 <div class="col-md-12 ">
                     <div class="form-check" >
-                        <input class="form-check-input" type="radio" wire:click="removeData" name="flexRadioDefault"  id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio"  name="flexRadioDefault"  id="flexRadioDefault1">
                         <label x-on:click="showSearch = ! showSearch"  class="form-check-label"  for="flexRadioDefault1">
                             <span><h6 class="alert-heading"> {{trans('site.New_domain_name')}}</h6></span>
                         </label>
                     </div>
                     <div class="form-check ">
-                        <input class="form-check-input" type="radio" wire:click="removeData" name="flexRadioDefault" id="flexRadioDefault2" >
+                        <input class="form-check-input" type="radio"  name="flexRadioDefault" id="flexRadioDefault2" >
                         <label x-on:click="showInputExistingDomain = ! showInputExistingDomain" class="form-check-label " for="flexRadioDefault2">
                             <span><h6 class="alert-heading">{{trans('site.Domain_name_exists')}}</h6></span>
                         </label>
@@ -28,10 +28,12 @@
 
             </div>
 
-            <section class="inner-page" x-show="showSearch" x-on:click.away="showSearch = false">
+            <section class="inner-page" x-show="showSearch" >
                 <h4 style="margin-right: 20px">{{trans('site.New_domain_name')}}</h4>
                 <hr>
                 <div class="container">
+
+
                     <footer id="footer" class="footer" >
                         <div class="footer-newsletter">
                             <div class="container">
@@ -104,7 +106,7 @@
                 </div>
             </section>
 
-            <section class="inner-page" x-show="showInputExistingDomain" x-on:click.away="showInputExistingDomain = false">
+            <section class="inner-page" x-show="showInputExistingDomain" >
                 <h4 style="margin-right: 20px">{{trans('site.Domain_name_exists')}}</h4>
                 <hr>
                 <div class="container">
@@ -118,8 +120,9 @@
                                     <div class="col-lg-6">
 
                                         <form>
-                                            <input class="form-control" wire:model="existingDomain" type="text" placeholder="{{trans('site.Enter_your_domain')}}">
-                                            <input type="submit" wire:click.prevent="addToCartExisitngDomain()" value="{{trans('site.Domain_Connection')}}">
+                                            <input class="form-control" wire:model="existingDomain" type="text" placeholder="{{trans('site.Enter_your_domain')}}"><br>
+                                            <input class="form-control" wire:model="dns" type="text" placeholder="أدخل ال دي ان اس"> <br>
+                                            <button class="btn btn-primary" type="submit" wire:click.prevent="addToCartExisitngDomain()" >{{trans('site.Domain_Connection')}}</button>
 
                                         </form>
 
@@ -134,6 +137,94 @@
                 </div>
             </section>
 
+
+
+
+            <div class="alert alert-light" role="alert">
+                <h4 class="alert-heading">3. بيانات إضافية</h4>
+                <h6 class="alert-heading">الإجابة على هذه البيانات إجباري لإتمام طلبك.</h6>
+                <br>
+                <br>
+
+
+
+                <div class="col-md-12 ">
+                    <h6 class="alert-heading">هل أنت مسجل في السجل الضريبي:</h6>
+                    <div class="form-check" >
+                        <input class="form-check-input" type="radio" value="yes" wire:model="tax"  name="tax"  id="taxYes">
+                        <label  for="taxYes">
+                            <span><h6 class="alert-heading"> نعم</h6></span>
+                        </label>
+
+                    </div>
+
+                    <div class="form-check ">
+                        <input class="form-check-input" type="radio" value="no" wire:model="tax"  name="tax" id="taxNo" >
+                        <label  class="form-check-label " for="taxNo">
+                            <span><h6 class="alert-heading">لا</h6></span>
+                        </label>
+
+                    </div>
+                    @error('tax')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+
+
+                <hr>
+
+                <div class="col-md-12 ">
+                    <h6 class="alert-heading">هل يوجد لديك شعار؟</h6>
+                    <div class="form-check" x-on:click="logo = ! logo" >
+                        <input class="form-check-input" type="radio" value="yes" wire:model="logo"  name="logo"  id="logoYes">
+                        <label  for="logoYes" >
+                            <span><h6 class="alert-heading"> نعم</h6></span>
+                        </label>
+                    </div>
+                    <div class="form-control" x-show="logo" x-on:click.away="logo = false">
+                        <input class="form-control-file" type="file" wire:model="logoFile"  name="logo"  >
+                    </div>
+
+
+                    <div class="form-check ">
+                        <input class="form-check-input" type="radio" value="no" wire:model="logo" name="logo" id="logoNo" >
+                        <label  class="form-check-label " for="logoNo">
+                            <span><h6 class="alert-heading">لا</h6></span>
+                        </label>
+                    </div>
+
+                    @error('logo')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+
+                <hr>
+                <div class="col-md-12 ">
+                    <h6 class="alert-heading">يرجى إختيار ثلاثة ألوان ؟</h6><br>
+                    <div class="d-flex justify-content-between">
+                        <div class="form-control"  >
+
+                            <input class="form-control" type="color" wire:model="color_one" name="color_one"  id="color">
+
+                            @error('color_one')
+                            <span class="text-danger">{{$message}}</span>
+                            @enderror
+                        </div>
+                        <div class="form-control" style="margin-left: 5px; margin-right: 5px" >
+                            <input class="form-control" type="color"  wire:model="color_tow" name="color_tow"  id="color">
+
+                        </div>
+                        <div class="form-control"  >
+                            <input class="form-control" type="color" wire:model="color_three" name="color_three"  id="color">
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
         </div>
     </section>
 

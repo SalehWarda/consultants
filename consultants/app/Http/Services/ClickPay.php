@@ -2,9 +2,11 @@
 
 namespace App\Http\Services;
 
+use App\Models\Backend\Admin;
 use App\Models\Backend\Coupon;
 use App\Models\Backend\Order;
 use App\Models\Backend\OrderTransaction;
+use App\Notifications\Frontend\OrderCreatNotification;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use http\Client;
 
@@ -88,20 +90,12 @@ class ClickPay
 
             ]);
 
-//            Admin::whereStatus(true)->each(function ($admin, $key) use ($order) {
-//                $admin->notify(new OrderCreatedNotification($order));
-//            });
+            Admin::query()->each(function ($admin, $key) use ($order) {
+                $admin->notify(new OrderCreatNotification($order));
+            });
 
-//
-//
-//            $data = $order->toArray();
-//            $data['currency_symbol'] = $order->currency == 'USD' ? '$' : $order->currency;
-//            $pdf = PDF::loadView('layouts.invoice', $data);
-//            $saved_file = storage_path('app/pdf/files/' . $data['ref_id'] . '.pdf');
-//            $pdf->save($saved_file);
-//
-//            $customer = User::find($order->user_id);
-//            $customer->notify(new OrderThanksNotification($order, $saved_file));
+
+
 
 
 

@@ -25,7 +25,7 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 
-    @if (App::getLocale() == 'ar')
+
     <!-- Vendor CSS Files -->
     <link href="{{asset('assets/site/vendor/aos/aos.css')}}" rel="stylesheet">
     <link href="{{asset('assets/site/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -37,18 +37,7 @@
     <!-- Template Main CSS File -->
     <link href="{{asset('assets/site/css/style.css')}}" rel="stylesheet">
 
-    @else
-        <link href="{{asset('assets/site/en/vendor/aos/aos.css')}}" rel="stylesheet">
-        <link href="{{asset('assets/site/en/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-        <link href="{{asset('assets/site/en/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
-        <link href="{{asset('assets/site/en/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
-        <link href="{{asset('assets/site/en/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
-        <link href="{{asset('assets/site/en/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
 
-        <!-- Template Main CSS File -->
-        <link href="{{asset('assets/site/en/css/style.css')}}" rel="stylesheet">
-
-    @endif
     <!-- =======================================================
     * Template Name: FlexStart - v1.10.1
     * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/

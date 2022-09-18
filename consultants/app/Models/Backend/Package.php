@@ -2,6 +2,7 @@
 
 namespace App\Models\Backend;
 
+use App\Models\PackageDetail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -20,4 +21,6 @@ class Package extends Model
     {
         return $this->belongsToMany(Order::class,'order_package');
     }
+
+
 }

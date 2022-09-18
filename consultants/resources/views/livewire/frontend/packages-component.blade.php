@@ -3,7 +3,7 @@
 
         @foreach($packages as $package)
             <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100" >
-                <div class="box" >
+                <div class="box" style="height: 500px">
                     <h3 style="color: #07d5c0;">{{$package->title}}</h3>
                     <div class="price"><sup>$</sup>{{$package->price}}<span> / {{$package->time_period}}</span></div>
                     <br>

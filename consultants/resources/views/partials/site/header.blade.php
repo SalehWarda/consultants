@@ -73,30 +73,10 @@
                         </li>
 
 
-                        <li class="dropdown">
-                            <a href="#">
-                                <i class="ri-notification-3-fill" style="font-size: 1.2rem; margin-left: -5px"></i>
-                                <span class="badge bg-danger rounded-circle " style="margin-bottom: 18px;">0</span>
-                            </a>
-                            <ul style="margin-right: -250px; margin-top: 10px">
-                                <li><a class="dropdown-item d-flex align-items-center " href="{{route('site.customer.profile')}}">
 
-                                        <div style="margin-left: 15px">
-                                            <div class="icon-circle bg-dark">
-                                                <i class="ri-file-line text-dark" style="font-size: 2.2rem"></i>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="small text-gray-500">2/5/2021</div>
-                                            <span class="font-weight-bold">Order ref#123596 status is under proccess</span>
-                                        </div>
-                                    </a>
-                                </li>
+                            <livewire:frontend.header.notification-component/>
 
 
-
-                            </ul>
-                        </li>
                         <li class="dropdown">
                             <livewire:frontend.cart-component/>
 
@@ -173,30 +153,7 @@
                         </li>
 
 
-                        <li class="dropdown">
-                            <a href="#">
-                                <i class="ri-notification-3-fill" style="font-size: 1.2rem; margin-left: -5px"></i>
-                                <span class="badge bg-danger rounded-circle " style="margin-bottom: 18px;">0</span>
-                            </a>
-                            <ul style="margin-right: -250px; margin-top: 10px">
-                                <li><a class="dropdown-item d-flex align-items-center " href="{{route('site.customer.profile')}}">
-
-                                        <div style="margin-left: 15px">
-                                            <div class="icon-circle bg-dark">
-                                                <i class="ri-file-line text-dark" style="font-size: 2.2rem"></i>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="small text-gray-500">2/5/2021</div>
-                                            <span class="font-weight-bold">Order ref#123596 status is under proccess</span>
-                                        </div>
-                                    </a>
-                                </li>
-
-
-
-                            </ul>
-                        </li>
+                        <livewire:frontend.header.notification-component/>
 
                         <li class="dropdown">
                             <livewire:frontend.cart-component/>

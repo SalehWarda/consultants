@@ -17,6 +17,13 @@ return new class extends Migration
             $table->foreignId('order_id')->nullable()->constrained()->cascadeOnDelete();
             $table->foreignId('package_id')->nullable()->constrained()->nullOnDelete();
             $table->string('domain')->nullable();
+            $table->string('color_one')->nullable();;
+            $table->string('color_tow')->nullable();;
+            $table->string('color_three')->nullable();;
+            $table->string('logo')->nullable();
+            $table->string('logo_file')->nullable();
+            $table->string('tax')->nullable();
+            $table->string('dns')->nullable();
         });
     }
 

@@ -28,6 +28,8 @@
                         <li><i class="bi bi-chevron-right scrollto"></i> <a href="#about">{{trans('site.About_Us')}}</a></li>
                         <li><i class="bi bi-chevron-right scrollto"></i> <a href="#pricing">{{trans('site.Services')}}</a></li>
                         <li><i class="bi bi-chevron-right scrollto"></i> <a href="#contact">{{trans('site.Contact_Us')}}</a></li>
+                        <li><i class="bi bi-chevron-right scrollto"></i> <a href="{{route('site.privacy')}}">بيان الخصوصية</a></li>
+                        <li><i class="bi bi-chevron-right scrollto"></i> <a href="{{route('site.terms')}}">الشروط والأحكام</a></li>
 {{--                        <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>--}}
 {{--                        <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>--}}
                     </ul>

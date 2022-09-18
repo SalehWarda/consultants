@@ -31,7 +31,7 @@
                     <h1 data-aos="fade-up">We provide modern solutions to grow your business</h1>
                     <h2 data-aos="fade-up" data-aos-delay="400">We are a team of talented designers making websites using the latest technology</h2>
                     <div data-aos="fade-up" data-aos-delay="600">
-                        <div class="text-center text-lg-start">
+                        <div class="text-center text-lg-end">
                             <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-end align-self-center">
                                 <span >{{trans('site.Lets_Go')}}</span>
                                 <i class="bi bi-arrow-right"></i>
@@ -78,7 +78,7 @@
                             <h3>{{trans('site.Get_to_know_us')}}</h3>
                             <h2>We are one of Hilla's IT products that was established and built to serve trainers, consultants, lawyers and everyone who provides services.</h2>
                             <br>
-                            <div class="text-center text-lg-start">
+                            <div class="text-center text-lg-end">
                                 <a href="{{route('site.about')}}" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
                                     <span>{{trans('site.Read_More')}}</span>
                                     <i class="bi bi-arrow-right"></i>

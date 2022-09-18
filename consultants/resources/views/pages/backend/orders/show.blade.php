@@ -182,12 +182,100 @@
                         <tbody>
 
                         @forelse($domain as $order)
-                            <tr>
-                                <td><a href="#">{{ $order->domain  }}</a></td>
-                            </tr>
+                            @if($order->domain != '')
+                                <tr>
+                                    <td><a href="#">{{ $order->domain  }}</a><br><small>{{ $order->dns  }}</small></td>
+                                </tr>
+                            @endif
+
                         @empty
                             <tr>
-                                <td colspan="1">No Domains Found ... </td>
+                                <td colspan="1">{{trans('dashboard.No_packages_found')}}</td>
+                            </tr>
+                        @endforelse
+
+
+                        </tbody>
+                    </table>
+
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>الألوان</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        @forelse($domain as $order)
+                            @if($order->domain != '')
+                                <tr>
+                                    <td><a href="#">{{ $order->color_one  }}</a><br><small>{{ $order->color_tow  }}</small><br><small>{{ $order->color_three  }}</small></td>
+                                </tr>
+                            @endif
+
+                        @empty
+                            <tr>
+                                <td colspan="1">{{trans('dashboard.No_packages_found')}}</td>
+                            </tr>
+                        @endforelse
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>الشعار</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        @forelse($domain as $order)
+                            @if($order->domain != '')
+                                <tr>
+                                    <td>
+                                        @if($order->logo == "yes")
+                                            <img
+                                                src="{{asset('assets/images/packages/'.$order->logo_file)}}"
+                                                width="60" height="60" alt="">
+                                        @else
+                                            <span>no logo</span>
+                                        @endif
+                                    </td>
+                                </tr>
+                            @endif
+
+                        @empty
+                            <tr>
+                                <td colspan="1">{{trans('dashboard.No_packages_found')}}</td>
+                            </tr>
+                        @endforelse
+
+
+                        </tbody>
+                    </table>
+
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>الضريبة</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        @forelse($domain as $order)
+                            @if($order->domain != '')
+                                <tr>
+
+                                    <td><a href="#">{{ $order->tax  }}</a></td>
+
+
+                                </tr>
+                            @endif
+
+                        @empty
+                            <tr>
+                                <td colspan="1">{{trans('dashboard.No_packages_found')}}</td>
                             </tr>
                         @endforelse
 

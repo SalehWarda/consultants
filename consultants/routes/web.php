@@ -57,6 +57,8 @@ Route::group(
 
     Route::post('/search-domain', [PackageController::class, 'search_domain'])->name('site.search_domain');
     Route::get('/about-us', [HomeController::class, 'about'])->name('site.about');
+    Route::get('/privacy-and-policy', [HomeController::class, 'privacy'])->name('site.privacy');
+    Route::get('/terms', [HomeController::class, 'terms'])->name('site.terms');
 
 
 });
