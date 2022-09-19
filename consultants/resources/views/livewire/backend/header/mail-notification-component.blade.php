@@ -6,8 +6,15 @@
 
         @if ($unReadNotifications)
 
-            <span class="badge rounded-pill bg-danger float-end" style="padding-left: 0.2em;
+            @if(app()->getLocale() == 'ar')
+                <span class="badge rounded-pill bg-danger float-end" style="padding-left: 0.2em;
                     padding-right: 0.4em; left: 10px">{{ $unReadNotificationsCount }}</span>
+
+            @else
+                <span class="badge rounded-pill bg-danger float-end" style="padding-left: 0.2em;
+                    padding-right: 0.4em; right: 4px">{{ $unReadNotificationsCount }}</span>
+
+            @endif
         @endif
 
     </button>
@@ -18,7 +25,7 @@
         <div class="p-3">
             <div class="row align-items-center">
                 <div class="col">
-                    <h6 class="m-0"> البريد الوارد </h6>
+                    <h6 class="m-0"> {{trans('site.incoming_mail')}} </h6>
                 </div>
 
             </div>
@@ -36,7 +43,7 @@
                                                 </span>
                             </div>
                             <div class="flex-1">
-                                <h6 class="mb-1">لديك بريد وارد من {{$notification->data['customer_name']}} </h6>
+                                <h6 class="mb-1"> {{trans('site.You_have_incoming_mail_from')}} {{$notification->data['customer_name']}} </h6>
                                 <div class="font-size-12 text-muted">
                                     <p class="mb-0"><i class="mdi mdi-clock-outline"></i> {{$notification->data['created_date']}}</p>
                                 </div>
@@ -49,7 +56,7 @@
                 <div class="p-2 border-top">
                     <div class="d-grid">
                         <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
-                            لا يوجد بريد وارد حتى الآن.
+                            {{trans('site.No_Mails_Found!')}}.
                         </a>
                     </div>
                 </div>

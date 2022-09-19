@@ -81,7 +81,54 @@ return [
     'There_are_no_order_in_the_cart' =>'لا يوجد طلبات في السلة',
 
 
+    'Privacy_and_Usage_Policy' => 'سياسة الخصوصية و الإستخدام',
+    'Privacy_Policy' => 'سياسة الخصوصية ',
+    'Term_of_usage' => ' شروط الإستخدام',
 
+
+
+    'Privacy_and_Usage_Policy_Arabic' => 'سياسة الخصوصية بالعربية',
+    'Privacy_and_Usage_Policy_English' => 'سياسة الخصوصية بالإنجليزية',
+    'Term_Arabic' => 'شروط الإستخدام بالعربية',
+    'Term_English' => ' شروط الإستخدام بالإنجليزية',
+
+
+    'Saving_changes' => 'حفظ التغييرات',
+
+     'Profile_personly'=>'الملف الشخصي',
+     'personal_information'=>'المعلومات الشخصية',
+     'your_list'=>' قائمتك',
+     'your_information'=>' بياناتك',
+
+
+     'Additional_data'=>' بيانات إضافية',
+     'Answering_this_information_is_mandatory_to_complete_your_application'=>' الإجابة على هذه البيانات إجباري لإتمام طلبك',
+     'Are_you_registered_in_the_tax_register'=>'هل أنت مسجل في السجل الضريبي:',
+     'yes'=>' نعم',
+     'no'=>' لا',
+     'Do_you_have_a_logo'=>' هل يوجد لديك شعار؟',
+     'Please_choose_three_colors'=>' يرجى إختيار ثلاثة ألوان ؟',
+
+
+    'This_domain_is' => 'هذا المجال ',
+    'available' => ' متاح !',
+    'This_domain_is_taken' => 'هذا المجال مأخوذ!',
+    'Sorry, this_domain_is_already_taken' => 'عذرا, هذا المجال مأخوذ بالفعل',
+
+
+    'Notifications' => 'الإشعارات',
+    'No_Notifications_Found!' => 'لم يتم العثور على إشعارات',
+    'All_rights_reserved_to_the_Foundation' => 'جميع الحقوق محفوظة لمؤسسة',
+    'Holla_Company' => 'مؤسسة حُلََّة لتقنية المعلومات',
+    'A_new_order_with_amount' => 'طلب جديد بميلغ',
+    'from' => 'من',
+
+
+       'incoming_mail' => 'البريد الوارد',
+       'You_have_incoming_mail_from' => 'لديك بريد وارد من',
+    'No_Mails_Found!' => 'لم يتم العثور على أي بريد وارد',
+    'Developed_by' => 'تم التطوير بواسطة',
+    'Remmeber_me' => 'تذكرني',
 
 
 

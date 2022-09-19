@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    الملف الشخصي
+    {{trans('site.Profile')}}
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0"> الملف الشخصي</h4>
+                        <h4 class="mb-sm-0"> {{trans('site.Profile')}}</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item active"> الملف الشخصي</li>
+                                <li class="breadcrumb-item active"> {{trans('site.Profile')}}</li>
                                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">{{trans('site.Home')}}</a></li>
                             </ol>
                         </div>
@@ -40,7 +40,7 @@
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    <label for="name_ar" class="col-sm-2 col-form-label">الإسم :</label>
+                                    <label for="name_ar" class="col-sm-2 col-form-label">{{trans('site.Full_name')}} :</label>
                                     <input class="form-control" type="text"
                                             name="name"
                                            value="{{auth('admin')->user()->name}}"
@@ -59,7 +59,7 @@
                                 <div class="col-md-6">
                                     <label for="email" class="col-sm-2 col-form-label">
 
-                                        البريد الإلكتروني:</label>
+                                        {{trans('site.Email')}}:</label>
                                     <input class="form-control" type="email"  name="email"
                                            value="{{auth('admin')->user()->email}}"
                                            id="email">
@@ -69,7 +69,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="mobile" class="col-sm-2 col-form-label">
-                                        الهاتف:</label>
+                                        {{trans('site.Mobile')}}:</label>
                                     <input class="form-control" type="text" name="mobile"
                                            value="{{auth('admin')->user()->mobile}}"
                                            id="mobile">
@@ -84,7 +84,7 @@
 
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="password" class="col-sm-2 col-form-label">كلمة السر:</label>
+                                    <label for="password" class="col-sm-2 col-form-label">{{trans('site.Password')}}:</label>
                                     <input class="form-control" type="password" name="password"  id="password">
                                     @error('password')
                                     <span class="text-danger">{{$message}}</span>
@@ -92,7 +92,7 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label for="password_confirmation" class="col-sm-2 col-form-label">تأكيد كلمة السر:</label>
+                                    <label for="password_confirmation" class=" col-form-label">{{trans('site.Password_Confirmation')}}:</label>
                                     <input class="form-control" type="password" name="password_confirmation"  id="password_confirmation">
                                     @error('password_confirmation')
                                     <span class="text-danger">{{$message}}</span>
@@ -107,7 +107,7 @@
 
 
                             <button class="btn ripple btn-secondary m-lg-2" type="submit" >
-                                حفظ التعديلات<i
+                                {{trans('site.Saving_changes')}}<i
                                     class="fe fe-plus"></i></button>
                             </form>
                         </div>

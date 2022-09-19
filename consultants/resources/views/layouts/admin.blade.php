@@ -145,7 +145,6 @@
 
 
 <!-- apexcharts -->
-<script src="{{asset('assets/admin/libs/apexcharts/apexcharts.min.js')}}"></script>
 
 <!-- jquery.vectormap map -->
 <script src="{{asset('assets/admin/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>

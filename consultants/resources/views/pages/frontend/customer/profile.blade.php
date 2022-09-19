@@ -3,7 +3,7 @@
 @extends('layouts.app')
 
 @section('title')
-    الملف الشخصي
+    {{trans('site.Profile_personly')}}
 @endsection
 
 
@@ -14,8 +14,8 @@
         <div class="container d-flex justify-content-between">
 
             <ol>
-                <li><a href="{{route('site.home')}}">الرئيسية</a></li>
-                <li>الملف الشخصي</li>
+                <li><a href="{{route('site.home')}}"> {{trans('site.Home')}}</a></li>
+                <li> {{trans('site.Profile_personly')}}</li>
             </ol>
             <h2 >{{auth('web')->user()->name}}</h2>
 
@@ -30,7 +30,7 @@
                 <div class="container" data-aos="fade-up">
 
                     <header class="section-header">
-                        <p>الملف الشخصي</p>
+                        <p> {{trans('site.Profile_personly')}}</p>
                     </header>
 
                     <div class="row gy-4">
@@ -41,7 +41,7 @@
                                 <div class="col-md-12">
                                     <div class="info-box d-flex justify-content-start" >
                                         <i class="bi bi-list"></i>
-                                        <h3 class="mt-2" style="margin-right: 10px;" >قائمتك</h3>
+                                        <h3 class="mt-2" style="margin-right: 10px;" > {{trans('site.your_list')}}</h3>
 
 
 
@@ -52,11 +52,11 @@
                                             <!-- Tabs -->
                                             <ul class="nav nav-pills mb-3 justify-content-start">
                                                 <li>
-                                                    <a class="nav-link mb-3 active" data-bs-toggle="pill" href="#tab1"><i class="ri-user-line" style="font-size: 1.2rem; color: black"></i><span style="color: black; font-size: 1.2rem; margin-right: 10px;">بياناتك </span></a>
+                                                    <a class="nav-link mb-3 active" data-bs-toggle="pill" href="#tab1"><i class="ri-user-line" style="font-size: 1.2rem; color: black"></i><span style="color: black; font-size: 1.2rem; margin-right: 10px;">{{trans('site.your_information')}} </span></a>
                                                 </li>
 
                                                 <li>
-                                                    <a class="nav-link" data-bs-toggle="pill" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="ri-logout-box-line" style="font-size: 1.2rem; color: black"></i><span style="color: black; font-size: 1.2rem; margin-right: 10px;"> خروج</span></a>
+                                                    <a class="nav-link" data-bs-toggle="pill" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="ri-logout-box-line" style="font-size: 1.2rem; color: black"></i><span style="color: black; font-size: 1.2rem; margin-right: 10px;"> {{trans('site.Logout')}}</span></a>
                                                     <form action="{{ route('site.logout.user') }}" method="post" id="logout-form"
                                                           class="d-none">
                                                         @csrf
@@ -86,55 +86,55 @@
                                     @method('PATCH')
                                     @csrf
                                     <header class="section-header">
-                                        <p>المعلومات الشخصية</p>
+                                        <p>{{trans('site.personal_information')}}</p>
                                     </header>
                                     <div class="row gy-4">
 
                                         <div class="col-md-6">
-                                            <p>الاسم كاملا:</p>
-                                            <input type="text" name="name" class="form-control" value="{{auth('web')->user()->name}}" placeholder="الإسم كاملا" >
+                                            <p>{{trans('site.Full_name')}}:</p>
+                                            <input type="text" name="name" class="form-control" value="{{auth('web')->user()->name}}" placeholder=" {{trans('site.Full_name')}}" >
                                             @error('name')
                                             <span class="text-danger">{{$message}}</span>
                                             @enderror
                                         </div>
 
                                         <div class="col-md-6 ">
-                                            <p>البريد الإلكتروني:</p>
-                                            <input type="email" class="form-control" name="email" value="{{auth('web')->user()->email}}" placeholder="البريد الإلكتروني" >
+                                            <p>{{trans('site.Email')}}:</p>
+                                            <input type="email" class="form-control" name="email" value="{{auth('web')->user()->email}}" placeholder="{{trans('site.Email')}}" >
                                             @error('email')
                                             <span class="text-danger">{{$message}}</span>
                                             @enderror
                                         </div>
                                         <div class="col-md-6 ">
-                                            <p>الوظيفة:</p>
-                                            <input type="text" class="form-control" name="job" value="{{auth('web')->user()->job}}" placeholder="الوظيفة" >
+                                            <p>{{trans('site.Job')}}:</p>
+                                            <input type="text" class="form-control" name="job" value="{{auth('web')->user()->job}}" placeholder="{{trans('site.Job')}}" >
                                             @error('job')
                                             <span class="text-danger">{{$message}}</span>
                                             @enderror
                                         </div>
                                         <div class="col-md-6 ">
-                                            <p>العمر:</p>
-                                            <input type="number" class="form-control" name="age" value="{{auth('web')->user()->age}}" placeholder="العمر" >
+                                            <p>{{trans('site.Age')}}:</p>
+                                            <input type="number" class="form-control" name="age" value="{{auth('web')->user()->age}}" placeholder="{{trans('site.Age')}}" >
                                             @error('age')
                                             <span class="text-danger">{{$message}}</span>
                                             @enderror
                                         </div>
 
                                         <div class="col-md-12">
-                                            <p>رقم الهاتف:</p>
-                                            <input type="text" class="form-control" name="mobile" value="{{auth('web')->user()->mobile}}" placeholder="رقم الهاتف" >
+                                            <p> {{trans('site.Mobile')}}:</p>
+                                            <input type="text" class="form-control" name="mobile" value="{{auth('web')->user()->mobile}}" placeholder="{{trans('site.Mobile')}} " >
                                             @error('mobile')
                                             <span class="text-danger">{{$message}}</span>
                                             @enderror
                                         </div>
                                         <div class="col-md-6 ">
-                                            <input type="password" class="form-control" name="password" placeholder="كلمة المرور" >
+                                            <input type="password" class="form-control" name="password" placeholder=" {{trans('site.Password')}}" >
                                             @error('password')
                                             <span class="text-danger">{{$message}}</span>
                                             @enderror
                                         </div>
                                         <div class="col-md-6 ">
-                                            <input type="password" class="form-control" name="password_confirmation" placeholder="تأكيد كلمة المرور" >
+                                            <input type="password" class="form-control" name="password_confirmation" placeholder="{{trans('site.Password_Confirmation')}}" >
                                             @error('password_confirmation')
                                             <span class="text-danger">{{$message}}</span>
                                             @enderror
@@ -145,7 +145,7 @@
                                         <div class="col-md-12 text-center">
 
 
-                                            <button type="submit">حفظ التغييرات</button>
+                                            <button type="submit">{{trans('site.Saving_changes')}} </button>
                                         </div>
 
                                     </div>

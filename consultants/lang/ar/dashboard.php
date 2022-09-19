@@ -6,6 +6,8 @@ return [
    //Sidebar
 
     'Home' => 'الرئيسية',
+    'Dashboard' => 'لوحة التحكم',
+    'statistics' => 'الإحصائيات',
     'About_Us' => 'نبذة عنا',
     'Contact_information' => 'معلومات التواصل',
     'Mail' => 'البريد الوارد',
@@ -167,11 +169,25 @@ return [
     'Order_Delete' => 'حذف الطلب',
 
 
-    'Domains' => 'الدومينات'
+    'Domains' => 'الدومينات',
 
+    'Number_of_messages_received' => 'عدد الرسائل الواردة',
+    'Total_discount_coupons' => 'إجمالي كوبونات الخصم',
+    'Total_activated_coupons' => 'إجمالي الكوبونات المفعلة',
+    'Total_packages' => 'إجمالي الباقات',
+    'The_full_number_of_packages' => 'العدد الكامل للباقات',
 
+    'Earnings_from_orders_(current month)' => 'الأرباح من الطلبات (الشهر الحالي)',
+    'Total_earnings_for_this_month' => 'إجمالي أرباح هذا الشهر',
+    'Earnings_from_orders_(current year)' => 'الأرباح من الطلبات (العام الحالي)',
+    'Total_earnings_for_this_year' => 'إجمالي أرباح هذا العام',
+    'New_orders_(current month)' => 'الطلبات الجديدة(الشهر الحالي)',
+    'All_new_orders_this_month' => 'كافة الطلبات الجديدة هذا الشهر',
+    'All_finished_orders_(current month)' => 'الطلبات المنتهية(الشهر الحالي)',
 
+    'SAR' => 'ريال سعودي',
 
+    'Earnings_overview' => 'نظرة عامة على الأرباح',
 
 
 

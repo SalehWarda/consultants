@@ -111,13 +111,13 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="fas fa-comment-dots"></i>
-                        <span>سياسة الخصوصية والإستخدام</span>
+                        <span>{{trans('site.Privacy_and_Usage_Policy')}}</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li>
 
 
-                        <li><a href="{{route('admin.privacy')}}">سياسة الخصوصية والإستخدام</a></li>
+                        <li><a href="{{route('admin.privacy')}}">{{trans('site.Privacy_and_Usage_Policy')}}</a></li>
 
 
                         </li>

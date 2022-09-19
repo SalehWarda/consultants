@@ -49,6 +49,7 @@ Route::group(
     Route::get('/login-users', [LoginController::class, 'getLogin'])->name('site.login');
     Route::post('/login-users', [LoginController::class, 'login'])->name('site.login.user');
     Route::post('/register-users', [LoginController::class, 'register'])->name('site.register.user');
+    Route::get('/register', [LoginController::class, 'getRegister'])->name('site.getRegister');
 
     Route::post('/contact/store', [HomeController::class, 'contact_store'])->name('site.contact_store');
     Route::get('/domains', [DomainController::class, 'index'])->name('site.domains');

@@ -2,7 +2,7 @@
 
 @section('title')
 
-    تسجيل الدخول
+    {{trans('site.Sign_in')}}
 
 @endsection
 @section('content')
@@ -13,14 +13,14 @@
 
                 <div class="text-center mt-4">
                     <div class="mb-3">
-                        <a href="index.html" class="auth-logo">
+                        <a href="#" class="auth-logo">
                             <img src="{{asset('assets/images/hulla.jpeg')}}" height="60" class="logo-dark mx-auto" alt="">
                             <img src="{{asset('assets/images/hulla.jpeg')}}" height="60" class="logo-light mx-auto" alt="">
                         </a>
                     </div>
                 </div>
 
-                <h4 class="text-muted text-center font-size-18"><b>تسجيل الدخول</b></h4>
+                <h4 class="text-muted text-center font-size-18"><b>{{trans('site.Sign_in')}}</b></h4>
 
                 @include('partials.alert.alert')
 
@@ -30,7 +30,7 @@
                         @csrf
                         <div class="form-group mb-3 row">
                             <div class="col-12">
-                                <input class="form-control" type="email" name="email" placeholder="البريد الإلكتروني">
+                                <input class="form-control" type="email" name="email" placeholder="{{trans('site.Email')}}">
                                 @error('email')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
@@ -39,7 +39,7 @@
 
                         <div class="form-group mb-3 row">
                             <div class="col-12">
-                                <input class="form-control" type="password" name="password" placeholder="كلمة المرور">
+                                <input class="form-control" type="password" name="password" placeholder="{{trans('site.Password')}}">
                                 @error('password')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
@@ -50,14 +50,14 @@
                             <div class="col-12">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                    <label class="form-label ms-1" for="customCheck1">تذكرني</label>
+                                    <label class="form-label ms-1" for="customCheck1">{{trans('site.Remmeber_me')}}</label>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group mb-3 text-center row mt-3 pt-1">
                             <div class="col-12">
-                                <button class="btn btn-info w-100 waves-effect waves-light" type="submit">دخول</button>
+                                <button class="btn btn-info w-100 waves-effect waves-light" style="background: linear-gradient(45deg,#20a0e6,#6d1d91)" type="submit">{{trans('site.Login')}}</button>
                             </div>
                         </div>
 

@@ -137,7 +137,7 @@ section {
   left: 15px;
   bottom: 15px;
   z-index: 99999;
-  background: #4154f1;
+background: linear-gradient(45deg, #20a0e6, #6d1d91);
   width: 40px;
   height: 40px;
   border-radius:4px;
@@ -151,7 +151,7 @@ section {
 }
 
 .back-to-top:hover {
-  background: #6776f4;
+background: linear-gradient(45deg, #20a0e6, #6d1d91);
   color: #fff;
 }
 
@@ -254,7 +254,7 @@ section {
 
 .navbar .getstarted,
 .navbar .getstarted:focus {
-  background: #4154f1;
+background: linear-gradient(45deg, #20a0e6, #6d1d91);
   padding:8px 20px;
   margin-right: 30px;
   border-radius:4px;
@@ -301,7 +301,7 @@ section {
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-  color: #4154f1;
+  color: #6d1d91;
 }
 
 .navbar .dropdown:hover>ul {
@@ -394,7 +394,7 @@ section {
 .navbar-mobile a:focus {
   padding:10px 20px;
   font-size: 15px;
-  color: #012970;
+  color: #6d1d91;
 }
 
 .navbar-mobile a:hover,
@@ -472,7 +472,7 @@ section {
   border-radius:4px;
   transition: 0.5s;
   color: #fff;
-  background: #4154f1;
+background: linear-gradient(45deg, #20a0e6, #6d1d91);
   box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4);
 }
 
@@ -572,7 +572,7 @@ section {
   border-radius:4px;
   transition: 0.5s;
   color: #fff;
-  background: #4154f1;
+background: linear-gradient(45deg, #20a0e6, #6d1d91);
   box-shadow: 0px 5px 25px rgba(65, 84, 241, 0.3);
 }
 
@@ -690,7 +690,7 @@ section {
 }
 
 .features .feature-box:hover i {
-  background: #4154f1;
+background: linear-gradient(45deg, #20a0e6, #6d1d91);
   color: #fff;
 }
 
@@ -1024,7 +1024,7 @@ section {
 }
 
 .pricing .btn-buy:hover {
-  background: #4154f1;
+background: linear-gradient(45deg, #20a0e6, #6d1d91);
   color: #fff;
 }
 
@@ -1037,7 +1037,7 @@ section {
   z-index: 1;
   font-size: 14px;
   padding-top: 1px; padding-left: 0; padding-bottom: 3px; padding-right: 0;
-  background: #4154f1;
+background: linear-gradient(45deg, #20a0e6, #6d1d91);
   color: #fff;
 }
 
@@ -1200,7 +1200,7 @@ section {
 
 .portfolio .portfolio-wrap .portfolio-links a {
   color: #fff;
-  background: #4154f1;
+background: linear-gradient(45deg, #20a0e6, #6d1d91);
   margin:10px 2px;
   width: 36px;
   height: 36px;
@@ -1688,7 +1688,7 @@ section {
 }
 
 .contact .btn-login button[type=submit] {
-  background: #4154f1;
+background: linear-gradient(45deg, #20a0e6, #6d1d91);
   border: 0;
   padding:10px 30px;
   color: #fff;
@@ -1797,7 +1797,7 @@ section {
 
 .blog .entry .entry-content .read-more a {
   display: inline-block;
-  background: #4154f1;
+background: linear-gradient(45deg, #20a0e6, #6d1d91);
   color: #fff;
   padding:6px 20px;
   transition: 0.3s;
@@ -2071,7 +2071,7 @@ section {
 
 .blog .blog-pagination li.active,
 .blog .blog-pagination li:hover {
-  background: #4154f1;
+background: linear-gradient(45deg, #20a0e6, #6d1d91);
 }
 
 .blog .blog-pagination li.active a,
@@ -2122,7 +2122,7 @@ section {
   font-size: 16px;
   padding:0 15px;
   margin:-1px;
-  background: #4154f1;
+background: linear-gradient(45deg, #20a0e6, #6d1d91);
   color: #fff;
   transition: 0.3s;
   border-top-right-radius: 0; border-top-left-radius: 4px; border-bottom-left-radius: 4px; border-bottom-right-radius: 0;
@@ -2219,7 +2219,7 @@ section {
 .blog .sidebar .tags ul a:hover {
   color: #fff;
   border: 1px solid #4154f1;
-  background: #4154f1;
+background: linear-gradient(45deg, #20a0e6, #6d1d91);
 }
 
 .blog .sidebar .tags ul a span {
@@ -2277,7 +2277,7 @@ section {
   font-size: 16px;
   padding:0 30px;
   margin:3px;
-  background: #4154f1;
+background: linear-gradient(45deg, #20a0e6, #6d1d91);
   color: #fff;
   transition: 0.3s;
   border-radius:4px;

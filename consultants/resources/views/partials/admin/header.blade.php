@@ -3,21 +3,21 @@
         <div class="d-flex">
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href="index.html" class="logo logo-dark">
+                <a href="{{route('admin.dashboard')}}" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="{{asset('assets/admin/images/logo-sm.png')}}" alt="logo-sm" height="22">
+                                    <img src="{{asset('assets/images/hulla1.png')}}" alt="logo-sm" height="60">
                                 </span>
                     <span class="logo-lg">
-                                    <img src="{{asset('assets/admin/images/logo-dark.')}}" alt="logo-dark" height="20">
+                                    <img src="{{asset('assets/images/hulla1.png')}}" alt="logo-dark" height="60">
                                 </span>
                 </a>
 
-                <a href="index.html" class="logo logo-light">
+                <a href="{{route('admin.dashboard')}}" class="logo logo-light">
                                 <span class="logo-sm">
-                                    <img src="{{asset('assets/admin/images/logo-sm.png')}}" alt="logo-sm-light" height="22">
+                                    <img src="{{asset('assets/images/hulla1.png')}}" alt="logo-sm-light" height="60">
                                 </span>
                     <span class="logo-lg">
-                                    <img src="{{asset('assets/admin/images/logo-light.png')}}" alt="logo-light" height="20">
+                                    <img src="{{asset('assets/images/hulla1.png')}}" alt="logo-light" height="60">
                                 </span>
                 </a>
             </div>
@@ -85,23 +85,19 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <a class="dropdown-item" href="{{route('admin.profile')}}"><i class="ri-user-line align-middle me-1"></i> الملف الشخصي</a>
+                    <a class="dropdown-item" href="{{route('admin.profile')}}"><i class="ri-user-line align-middle me-1"></i> {{trans('site.Profile')}}</a>
 
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger"  href="javascript:void(0);"
                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        <i class="ri-shut-down-line align-middle me-1 text-danger"></i>تسجيل الخروج</a>
+                        <i class="ri-shut-down-line align-middle me-1 text-danger"></i>{{trans('site.Logout')}}</a>
                     <form action="{{route('admin.logout')}}" method="post" id="logout-form" class="d-none">
                         @csrf
                     </form>
                 </div>
             </div>
 
-            <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
-                    <i class="ri-settings-2-line"></i>
-                </button>
-            </div>
+
 
         </div>
     </div>

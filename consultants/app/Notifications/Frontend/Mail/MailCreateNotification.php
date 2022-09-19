@@ -33,7 +33,7 @@ class MailCreateNotification extends Notification implements ShouldQueue
      */
     public function via($notifiable)
     {
-        return ['database','mail'];
+        return ['database'];
     }
 
     /**
@@ -49,6 +49,7 @@ class MailCreateNotification extends Notification implements ShouldQueue
                     ->line($this->mail->created_at)
                     ->line($this->mail->name)
                     ->from($this->mail->email)
+
                     ->line($this->mail->message);
     }
 

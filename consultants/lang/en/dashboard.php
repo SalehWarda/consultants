@@ -6,6 +6,9 @@ return [
 
 
     'Home' => 'Home',
+    'Dashboard' => 'Dashboard',
+    'statistics' => 'Statistics',
+
     'About_Us' => 'About Us',
     'Contact_information' => 'Contact information',
     'Mail' => 'Mail',
@@ -175,8 +178,25 @@ return [
     'Order_Delete' => 'Order delete',
 
 
-    'Domains' => 'Domains'
+    'Domains' => 'Domains',
 
+    'Number_of_messages_received' => 'Number of messages received',
+    'Total_discount_coupons' => 'Total discount coupons',
+    'Total_activated_coupons' => 'Total activated coupons',
+    'Total_packages' => 'Total packages',
+    'The_full_number_of_packages' => 'The full number of packages',
+
+    'Earnings_from_orders_(current month)' => 'Earnings (current month)',
+    'Total_earnings_for_this_month' => 'Total earnings from orders for this month',
+    'Earnings_from_orders_(current year)' => 'Earnings (current year)',
+    'Total_earnings_for_this_year' => 'Total earnings from orders for this year',
+    'New_orders_(current month)' => 'New orders(current month)',
+    'All_new_orders_this_month' => 'All new orders this month',
+    'All_finished_orders_(current monthh)' => 'All finished orders',
+    'All_finished_orders_(current month)' => 'All finished orders(current month)',
+    'SAR' => 'SAR',
+
+    'Earnings_overview' => 'Earnings_overview',
 
 
 ];

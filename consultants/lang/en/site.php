@@ -82,5 +82,55 @@ return [
 
 
 
+    'Privacy_and_Usage_Policy' => 'Privacy and Policy',
+    'Privacy_Policy' => 'Privacy Policy ',
+    'Term_of_usage' => ' Terms of usage',
+
+
+
+    'Privacy_and_Usage_Policy_Arabic' => 'Privacy Policy in Arabic',
+    'Privacy_and_Usage_Policy_English' => 'Privacy Policy in English',
+    'Term_Arabic' => 'Terms of use in Arabic',
+    'Term_English' => 'Terms of use in English',
+
+
+    'Saving_changes' => 'Saving changes',
+
+    'Profile_personly'=>'Profile personly',
+    'personal_information'=>'Personal information',
+    'your_list'=>' Your list',
+    'your_information'=>' data',
+
+
+    'Additional_data'=>'Additional data',
+    'Answering_this_information_is_mandatory_to_complete_your_application'=>'Answering this information is mandatory to complete your application',
+    'Are_you_registered_in_the_tax_register'=>'Are you registered in the tax register:',
+    'yes'=>' yes',
+    'no'=>' no',
+    'Do_you_have_a_logo'=>'Do you have a logo ?',
+    'Please_choose_three_colors'=>'Please choose three colors ?',
+
+
+    'This_domain_is' => 'This domain is ',
+    'available' => ' available !',
+    'This_domain_is_taken' => 'This domain is taken !',
+    'Sorry, this_domain_is_already_taken' => 'Sorry, this domain is already taken',
+
+    'Notifications' => 'Notifications',
+    'No_Notifications_Found!' => 'No notifications found',
+    'All_rights_reserved_to_the_Foundation' => 'All rights reserved to the Foundation',
+    'Holla_Company' => 'Holla Institute for Information Technology',
+    'SR' => 'SR',
+    'A_new_order_with_amount' => 'A new order with amount',
+    'from' => 'from',
+
+    'incoming_mail' => 'Incoming mail',
+    'You_have_incoming_mail_from' => 'You have incoming mail from',
+    'No_Mails_Found!' => 'No Mails Found',
+
+    'Developed_by' => 'Developed by',
+
+
+    'Remmeber_me' => 'Remmeber me',
 
 ];

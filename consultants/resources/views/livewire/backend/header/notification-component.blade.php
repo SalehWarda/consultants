@@ -5,9 +5,27 @@
             data-bs-toggle="dropdown" aria-expanded="false">
         <i class="ri-notification-3-line"></i>
         @if ($unReadNotifications)
-            <span class="badge rounded-pill bg-danger float-end" style="padding-left: 0.2em;
-                    padding-right: 0.4em; left: 10px">{{ $unReadNotificationsCount }}
+
+            @if(app()->getLocale() == 'ar')
+                <span class="badge rounded-pill bg-danger float-end"
+
+
+                      style="   padding-left: 0.2em;
+                    padding-right: 0.4em; left: 10px">
+
+                {{ $unReadNotificationsCount }}
             </span>
+            @else
+                <span class="badge rounded-pill bg-danger float-end"
+
+
+                      style="   padding-left: 0.2em;
+                    padding-right: 0.4em; right: 4px">
+
+                {{ $unReadNotificationsCount }}
+            </span>
+            @endif
+
         @endif
     </button>
 
@@ -18,7 +36,7 @@
         <div class="p-3">
             <div class="row align-items-center">
                 <div class="col">
-                    <h6 class="m-0"> الإشعارات </h6>
+                    <h6 class="m-0"> {{trans('site.Notifications')}} </h6>
                 </div>
 
             </div>
@@ -34,7 +52,7 @@
                                                 </span>
                             </div>
                             <div class="flex-1">
-                                <h6 class="mb-1">لديك طلب جديد بمبلغ ({{$notification->data['amount']}}) من {{$notification->data['customer_name']}}</h6>
+                                <h6 class="mb-1"> {{trans('site.A_new_order_with_amount')}} ({{$notification->data['amount']}})  {{trans('site.from')}} {{$notification->data['customer_name']}}</h6>
                                 <div class="font-size-12 text-muted">
                                     <p class="mb-0"><i class="mdi mdi-clock-outline"></i> {{$notification->data['created_date']}}</p>
                                 </div>
@@ -46,7 +64,7 @@
                 <div class="p-2 border-top">
                     <div class="d-grid">
                         <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
-                            لا يوجد اشعارات جديدة
+                            {{trans('site.No_Notifications_Found!')}}
                         </a>
                     </div>
                 </div>

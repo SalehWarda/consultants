@@ -19,6 +19,11 @@ class LoginController extends Controller
         return view('pages.frontend.auth.login');
     }
 
+    public function getRegister()
+    {
+        return view('pages.frontend.auth.register');
+    }
+
     public function login(LoginRequest $request)
     {
         if (auth('web')->attempt(['email' => $request->input('email'), 'password' => $request->input('password')])){

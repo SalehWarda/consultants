@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    {{trans('privacy_policy.Privacy_and_Usage_Policy')}}
+    {{trans('site.Privacy_and_Usage_Policy')}}
 @endsection
 
 @section('content')
@@ -13,13 +13,13 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">{{trans('privacy_policy.Privacy_and_Usage_Policy')}}</h4>
+                        <h4 class="mb-sm-0">{{trans('site.Privacy_and_Usage_Policy')}}</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item active">{{trans('privacy_policy.Privacy_and_Usage_Policy')}}</li>
+                                <li class="breadcrumb-item active">{{trans('site.Privacy_and_Usage_Policy')}}</li>
                                 <li class="breadcrumb-item"><a
-                                        href="{{route('admin.dashboard')}}">{{trans('privacy_policy.Home')}}</a></li>
+                                        href="{{route('admin.dashboard')}}">{{trans('site.Home')}}</a></li>
                             </ol>
                         </div>
 
@@ -56,7 +56,7 @@
                                 <div class="row">
 
                                     <div class="col-6">
-                                        <label for="privacy_policy_ar"> {{trans('privacy_policy.Privacy_and_Usage_Policy_Arabic')}}:</label>
+                                        <label for="privacy_policy_ar"> {{trans('site.Privacy_and_Usage_Policy_Arabic')}}:</label>
 
                                         <textarea id="privacy_policy_ar" hidden name="privacy_policy_ar" class="body-content-ar"
                                         >
@@ -67,7 +67,7 @@
                                     </div>
 
                                     <div class="col-6">
-                                        <label for="privacy_policy_en"> {{trans('privacy_policy.Privacy_and_Usage_Policy_English')}}:</label>
+                                        <label for="privacy_policy_en"> {{trans('site.Privacy_and_Usage_Policy_English')}}:</label>
 
                                         <textarea id="privacy_policy_en" hidden name="privacy_policy_en" class="body-content-en"
                                         >
@@ -84,7 +84,7 @@
                                 <div class="row">
 
                                     <div class="col-6">
-                                        <label for="term_ar"> {{trans('privacy_policy.Term_Arabic')}}:</label>
+                                        <label for="term_ar"> {{trans('site.Term_Arabic')}}:</label>
 
                                         <textarea id="term_ar" hidden name="term_ar" class="body-content-ar"
                                         >
@@ -95,7 +95,7 @@
                                     </div>
 
                                     <div class="col-6">
-                                        <label for="term_en"> {{trans('privacy_policy.Term_English')}}:</label>
+                                        <label for="term_en"> {{trans('site.Term_English')}}:</label>
 
                                         <textarea id="term_en" hidden name="term_en" class="body-content-en"
                                         >
@@ -115,7 +115,7 @@
 
 
                                 <button class="btn ripple btn-secondary m-lg-2" type="submit">
-                                    {{trans('privacy_policy.Saving_changes')}}<i
+                                    {{trans('site.Saving_changes')}}<i
                                         class="fe fe-plus"></i></button>
                             </form>
 

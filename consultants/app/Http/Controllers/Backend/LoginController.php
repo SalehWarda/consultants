@@ -14,6 +14,8 @@ class LoginController extends Controller
         return view('pages.backend.auth.login');
     }
 
+
+
     public function login(LoginRequest $request)
     {
         if (auth()->guard('admin')->attempt(['email' => $request->input('email'), 'password' => $request->input('password')])){
