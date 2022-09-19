@@ -36,7 +36,7 @@ class PackagesController extends Controller
        ]);
 
 
-        toastr('تم إضافة الباقة بنجاح!','success');
+        toastr(trans('site.Created_successfully'),'success');
         return redirect()->back();
     }
 
@@ -60,7 +60,7 @@ class PackagesController extends Controller
 
         ]);
 
-        toastr('تم تعديل الباقة بنجاح!','success');
+        toastr(trans('site.Updated_successfully'),'success');
         return redirect()->back();
     }
 
@@ -68,7 +68,7 @@ class PackagesController extends Controller
     {
         $packege = Package::findOrFail($request->package_id);
         $packege->delete();
-        toastr('تم حذف الباقة بنجاح!','success');
+        toastr(trans('site.Deleted_successfully'),'success');
         return redirect()->back();
     }
 }

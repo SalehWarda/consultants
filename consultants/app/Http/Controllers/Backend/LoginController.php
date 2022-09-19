@@ -24,7 +24,7 @@ class LoginController extends Controller
         }else{
             return back()->with([
 
-                'message' => 'يوجد خطأ في البيانات, يرجى المحاولة مرة أخرى !',
+                'message' => trans('site.There_is_an_error_in_the_data,_please_try_again'),
                 'alert-type' => 'danger'
             ]);
         }

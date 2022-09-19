@@ -29,7 +29,7 @@ class CouponController extends Controller
 
         Coupon::create($request->validated());
 
-        toastr('تم إضافة الكويون بنجاح!','success');
+        toastr(trans('site.Created_successfully'),'success');
         return redirect()->back();
     }
 
@@ -49,7 +49,7 @@ class CouponController extends Controller
     {
         $coupon = Coupon::findOrFail($request->coupon_id);
         $coupon->update($request->validated());
-        toastr('تم تعديل الكويون بنجاح!','success');
+        toastr(trans('site.Updated_successfully'),'success');
 
         return redirect()->back();
     }
@@ -60,7 +60,7 @@ class CouponController extends Controller
 
         $coupon = Coupon::findOrFail($request->coupon_id);
         $coupon->delete();
-        toastr('تم حذف الكويون بنجاح!','success');
+        toastr(trans('site.Deleted_successfully'),'success');
 
         return redirect()->back();
     }

@@ -83,6 +83,7 @@ Route::group(['prefix' => 'admin'],function (){
 
         Route::group(['prefix' => 'orders'], function () {
 
+            Route::get('/download_attachment/{id}',[OrdersController::class,'download_attachment'])->name('admin.orders.download_attachment');
 
             Route::get('/', [OrdersController::class, 'index'])->name('admin.orders.index');
             Route::get('/create', [OrdersController::class, 'create'])->name('admin.orders.create');

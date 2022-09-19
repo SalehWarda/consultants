@@ -32,7 +32,7 @@ class CustomerController extends Controller
 
         $user->update($data);
 
-        toastr('تم تحديث بياناتك بنجاح!', 'success');
+        toastr(trans('site.Updatedsuccessfully'), 'success');
         return back();
     }
 }

@@ -74,7 +74,7 @@ class OrdersController extends Controller
             $customer->notify(new OrderNotification($order));
 
             return back()->with([
-                'message' => 'updated successfully',
+                'message' => trans('site.Updated_successfully'),
                 'alert-type' => 'success',
             ]);
 
@@ -88,7 +88,7 @@ class OrdersController extends Controller
         $order = Order::findOrFail($request->order_id);
         $order->delete();
 
-        toastr('تم حذف الطلب بنجاح', 'error');
+        toastr(trans('site.Deleted_successfully'), 'error');
         return redirect()->back();
 
 
@@ -107,5 +107,16 @@ class OrdersController extends Controller
 
 
         return view('pages.backend.orders.domain_order_details',compact('package'));
+    }
+
+
+    public function download_attachment($id)
+    {
+
+        $order = Order::findOrFail($id);
+
+        $domain = OrderPackage::whereOrderId($order->id)->wherePackageId(null)->first();
+
+        return response()->download(public_path('/assets/images/packages/'.$domain->logo_file));
     }
 }

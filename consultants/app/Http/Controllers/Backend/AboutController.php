@@ -33,7 +33,7 @@ class AboutController extends Controller
 
         $about->update($input);
 
-        toastr()->success('تم التعديل بنجاح !');
+        toastr()->success(trans('site.Updated_successfully'));
 
         return redirect()->back();
     }

@@ -133,4 +133,16 @@ return [
 
     'Remmeber_me' => 'Remmeber me',
 
+    'Domain_added_to_cart_successfully' => 'Domain added to cart successfully',
+    'Updated_successfully' => 'Updated successfully',
+    'Created_successfully' => 'Created successfully',
+    'Deleted_successfully' => 'Deleted successfully',
+    'There_is_an_error_in_the_data,_please_try_again' => 'There is an error in the data, please try again',
+    'Sent_succesfully' => 'Sent succesfully',
+    'Enter_dns' => 'Enter DNS',
+    'Order_info' => 'Order info',
+    '_your_own_logo_will_be_made_at_a_cost_of_700_Saudi_riyals_added_to_the_order_price' => 'When there is no logo, your own logo will be made at a cost of 700 Saudi riyals added to the order price',
+
+
+
 ];

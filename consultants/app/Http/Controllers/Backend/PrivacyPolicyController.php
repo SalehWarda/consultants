@@ -31,7 +31,7 @@ class PrivacyPolicyController extends Controller
 
         $privacy->update($input);
 
-        toastr()->success('تم التعديل بنجاح !');
+        toastr()->success(trans('site.Updated_successfully'));
 
         return redirect()->back();
     }

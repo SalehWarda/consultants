@@ -82,7 +82,7 @@ class DomainCheckerComponenet extends Component
              Cart::instance('default')->add($this->aggrement['domain'],
                  $this->aggrement['domain'],
                  1 ,
-                 Str::limit($this->aggrement['price'],2,'') ,
+                 Str::limit(($this->aggrement['price']*4.5),2,'') ,
                  ['type'=>'domain',
                  'color_one'=>$this->color_one,
                  'color_tow'=>$this->color_tow,
@@ -99,7 +99,7 @@ class DomainCheckerComponenet extends Component
 
 
 
-             $this->alert('success', 'تم إضافة الدومين في السلة بنجاح.');
+             $this->alert('success', trans('site.Domain_added_to_cart_successfully'));
              return redirect()->route('site.cart');
 
          }
@@ -156,7 +156,7 @@ class DomainCheckerComponenet extends Component
 
              $this->emit('updateCart');
 
-             $this->alert('success', 'تم إضافة الدومين في السلة بنجاح.');
+             $this->alert('success', trans('site.Domain_added_to_cart_successfully'));
              return redirect()->route('site.cart');
          }
 

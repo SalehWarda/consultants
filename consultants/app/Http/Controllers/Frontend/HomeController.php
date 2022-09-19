@@ -40,7 +40,7 @@ class HomeController extends Controller
 
         return back()->with([
 
-            'message' => 'تم الإرسال بنجاح !',
+            'message' => trans('site.Sent_succesfully'),
             'alert-type' => 'success'
         ]);
     }

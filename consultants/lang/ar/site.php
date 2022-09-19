@@ -131,5 +131,19 @@ return [
     'Remmeber_me' => 'تذكرني',
 
 
+    'Domain_added_to_cart_successfully' => 'تم إضافة الدومين للسلة بنجاح',
+    'Updated_successfully' => 'تم التعديل بنجاح',
+    'Created_successfully' => 'تم الإضافة بنجاح',
+    'Deleted_successfully' => 'تم الحذف بنجاح',
+    'There_is_an_error_in_the_data,_please_try_again' => 'يوجد خطأ في البيانات ، يرجى المحاولة مرة أخرى',
+    'Sent_succesfully' => 'تم الإرسال بنجاح',
+    'Enter_dns' => 'أدخل الدي أن أس',
+    'Order_info' => 'معلومات الطلب',
+    'When_there_is_no_logo,_your_own_logo_will_be_made_at_a_cost_of_700_Saudi_riyals_added_to_the_order_price' => 'عند عدم وجود شعار سيتم عمل شعار خاص بك بتكلفة 700 ريال سعودي مضافة لسعر الطلب',
+
+
+
+
+
 
 ];

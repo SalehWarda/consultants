@@ -235,9 +235,13 @@
                                 <tr>
                                     <td>
                                         @if($order->logo == "yes")
-                                            <img
-                                                src="{{asset('assets/images/packages/'.$order->logo_file)}}"
-                                                width="60" height="60" alt="">
+
+                                            <a href="{{route('admin.orders.download_attachment',$order->order_id)}}">
+                                                <img
+                                                    src="{{asset('assets/images/packages/'.$order->logo_file)}}"
+                                                    width="60" height="60" alt="">
+                                            </a>
+
                                         @else
                                             <span>no logo</span>
                                         @endif

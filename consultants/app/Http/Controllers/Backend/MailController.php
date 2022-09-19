@@ -25,7 +25,7 @@ class MailController extends Controller
     {
         $mail = Mail::findOrFail($request->mail_id);
         $mail->delete();
-        toastr()->success('تم الحذف بنجاح !');
+        toastr()->success(trans('site.Deleted_successfully'));
         return redirect()->back();
     }
 }

@@ -46,7 +46,7 @@ class DashboardController extends Controller
 
         $user->update($data);
 
-        toastr('تم تحديث بياناتك بنجاح!', 'success');
+        toastr(trans('site.Updated_successfully'), 'success');
         return back();
 
 

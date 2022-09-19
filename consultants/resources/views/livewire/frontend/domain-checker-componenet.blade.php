@@ -37,7 +37,7 @@
                 <hr>
 
                 <div class="col-md-12 ">
-                    <h6 class="alert-heading">{{trans('site.Do_you_have_a_logo')}}</h6>
+                    <h6 class="alert-heading">{{trans('site.Do_you_have_a_logo')}} <span class="text-danger">(يرجى رفع الشعار بجودة عالية الدقة.)</span></h6>
                     <div class="form-check" x-on:click="logo = ! logo" >
                         <input class="form-check-input" type="radio" value="yes" wire:model="logo"  name="logo"  id="logoYes">
                         <label  for="logoYes" >
@@ -209,7 +209,7 @@
 
                                         <form>
                                             <input class="form-control" wire:model="existingDomain" type="text" placeholder="{{trans('site.Enter_your_domain')}}"><br>
-                                            <input class="form-control" wire:model="dns" type="text" placeholder="أدخل ال دي ان اس"> <br>
+                                            <input class="form-control" wire:model="dns" type="text" placeholder="{{trans('site.Enter_dns')}}"> <br>
                                             <button class="btn btn-primary" type="submit" wire:click.prevent="addToCartExisitngDomain()" >{{trans('site.Domain_Connection')}}</button>
 
                                         </form>
