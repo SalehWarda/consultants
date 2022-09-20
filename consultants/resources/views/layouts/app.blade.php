@@ -27,7 +27,7 @@
 
 
     <!-- Vendor CSS Files -->
-    <link href="{{asset('assets/site/vendor/aos/aos.css')}}" rel="stylesheet">
+{{--    <link href="{{asset('assets/site/vendor/aos/aos.css')}}" rel="stylesheet">--}}
     <link href="{{asset('assets/site/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/site/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
     <link href="{{asset('assets/site/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
@@ -36,6 +36,9 @@
 
     <!-- Template Main CSS File -->
     <link href="{{asset('assets/site/css/style.css')}}" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 
     <!-- =======================================================

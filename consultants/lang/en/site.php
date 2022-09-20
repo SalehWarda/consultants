@@ -142,6 +142,7 @@ return [
     'Enter_dns' => 'Enter DNS',
     'Order_info' => 'Order info',
     '_your_own_logo_will_be_made_at_a_cost_of_700_Saudi_riyals_added_to_the_order_price' => 'When there is no logo, your own logo will be made at a cost of 700 Saudi riyals added to the order price',
+    'Please_upload_the_logo_in_high_definition' => 'Please upload the logo in high definition,',
 
 
 

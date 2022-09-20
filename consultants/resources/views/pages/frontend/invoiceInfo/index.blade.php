@@ -166,7 +166,7 @@
                                                             @endforeach
 
                                                             <tr>
-                                                                <th ><span style="font-size: 15px"><strong style="color: red">{{trans('site.Note')}}: </strong> {{trans('site._your_own_logo_will_be_made_at_a_cost_of_700_Saudi_riyals_added_to_the_order_price')}}.</span></th>
+                                                                <th ><span style="font-size: 15px"><strong style="color: red">{{trans('site.Note')}}: </strong> {{trans('site.When_there_is_no_logo,_your_own_logo_will_be_made_at_a_cost_of_700_Saudi_riyals_added_to_the_order_price')}}.</span></th>
                                                                 <th ></th>
                                                                 <th ></th>
 

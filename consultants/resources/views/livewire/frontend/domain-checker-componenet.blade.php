@@ -37,7 +37,7 @@
                 <hr>
 
                 <div class="col-md-12 ">
-                    <h6 class="alert-heading">{{trans('site.Do_you_have_a_logo')}} <span class="text-danger">(يرجى رفع الشعار بجودة عالية الدقة.)</span></h6>
+                    <h6 class="alert-heading">{{trans('site.Do_you_have_a_logo')}} <span class="text-danger">({{trans('site.Please_upload_the_logo_in_high_definition')}})</span></h6>
                     <div class="form-check" x-on:click="logo = ! logo" >
                         <input class="form-check-input" type="radio" value="yes" wire:model="logo"  name="logo"  id="logoYes">
                         <label  for="logoYes" >
@@ -158,7 +158,7 @@
                                 <div class="info-box d-md-flex justify-content-between">
 
                                     <h3>{{$aggrement['domain'] ?? '' }}</h3>
-                                    <h3>{{$aggrement['period'] = 'years' ?? '' }}/{{\Illuminate\Support\Str::limit(number_format(($aggrement['price']) ,2) ,5,'')   ?? ''}} {{$aggrement['currency'] ?? ''}}</h3>
+                                    <h3>{{$aggrement['period'] = 'years' ?? '' }}/{{\Illuminate\Support\Str::limit(number_format((($aggrement['price']*4.5)) ,2) ,5,'')   ?? ''}} {{$aggrement['currency'] ?? ''}}</h3>
                                     <div class="pricing">
                                         <a wire:click.prevent="addToCart()" class="btn-buy" ><i class="ri-shopping-cart-line"></i> {{trans('site.Add_to_cart')}} </a>
                                     </div>

@@ -32,7 +32,7 @@ class OrderNotification extends Notification implements ShouldQueue
      */
     public function via($notifiable)
     {
-        return ['database'];
+        return ['database','mail'];
     }
 
     /**
@@ -41,13 +41,15 @@ class OrderNotification extends Notification implements ShouldQueue
      * @param  mixed  $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
-//    public function toMail($notifiable)
-//    {
-//        return (new MailMessage)
-//                    ->line('The introduction to the notification.')
-//                    ->action('Notification Action', url('/'))
-//                    ->line('Thank you for using our application!');
-//    }
+    public function toMail($notifiable)
+    {
+        return (new MailMessage)
+            ->line($this->order->ref_id)
+            ->line($this->order->status($this->order->transactions()->latest()->first()->transaction))
+            ->line($this->order->transactions()->latest()->first()->created_at->format('M d, Y'))
+            ->from('Holla@gmail.com');
+
+    }
 
     /**
      * Get the array representation of the notification.

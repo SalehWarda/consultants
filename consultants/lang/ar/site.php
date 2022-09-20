@@ -140,6 +140,7 @@ return [
     'Enter_dns' => 'أدخل الدي أن أس',
     'Order_info' => 'معلومات الطلب',
     'When_there_is_no_logo,_your_own_logo_will_be_made_at_a_cost_of_700_Saudi_riyals_added_to_the_order_price' => 'عند عدم وجود شعار سيتم عمل شعار خاص بك بتكلفة 700 ريال سعودي مضافة لسعر الطلب',
+    'Please_upload_the_logo_in_high_definition' => 'يرجى رفع الشعار بجودة عالية الدقة,',
 
 
 

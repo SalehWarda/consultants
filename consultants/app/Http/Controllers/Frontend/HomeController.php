@@ -34,6 +34,8 @@ class HomeController extends Controller
 
         $mail = Mail::create($input);
 
+
+
         Admin::query()->each(function ($admin, $key) use ($mail) {
             $admin->notify(new MailCreateNotification($mail));
         });

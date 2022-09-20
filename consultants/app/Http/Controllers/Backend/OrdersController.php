@@ -72,6 +72,8 @@ class OrdersController extends Controller
             ]);
 
             $customer->notify(new OrderNotification($order));
+            $customer->notify(new OrderNotification($order));
+
 
             return back()->with([
                 'message' => trans('site.Updated_successfully'),
